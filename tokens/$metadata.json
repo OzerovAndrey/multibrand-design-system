@@ -1,0 +1,13 @@
+{
+  "tokenSetOrder": [
+    "core",
+    "brand/aurum",
+    "brand/nova",
+    "brand/fiesta",
+    "map",
+    "theme/light",
+    "theme/dark",
+    "typography",
+    "components"
+  ]
+}
