@@ -405,5 +405,76 @@
         "description": "відстань label ↔ поле ↔ helper"
       }
     }
+  },
+  "card": {
+    "default": {
+      "bg": {
+        "value": "{color.bg.secondary}",
+        "type": "color"
+      },
+      "br": {
+        "value": "{color.border.tertiary}",
+        "type": "color"
+      },
+      "borderWidth": {
+        "value": "{borderWidth.control}",
+        "type": "borderWidth"
+      },
+      "borderRadius": {
+        "value": "{borderRadius.surface}",
+        "type": "borderRadius"
+      },
+      "paddingH": {
+        "xs": {
+          "value": "{space.padding.sm}",
+          "type": "spacing",
+          "description": "mobile"
+        },
+        "sm": {
+          "value": "{space.padding.md}",
+          "type": "spacing",
+          "description": "tablet"
+        },
+        "md": {
+          "value": "{space.padding.xl}",
+          "type": "spacing",
+          "description": "desktop"
+        }
+      },
+      "paddingV": {
+        "xs": {
+          "value": "{space.padding.sm}",
+          "type": "spacing",
+          "description": "mobile"
+        },
+        "sm": {
+          "value": "{space.padding.md}",
+          "type": "spacing",
+          "description": "tablet"
+        },
+        "md": {
+          "value": "{space.padding.xl}",
+          "type": "spacing",
+          "description": "desktop"
+        }
+      },
+      "gap": {
+        "xs": {
+          "value": "{space.gap.md}",
+          "type": "spacing",
+          "description": "відстань між слотами · mobile"
+        },
+        "sm": {
+          "value": "{space.gap.lg}",
+          "type": "spacing",
+          "description": "відстань між слотами · tablet"
+        },
+        "md": {
+          "value": "{space.gap.xl}",
+          "type": "spacing",
+          "description": "відстань між слотами · desktop"
+        }
+      }
+    }
   }
 }

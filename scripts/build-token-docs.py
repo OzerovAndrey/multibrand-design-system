@@ -54,6 +54,18 @@ COMPONENT_NOTES = {
             "Висоти sm/md/lg = Button sm/md/lg (32/40/48) — стають в один ряд.",
         ],
     },
+    "card": {
+        "title": "Card Default",
+        "figma": "Card Default (component set) · Size",
+        "anatomy": "Контейнер (auto-layout V, padding `card.default.paddingH/V.{size}`, gap `card.default.gap.{size}`) → "
+                   "`Slot 1` · `Slot 2` · `Slot 3` (інстанси `_Card slot`).",
+        "variants": "Size: xs (mobile) / sm (tablet) / md (desktop). Станів немає — статичний контейнер",
+        "notes": [
+            "Власного контенту немає — вміст підставляється через instance swap 💠 Slot 1–3; Slot 2 і Slot 3 вмикаються булеанами.",
+            "Ширина в сеті — референс (320 / 400 / 480); у макеті картка тягнеться (Fill) по колонці сітки.",
+            "Padding: xs 12 · sm 16 · md 24; gap: xs 8 · sm 10 · md 12 — з існуючої брендової шкали `space.*`.",
+        ],
+    },
 }
 
 # ---------------------------------------------------------------- завантаження
