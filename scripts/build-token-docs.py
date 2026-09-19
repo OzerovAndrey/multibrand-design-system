@@ -66,6 +66,47 @@ COMPONENT_NOTES = {
             "Padding: xs 12 · sm 16 · md 24; gap: xs 8 · sm 10 · md 12 — з існуючої брендової шкали `space.*`.",
         ],
     },
+    "media": {
+        "title": "Media",
+        "figma": "Media (component set) · Ratio × State",
+        "anatomy": "Контейнер (fill `media.bg`, radius `media.borderRadius`, clip) → `image` (rectangle, image fill) · `overlay` (`media.overlay.bg`) · "
+                   "`icon` (fallback, `media.fallback.iconSize`) · `Content` (slot, padding `media.padding`, gap `media.gap`).",
+        "variants": "Ratio: 1:1 / 4:3 / 16:9 / 3:4 · State: Loaded / Loading / Error",
+        "notes": [
+            "Медіа-примітив: зображення з брендовим радіусом і станами завантаження; основа для Thumb, PromoCard, банерів.",
+            "Loading — фон `media.skeleton.bg`; Error — іконка `placeholder-default` кольору `media.fallback.iconColor`.",
+            "Властивості: boolean Overlay · swap 💠 Fallback icon · slot Content (бейджі, кнопки).",
+            "Ratio — фіксовані пропорції; у макеті Fill по ширині, висота за пропорцією. Картинка міняється заливкою шару image.",
+        ],
+    },
+    "header": {
+        "title": "Header",
+        "figma": "Header (component set) · State  ·  частини: Logo (component set · Brand), Balance (component)",
+        "anatomy": "Контейнер (auto-layout H, space-between, padding `header.paddingH/V`, нижній бордер `header.br` × `header.borderWidth`) → "
+                   "`Logo` (instance) · `Actions` (auto-layout H, gap `header.gap`) → `Tools` (gap `header.actions.gap`: Search · Support) · `Balance`.",
+        "variants": "State: Logged in / Search open / Logged out",
+        "notes": [
+            "Організм: збирається з Button, Input, Logo і Balance — власних кольорів у контролах немає, тільки контейнер і лого.",
+            "Logged in: Search і Support = Button Secondary md icon-only (іконки `search`, `support`), далі Balance.",
+            "Search open: замість кнопки пошуку — Input md State=Active, Label off, іконки `search` / `close`, ширина 320 (референс, у макеті — Fill).",
+            "Logged out: тільки Log in (Button Secondary md) і Sign up (Button Primary md).",
+            "Висота 72 не токен: `header.paddingV` 16 × 2 + control md 40.",
+            "Logo — asset, не токен: Brand-варіант (Aurum / Nova / Fiesta) обирається разом із Brand-mode; кольори — `header.logo.iconColor` (марка) і `header.logo.color` (wordmark), тому лого саме перемикається light/dark.",
+            "Logo, Balance, Search, Support, Log in, Sign up — exposed instances: властивості вкладених компонентів доступні з панелі хедера.",
+        ],
+    },
+    "balance": {
+        "title": "Balance",
+        "figma": "Balance (component) · молекула всередині Header",
+        "anatomy": "Контейнер (auto-layout H, bg `balance.bg`, radius `balance.borderRadius`, paddingL `balance.paddingL`, paddingR 0, gap `balance.gap`) → "
+                   "`Icon` (instance `wallet`, `balance.iconSize`, `balance.iconColor`) · `Amount` (text) · `Deposit` (Button Primary md).",
+        "variants": "Без варіантів. Властивості: ✏️ Amount · 💰 Icon (boolean) · 💠 Icon (swap)",
+        "text_styles": [("Amount", "label/md")],
+        "notes": [
+            "Висота = висота кнопки Deposit (control md 40): контейнер hug, кнопка впритул праворуч.",
+            "Deposit — exposed instance Button: розмір/іконку/текст можна міняти з панелі.",
+        ],
+    },
 }
 
 # ---------------------------------------------------------------- завантаження

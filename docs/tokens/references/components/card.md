@@ -1,6 +1,6 @@
 # Card Default
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Card Default (component set) · Size  
 **Варіанти:** Size: xs (mobile) / sm (tablet) / md (desktop). Станів немає — статичний контейнер  

@@ -1,6 +1,6 @@
 # Core — примітиви
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 Словник сирих значень. **Ніколи не прив'язується до шару в Figma** — на core посилаються brand/map/theme/typography.
 Figma: колекція **Base** (mode Default). Токенів: **58**.

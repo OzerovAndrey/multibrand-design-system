@@ -1,6 +1,6 @@
 # Typography — text styles
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 Окремий шар. Сет `typography` → тема **Typography / Default** → Figma **text styles** `typography/…`.
 Компоненти **не мають** власних typography-токенів: текстовий шар бере стиль зі шкали. Той самий набір — для вільного тексту.

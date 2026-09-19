@@ -1,6 +1,6 @@
 # Map — рампи
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 Міст між брендом і темою: кроки `100…900` (і `neutral.0…900`) для кожного базового кольору бренду.
 Figma: колекція **Brand** (map enabled у темах Brand).

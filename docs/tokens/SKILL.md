@@ -5,10 +5,10 @@ description: Реєстр токенів Multibrand Design System (репо mult
 
 # Multibrand Design System — токени (індекс)
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **421**.
+Усього токенів: **446**.
 
 ## Потік
 
@@ -38,7 +38,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | `theme/light` | 46 | семантика кольорів: bg, fill, text, border, outline |
 | `theme/dark` | 46 | ті самі ключі, інші кроки рампи |
 | `typography` | 25 | text styles |
-| `components` | 100 | усі компонентні токени в одному сеті |
+| `components` | 125 | усі компонентні токени в одному сеті |
 
 ## Теми → Figma
 
@@ -82,6 +82,9 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | [Button](references/components/button.md) | 48 |
 | [Input](references/components/input.md) | 39 |
 | [Card Default](references/components/card.md) | 13 |
+| [Media](references/components/media.md) | 8 |
+| [Header](references/components/header.md) | 10 |
+| [Balance](references/components/balance.md) | 7 |
 
 ## Додати компонент
 

@@ -1,6 +1,6 @@
 # Theme — Light / Dark
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 Семантика кольорів. Тут калькулюється логіка тем: той самий ключ у light і dark дивиться в різні кроки `map`.
 Figma: колекція **Theme** (modes Light / Dark). **Тільки кольори** — розміри живуть у бренді.

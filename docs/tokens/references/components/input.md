@@ -1,6 +1,6 @@
 # Input
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-18. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Input (component set) · Size × State  
 **Варіанти:** Size: sm / md / lg · State: Default / Hover / Active / Disabled (focus не робимо)  
