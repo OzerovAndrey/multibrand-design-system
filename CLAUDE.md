@@ -12,11 +12,11 @@
 ## Структура токенів (не змінювати без прямої вказівки)
 - Порядок сетів: core → brand/aurum|nova|fiesta → map → theme/light|dark → typography → components.
 - **core** — примітиви. Компоненти на core не посилаються.
-- **brand/<x>** — одиничні базові кольори (product1–3, onProduct1/2, success, warning, danger, ink), fontFamily.display/base, розмірна семантика (space.padding/gap, size.control, iconSize, borderRadius.control|surface, borderWidth.none|control). Ключі трьох брендів ідентичні. Рамп у бренді немає.
+- **brand/<x>** — одиничні базові кольори (product1–3, onProduct1/2, success, warning, danger, ink), fontFamily.display/base, розмірна семантика (space.padding/gap, size.control, iconSize, borderRadius.control|surface, borderWidth.none|control), сітка сторінки (layout.columns/columnGap/paddingH/rowGap по xs–xl). Ключі трьох брендів ідентичні. Рамп у бренді немає.
 - **map** — рампи 100…900 від базових кольорів.
 - **theme/light|dark** — тільки кольори. Ключі ідентичні.
 - **typography** — text styles. Компоненти не мають typography-токенів.
-- **components** — один сет, посилання тільки на theme / brand-семантику.
+- **components** — один сет, посилання тільки на theme / brand-семантику (включно з layout.*).
 - Змінюючи кольори бренду — міняй тільки значення, структуру не чіпай.
 
 ## Нейминг

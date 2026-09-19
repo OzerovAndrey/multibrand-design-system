@@ -4,12 +4,13 @@
 
 Бренд = набір значень. Ключі в усіх трьох файлах **ідентичні**, різняться лише значення.
 Figma: колекція **Brand** (modes Aurum / Nova / Fiesta). Разом із брендом у цю колекцію потрапляє `map` (enabled у темах Brand).
-Токенів у бренді: **35**.
+Токенів у бренді: **55**.
 
 Що живе в бренді:
 - **Кольори** — одиничні базові (`product1–3`, `onProduct1/2`, `success`, `warning`, `danger`, `ink`). Без рамп: відтінки — у `map`.
 - **Шрифти** — `fontFamily.display` (display/title), `fontFamily.base` (решта тексту).
 - **Розмірна семантика** — `space.padding.*`, `space.gap.*`, `size.control.*`, `iconSize.*`, `borderRadius.control|surface`, `borderWidth.none|control`. Живе в бренді, а не в темі: бренд може мати інші радіуси/щільність, тема (light/dark) міняє тільки кольори.
+- **Сітка сторінки** — `layout.columns.*` (кількість колонок), `layout.columnGap.*` (gutter), `layout.paddingH.*` (поля), `layout.rowGap.*` (відстань між секціями) по брейкпоінтах xs 360 · sm 768 · md 1024 · lg 1200 · xl 1440. У Figma прив'язані до Layout grid фреймів сторінок; організми (Footer) беруть поля й відступи звідси.
 
 ## color
 
@@ -85,3 +86,43 @@ Figma: колекція **Brand** (modes Aurum / Nova / Fiesta). Разом із
 | `iconSize.md` | sizing | `{dimension.20}` → `20` | `{dimension.20}` → `20` | `{dimension.20}` → `20` |
 | `iconSize.lg` | sizing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
 | `iconSize.xl` | sizing | `{dimension.32}` → `32` | `{dimension.32}` → `32` | `{dimension.32}` → `32` |
+
+## layout.columns
+
+| Токен | Тип | Aurum | Nova | Fiesta |
+|---|---|---|---|---|
+| `layout.columns.xs` | number | `4` | `4` | `4` |
+| `layout.columns.sm` | number | `8` | `8` | `8` |
+| `layout.columns.md` | number | `12` | `12` | `12` |
+| `layout.columns.lg` | number | `12` | `12` | `12` |
+| `layout.columns.xl` | number | `12` | `12` | `12` |
+
+## layout.columnGap
+
+| Токен | Тип | Aurum | Nova | Fiesta |
+|---|---|---|---|---|
+| `layout.columnGap.xs` | spacing | `{dimension.16}` → `16` | `{dimension.16}` → `16` | `{dimension.16}` → `16` |
+| `layout.columnGap.sm` | spacing | `{dimension.16}` → `16` | `{dimension.16}` → `16` | `{dimension.16}` → `16` |
+| `layout.columnGap.md` | spacing | `{dimension.16}` → `16` | `{dimension.16}` → `16` | `{dimension.16}` → `16` |
+| `layout.columnGap.lg` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+| `layout.columnGap.xl` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+
+## layout.paddingH
+
+| Токен | Тип | Aurum | Nova | Fiesta |
+|---|---|---|---|---|
+| `layout.paddingH.xs` | spacing | `{dimension.16}` → `16` | `{dimension.16}` → `16` | `{dimension.16}` → `16` |
+| `layout.paddingH.sm` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+| `layout.paddingH.md` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+| `layout.paddingH.lg` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+| `layout.paddingH.xl` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+
+## layout.rowGap
+
+| Токен | Тип | Aurum | Nova | Fiesta |
+|---|---|---|---|---|
+| `layout.rowGap.xs` | spacing | `{dimension.24}` → `24` | `{dimension.24}` → `24` | `{dimension.24}` → `24` |
+| `layout.rowGap.sm` | spacing | `{dimension.32}` → `32` | `{dimension.32}` → `32` | `{dimension.32}` → `32` |
+| `layout.rowGap.md` | spacing | `{dimension.32}` → `32` | `{dimension.32}` → `32` | `{dimension.32}` → `32` |
+| `layout.rowGap.lg` | spacing | `{dimension.40}` → `40` | `{dimension.40}` → `40` | `{dimension.40}` → `40` |
+| `layout.rowGap.xl` | spacing | `{dimension.48}` → `48` | `{dimension.48}` → `48` | `{dimension.48}` → `48` |

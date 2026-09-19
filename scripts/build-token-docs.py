@@ -81,30 +81,50 @@ COMPONENT_NOTES = {
     },
     "header": {
         "title": "Header",
-        "figma": "Header (component set) · State  ·  частини: Logo (component set · Brand), Balance (component)",
-        "anatomy": "Контейнер (auto-layout H, space-between, padding `header.paddingH/V`, нижній бордер `header.br` × `header.borderWidth`) → "
+        "figma": "Header (component set) · Size × State  ·  частини: Logo (component set · Brand × Type), Balance (component set · Size)",
+        "anatomy": "Контейнер (auto-layout H, space-between, padding `header.paddingH/V.{size}`, нижній бордер `header.br` × `header.borderWidth`) → "
                    "`Logo` (instance) · `Actions` (auto-layout H, gap `header.gap`) → `Tools` (gap `header.actions.gap`: Search · Support) · `Balance`.",
-        "variants": "State: Logged in / Search open / Logged out",
+        "variants": "Size: xs (mobile 360) / md (desktop, від sm 768 і ширше — Fill) · State: Logged in / Search open / Logged out",
         "notes": [
             "Організм: збирається з Button, Input, Logo і Balance — власних кольорів у контролах немає, тільки контейнер і лого.",
-            "Logged in: Search і Support = Button Secondary md icon-only (іконки `search`, `support`), далі Balance.",
-            "Search open: замість кнопки пошуку — Input md State=Active, Label off, іконки `search` / `close`, ширина 320 (референс, у макеті — Fill).",
-            "Logged out: тільки Log in (Button Secondary md) і Sign up (Button Primary md).",
-            "Висота 72 не токен: `header.paddingV` 16 × 2 + control md 40.",
-            "Logo — asset, не токен: Brand-варіант (Aurum / Nova / Fiesta) обирається разом із Brand-mode; кольори — `header.logo.iconColor` (марка) і `header.logo.color` (wordmark), тому лого саме перемикається light/dark.",
-            "Logo, Balance, Search, Support, Log in, Sign up — exposed instances: властивості вкладених компонентів доступні з панелі хедера.",
+            "md · Logged in: Search і Support = Button Secondary md icon-only (`search`, `support`), далі Balance md.",
+            "md · Search open: замість кнопки пошуку — Input md State=Active, Label off, іконки `search` / `close`, ширина 320.",
+            "md · Logged out: Log in (Button Secondary md) і Sign up (Button Primary md).",
+            "xs: Logo Type=Mark, контроли sm (32), Support прихований (іде в меню / TabBar), Balance Size=sm. Search open — Input sm Fill на місці лого.",
+            "Висота не токен: md 72 = `header.paddingV.md` 16 × 2 + control md 40; xs 56 = `header.paddingV.xs` 12 × 2 + control sm 32.",
+            "Logo — asset, не токен: Brand-варіант (Aurum / Nova / Fiesta) обирається разом із Brand-mode; Type=Full / Mark. Кольори — `header.logo.iconColor` (марка) і `header.logo.color` (wordmark).",
+            "Logo, Balance, Search, Support, Log in, Sign up — exposed instances.",
         ],
     },
     "balance": {
         "title": "Balance",
-        "figma": "Balance (component) · молекула всередині Header",
-        "anatomy": "Контейнер (auto-layout H, bg `balance.bg`, radius `balance.borderRadius`, paddingL `balance.paddingL`, paddingR 0, gap `balance.gap`) → "
-                   "`Icon` (instance `wallet`, `balance.iconSize`, `balance.iconColor`) · `Amount` (text) · `Deposit` (Button Primary md).",
-        "variants": "Без варіантів. Властивості: ✏️ Amount · 💰 Icon (boolean) · 💠 Icon (swap)",
+        "figma": "Balance (component set) · Size — молекула всередині Header",
+        "anatomy": "Контейнер (auto-layout H, bg `balance.bg`, radius `balance.borderRadius`, paddingL `balance.paddingL.{size}`, paddingR 0, gap `balance.gap.{size}`) → "
+                   "`Icon` (instance `wallet`, `balance.iconSize.{size}`, `balance.iconColor`) · `Amount` (text) · `Deposit` (Button Primary).",
+        "variants": "Size: sm (Deposit = Button Primary sm icon-only `plus`) / md (Button Primary md «Deposit»). Властивості: ✏️ Amount · 💰 Icon · 💠 Icon",
         "text_styles": [("Amount", "label/md")],
         "notes": [
-            "Висота = висота кнопки Deposit (control md 40): контейнер hug, кнопка впритул праворуч.",
-            "Deposit — exposed instance Button: розмір/іконку/текст можна міняти з панелі.",
+            "Висота = висота кнопки Deposit (sm 32 / md 40): контейнер hug, кнопка впритул праворуч.",
+            "Deposit — exposed instance Button.",
+        ],
+    },
+    "footer": {
+        "title": "Footer",
+        "figma": "Footer (component set) · Size  ·  частини: _Footer badge, _Footer age",
+        "anatomy": "Контейнер (auto-layout V, padding `footer.paddingH/V.{size}`, gap `footer.gap.{size}`, верхній бордер) → "
+                   "`Top` (md — H, xs/sm — V) → `About` (Logo · Tagline · Social) · `Links` (4 колонки, gap `footer.links.gap.{size}`) → "
+                   "`Divider` → `Payments` (Title · Methods з _Footer badge) → `Divider` → `Bottom` (Legal: _Footer age · Disclaimer · © | Language).",
+        "variants": "Size: xs (mobile 360) / sm (tablet 768) / md (desktop, Fill для md 1024 · lg 1200 · xl 1440)",
+        "text_styles": [("Title колонки / Payments", "label/md"), ("Посилання, Tagline", "body/sm/regular"), ("Disclaimer, ©", "caption/md"),
+                        ("_Footer badge", "label/sm"), ("_Footer age", "label/xs")],
+        "notes": [
+            "Колонки: Casino · Promotions · Help · Company. md — About фіксовано 320 + колонки Fill; sm — About над колонками; xs — колонки 2×2 (wrap, ширина 156).",
+            "Social = Button Secondary sm icon-only: telegram · instagram · facebook · youtube · tiktok (Static — Icons).",
+            "Payment methods — бейджі `_Footer badge` (💠 Icon + ✏️ Label): Cards `card-send` · Bank transfer `money-send` · E-wallets `wallet` · Crypto `coin`. Ряд з wrap.",
+            "Language = Button Secondary sm з іконками `translate` / `chevron-down`.",
+            "Поля й відступи прив'язані до сітки сторінки (`layout.paddingH.*`, `layout.rowGap.*`, `layout.columnGap.*`) — футер вирівняний з контентом.",
+            "Фон `color.bg.primary` (як Header), щоб Secondary-кнопки і бейджі (`fill.secondary`) були видимі в обох темах.",
+            "Logo і Language — exposed instances.",
         ],
     },
 }
@@ -214,10 +234,12 @@ def doc_brand():
              "- **Кольори** — одиничні базові (`product1–3`, `onProduct1/2`, `success`, `warning`, `danger`, `ink`). Без рамп: відтінки — у `map`.",
              "- **Шрифти** — `fontFamily.display` (display/title), `fontFamily.base` (решта тексту).",
              "- **Розмірна семантика** — `space.padding.*`, `space.gap.*`, `size.control.*`, `iconSize.*`, `borderRadius.control|surface`, `borderWidth.none|control`. "
-             "Живе в бренді, а не в темі: бренд може мати інші радіуси/щільність, тема (light/dark) міняє тільки кольори.\n"]
+             "Живе в бренді, а не в темі: бренд може мати інші радіуси/щільність, тема (light/dark) міняє тільки кольори.",
+             "- **Сітка сторінки** — `layout.columns.*` (кількість колонок), `layout.columnGap.*` (gutter), `layout.paddingH.*` (поля), `layout.rowGap.*` (відстань між секціями) по брейкпоінтах "
+             "xs 360 · sm 768 · md 1024 · lg 1200 · xl 1440. У Figma прив'язані до Layout grid фреймів сторінок; організми (Footer) беруть поля й відступи звідси.\n"]
     groups = OrderedDict()
     for k in keys:
-        g = k.split(".")[0] if not k.startswith("space.") else ".".join(k.split(".")[:2])
+        g = k.split(".")[0] if not k.startswith(("space.", "layout.")) else ".".join(k.split(".")[:2])
         groups.setdefault(g, []).append(k)
     for g, ks in groups.items():
         parts.append(f"## {g}\n")
@@ -346,7 +368,7 @@ def doc_index(comps):
         th_rows.append([t["group"], t["name"], sel, out])
     set_rows = [[code(s), len(SETS[s]), desc] for s, desc in [
         ("core", "примітиви: dimension, borderRadius, borderWidth, fontWeight, fontSize, lineHeight, letterSpacing, textCase, color.white/black/transparent"),
-        ("brand/aurum", "кольори бренду, шрифти, розмірна семантика"),
+        ("brand/aurum", "кольори бренду, шрифти, розмірна семантика, сітка сторінки (layout)"),
         ("brand/nova", "ті самі ключі, інші значення"),
         ("brand/fiesta", "ті самі ключі, інші значення"),
         ("map", "рампи 100…900 від базових кольорів бренду"),
@@ -378,7 +400,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 ```
 
 - **core** — словник сирих значень. Ніколи не на шарі.
-- **brand** — що відрізняє бренд: кольори, шрифти, розмірна семантика.
+- **brand** — що відрізняє бренд: кольори, шрифти, розмірна семантика, сітка сторінки.
 - **map** — рампи від базових кольорів бренду.
 - **theme** — семантика кольорів; light/dark дивляться в різні кроки рампи. Тільки кольори.
 - **typography** — text styles; компоненти беруть стиль, а не токени.
@@ -397,7 +419,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 ## Правила
 
 1. Ім'я токена = CSS-властивість: `bg`, `color`, `br`, `iconColor`, `size`, `paddingH/V`, `gap`, `iconSize`, `borderRadius`, `borderWidth`. Формат `компонент.[підчастина].[варіант].властивість.[стан|розмір]`; стан/розмір — завжди останній.
-2. Компонент посилається тільки на theme / brand-семантику (`color.*`, `space.*`, `size.control.*`, `iconSize.*`, `borderRadius.*`, `borderWidth.*`). Ніколи на core і ніколи на `map` напряму.
+2. Компонент посилається тільки на theme / brand-семантику (`color.*`, `space.*`, `layout.*`, `size.control.*`, `iconSize.*`, `borderRadius.*`, `borderWidth.*`). Ніколи на core і ніколи на `map` напряму.
 3. Компонент не має typography-токенів — текстовий шар отримує text style (`typography/…`).
 4. Ключі трьох брендів ідентичні; ключі light і dark ідентичні.
 5. Бренд = тільки значення. Нові ключі в бренді — лише якщо їх додано в усі три.

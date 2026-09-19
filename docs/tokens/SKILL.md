@@ -8,7 +8,7 @@ description: Реєстр токенів Multibrand Design System (репо mult
 > Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **446**.
+Усього токенів: **544**.
 
 ## Потік
 
@@ -20,7 +20,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 ```
 
 - **core** — словник сирих значень. Ніколи не на шарі.
-- **brand** — що відрізняє бренд: кольори, шрифти, розмірна семантика.
+- **brand** — що відрізняє бренд: кольори, шрифти, розмірна семантика, сітка сторінки.
 - **map** — рампи від базових кольорів бренду.
 - **theme** — семантика кольорів; light/dark дивляться в різні кроки рампи. Тільки кольори.
 - **typography** — text styles; компоненти беруть стиль, а не токени.
@@ -31,14 +31,14 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | Сет | Токенів | Що всередині |
 |---|---|---|
 | `core` | 58 | примітиви: dimension, borderRadius, borderWidth, fontWeight, fontSize, lineHeight, letterSpacing, textCase, color.white/black/transparent |
-| `brand/aurum` | 35 | кольори бренду, шрифти, розмірна семантика |
-| `brand/nova` | 35 | ті самі ключі, інші значення |
-| `brand/fiesta` | 35 | ті самі ключі, інші значення |
+| `brand/aurum` | 55 | кольори бренду, шрифти, розмірна семантика, сітка сторінки (layout) |
+| `brand/nova` | 55 | ті самі ключі, інші значення |
+| `brand/fiesta` | 55 | ті самі ключі, інші значення |
 | `map` | 41 | рампи 100…900 від базових кольорів бренду |
 | `theme/light` | 46 | семантика кольорів: bg, fill, text, border, outline |
 | `theme/dark` | 46 | ті самі ключі, інші кроки рампи |
 | `typography` | 25 | text styles |
-| `components` | 125 | усі компонентні токени в одному сеті |
+| `components` | 163 | усі компонентні токени в одному сеті |
 
 ## Теми → Figma
 
@@ -58,7 +58,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 ## Правила
 
 1. Ім'я токена = CSS-властивість: `bg`, `color`, `br`, `iconColor`, `size`, `paddingH/V`, `gap`, `iconSize`, `borderRadius`, `borderWidth`. Формат `компонент.[підчастина].[варіант].властивість.[стан|розмір]`; стан/розмір — завжди останній.
-2. Компонент посилається тільки на theme / brand-семантику (`color.*`, `space.*`, `size.control.*`, `iconSize.*`, `borderRadius.*`, `borderWidth.*`). Ніколи на core і ніколи на `map` напряму.
+2. Компонент посилається тільки на theme / brand-семантику (`color.*`, `space.*`, `layout.*`, `size.control.*`, `iconSize.*`, `borderRadius.*`, `borderWidth.*`). Ніколи на core і ніколи на `map` напряму.
 3. Компонент не має typography-токенів — текстовий шар отримує text style (`typography/…`).
 4. Ключі трьох брендів ідентичні; ключі light і dark ідентичні.
 5. Бренд = тільки значення. Нові ключі в бренді — лише якщо їх додано в усі три.
@@ -83,8 +83,9 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | [Input](references/components/input.md) | 39 |
 | [Card Default](references/components/card.md) | 13 |
 | [Media](references/components/media.md) | 8 |
-| [Header](references/components/header.md) | 10 |
-| [Balance](references/components/balance.md) | 7 |
+| [Header](references/components/header.md) | 12 |
+| [Balance](references/components/balance.md) | 10 |
+| [Footer](references/components/footer.md) | 33 |
 
 ## Додати компонент
 

@@ -162,5 +162,115 @@
       "value": "{dimension.32}",
       "type": "sizing"
     }
+  },
+  "layout": {
+    "columns": {
+      "xs": {
+        "value": "4",
+        "type": "number",
+        "description": "кількість колонок сітки"
+      },
+      "sm": {
+        "value": "8",
+        "type": "number",
+        "description": "кількість колонок сітки"
+      },
+      "md": {
+        "value": "12",
+        "type": "number",
+        "description": "кількість колонок сітки"
+      },
+      "lg": {
+        "value": "12",
+        "type": "number",
+        "description": "кількість колонок сітки"
+      },
+      "xl": {
+        "value": "12",
+        "type": "number",
+        "description": "кількість колонок сітки"
+      }
+    },
+    "columnGap": {
+      "xs": {
+        "value": "{dimension.16}",
+        "type": "spacing",
+        "description": "gutter сітки й відстань між картками"
+      },
+      "sm": {
+        "value": "{dimension.16}",
+        "type": "spacing",
+        "description": "gutter сітки й відстань між картками"
+      },
+      "md": {
+        "value": "{dimension.16}",
+        "type": "spacing",
+        "description": "gutter сітки й відстань між картками"
+      },
+      "lg": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "gutter сітки й відстань між картками"
+      },
+      "xl": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "gutter сітки й відстань між картками"
+      }
+    },
+    "paddingH": {
+      "xs": {
+        "value": "{dimension.16}",
+        "type": "spacing",
+        "description": "поля сторінки (margin сітки)"
+      },
+      "sm": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "поля сторінки (margin сітки)"
+      },
+      "md": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "поля сторінки (margin сітки)"
+      },
+      "lg": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "поля сторінки (margin сітки)"
+      },
+      "xl": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "поля сторінки (margin сітки)"
+      }
+    },
+    "rowGap": {
+      "xs": {
+        "value": "{dimension.24}",
+        "type": "spacing",
+        "description": "відстань між секціями сторінки"
+      },
+      "sm": {
+        "value": "{dimension.32}",
+        "type": "spacing",
+        "description": "відстань між секціями сторінки"
+      },
+      "md": {
+        "value": "{dimension.32}",
+        "type": "spacing",
+        "description": "відстань між секціями сторінки"
+      },
+      "lg": {
+        "value": "{dimension.40}",
+        "type": "spacing",
+        "description": "відстань між секціями сторінки"
+      },
+      "xl": {
+        "value": "{dimension.48}",
+        "type": "spacing",
+        "description": "відстань між секціями сторінки"
+      }
+    }
   }
 }
