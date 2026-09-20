@@ -211,6 +211,114 @@ COMPONENT_NOTES.update({
     },
 })
 
+COMPONENT_NOTES.update({
+    "sectionHeader": {
+        "title": "Section Heading",
+        "figma": "Section Heading (component set) · Size",
+        "anatomy": "Контейнер (auto-layout H, space-between) → `Title group` (`Icon` · `Text`: Title + Subtitle) · `Actions` (`See all` = Button Text sm · `Arrows` = 2 × Button Secondary sm icon-only).",
+        "variants": "Size: xs (mobile 328) / md (desktop 720). Booleans: Icon, Subtitle, See all, Arrows",
+        "text_styles": [("xs", "title/t4"), ("md", "title/t2"), ("subtitle", "body/sm/regular")],
+        "notes": ["Заголовок — display-шрифт бренду; ✏️ Title · ✏️ Subtitle · 💠 Icon (swap, `flame-filled`)."],
+    },
+    "stat": {
+        "title": "Stat Tile",
+        "figma": "Stat Tile (component set) · Size × Trend",
+        "anatomy": "Картка (auto-layout V) → `Header` (`Icon box` + Label) · `Value` · `Delta`.",
+        "variants": "Size: xs (160) / md (260) · Trend: Neutral / Up / Down (колір delta)",
+        "text_styles": [("label", "label/sm"), ("value xs", "title/t4"), ("value md", "title/t3"), ("delta", "label/sm")],
+        "notes": ["Властивості: ✏️ Label · ✏️ Value · Delta (boolean) · Icon (boolean) · 💠 Icon (swap, `wallet`). Текст delta — у кожного Trend свій."],
+    },
+    "listItem": {
+        "title": "List Item",
+        "figma": "List Item (component set) · State",
+        "anatomy": "Рядок (auto-layout H, ghost-фон) → `Icon box` · `Text` (Title + Subtitle) · `Value` · `Chevron` · `Divider` (absolute).",
+        "variants": "State: Default / Hover / Active / Disabled",
+        "text_styles": [("title", "label/md"), ("subtitle", "caption/md"), ("value", "body/sm/regular")],
+        "notes": ["Меню профілю/налаштувань. Booleans: Icon, Subtitle, Value, Chevron, Divider · 💠 Icon (swap)."],
+    },
+    "alert": {
+        "title": "Alert",
+        "figma": "Alert (component set) · Tone",
+        "anatomy": "Контейнер (auto-layout H) → `Icon` · `Text` (Title + Message) · `Close`.",
+        "variants": "Tone: Info / Success / Warning / Danger",
+        "text_styles": [("title", "label/md"), ("message", "body/sm/regular")],
+        "notes": ["Booleans: Show title, Dismissible. Іконка тону — статична (info / check-mark-circle-filled / warning-filled / close-circle-filled)."],
+    },
+    "leaderRow": {
+        "title": "Leaderboard Row",
+        "figma": "Leaderboard Row (component set) · Rank × You",
+        "anatomy": "Рядок (auto-layout H) → `Rank` (число) · `Avatar` (instance) · `Player` (Name + Sub) · `Result` (Score + Prize).",
+        "variants": "Rank: 1 / 2 / 3 / Other · You: False / True (підсвітка поточного гравця)",
+        "text_styles": [("rank", "label/sm"), ("name", "label/md"), ("sub", "caption/md"), ("score", "label/md"), ("prize", "label/sm")],
+        "notes": ["Ранг 1–3 — акцентні кольори (product1 / neutral / product2), далі нейтральний. ✏️ Name · Sub · Score · Prize; Prize (boolean)."],
+    },
+    "navItem": {
+        "title": "Nav Item",
+        "figma": "Nav Item (component set) · Selected",
+        "anatomy": "Вертикальний auto-layout → `Pill` (фон при Selected) з `Icon` · `Dot` (absolute) · `Label`.",
+        "variants": "Selected: False / True",
+        "text_styles": [("label", "caption/sm")],
+        "notes": ["Складова Bottom Nav. ✏️ Label · 💠 Icon (swap) · Dot (boolean)."],
+    },
+    "bottomNav": {
+        "title": "Bottom Nav",
+        "figma": "Bottom Nav (component set) · Active",
+        "anatomy": "Контейнер (auto-layout H, верхній бордер) → 5 × Nav Item: Home · Games · Tournaments · Shop · Profile.",
+        "variants": "Active: Home / Games / Tournaments / Shop / Profile",
+        "notes": ["Мобільна навігація лобі (xs 360)."],
+    },
+    "art": {
+        "title": "Game Art",
+        "figma": "Game Art (component set) · Pattern",
+        "anatomy": "Фрейм 240×320 (clip) → `Shape 1` (велике коло, правий нижній кут) · `Shape 2` (мале коло, лівий верхній) · `Shape 3` (скошена смуга).",
+        "variants": "Pattern: a–f",
+        "notes": [
+            "Абстрактні плейсхолдери замість зображень: кольори беруться з теми/бренду, тому арт міняє палітру при перемиканні.",
+            "Використовується як 💠 Art у Game Tile, Promo Banner, Tournament Card. Замінюється фото заливкою.",
+        ],
+    },
+    "gameTile": {
+        "title": "Game Tile",
+        "figma": "Game Tile (component set) · Type × State",
+        "anatomy": "Вертикальний auto-layout → `Cover` (clip; `Art` · `Hover overlay` · `Play` · `Top row`: Badge + Favorite · для Live `Bottom row`: Players) · `Info` (Title + Provider).",
+        "variants": "Type: Slot (3:4, 176×235) / Live (16:9, 320×180) · State: Default / Hover (overlay + Play)",
+        "text_styles": [("title", "label/md"), ("provider", "caption/md"), ("players", "label/sm")],
+        "notes": ["✏️ Title · ✏️ Provider · Favorite · Badge (boolean, swap тону: NEW / HOT / LIVE) · 💠 Art (swap патерна або фото). Форма Play — від `borderRadius.surface` бренду."],
+    },
+    "promo": {
+        "title": "Promo Banner",
+        "figma": "Promo Banner (component set) · Size",
+        "anatomy": "Контейнер (clip) → `Art` (absolute, фон) · `Content` (панель `promo.overlay.bg`: Eyebrow Badge · Title · Text · Actions: Primary + Secondary).",
+        "variants": "Size: xs (mobile 328×420, контент знизу) / md (desktop 1000×360, панель зліва)",
+        "text_styles": [("title xs", "title/t2"), ("title md", "display/d3"), ("text xs", "body/md/regular"), ("text md", "body/lg/regular")],
+        "notes": ["Hero лобі. ✏️ Title · ✏️ Text · Eyebrow, Secondary action (boolean) · 💠 Art."],
+    },
+    "tournament": {
+        "title": "Tournament Card",
+        "figma": "Tournament Card (component set) · State",
+        "anatomy": "Картка (V, clip) → `Cover` (`Art` + статус-`Badge`) · `Body` (Title · Prize pool · Meta: Players/Time · Progress · CTA).",
+        "variants": "State: Live (CTA Join now) / Upcoming (Remind me) / Finished (View results)",
+        "text_styles": [("title", "title/t4"), ("prize", "title/t2"), ("meta", "body/sm/regular")],
+        "notes": ["Призовий фонд — `tournament.prize.color` (accent). ✏️ Title · ✏️ Prize · Progress (boolean) · 💠 Art."],
+    },
+    "lootbox": {
+        "title": "Lootbox Card",
+        "figma": "Lootbox Card (component set) · Rarity × State",
+        "anatomy": "Картка (V, clip) → `Art` (фон рідкості, `Halo`, `Icon`, `Rarity strip`, Badge) · `Info` (Title + Description) · `Purchase` (Price + Buy).",
+        "variants": "Rarity: Common / Rare / Epic / Legendary · State: Default / Hover (контур accent)",
+        "text_styles": [("title", "title/t4"), ("description", "body/sm/regular"), ("price", "label/lg")],
+        "notes": ["Рідкість мапиться на neutral / info(product3) / accent(product2) / primary(product1) — кольори міняються з брендом. ✏️ Title · Description · Price · Rarity badge (boolean)."],
+    },
+    "modal": {
+        "title": "Modal",
+        "figma": "Modal (component set) · Size",
+        "anatomy": "Контейнер (V, clip) → `Handle` (тільки xs) · `Header` (Title + Close) · `Content` (slot) · `Actions`.",
+        "variants": "Size: xs (bottom sheet 360, лише верхні кути) / md (діалог 480)",
+        "text_styles": [("title", "title/t3"), ("text", "body/md/regular")],
+        "notes": ["Scrim — `modal.overlay.bg` (окремий шар під модалкою). ✏️ Title · Secondary action (boolean) · slot Content."],
+    },
+})
+
 # ---------------------------------------------------------------- завантаження
 def load(p):
     with open(os.path.join(TOK, p), encoding="utf-8") as f:

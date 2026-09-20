@@ -8,7 +8,7 @@ description: Реєстр токенів Multibrand Design System (репо mult
 > Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **692**.
+Усього токенів: **895**.
 
 ## Мета й ідеологія
 
@@ -50,7 +50,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | `theme/light` | 54 | семантика кольорів: bg, fill, text, border, outline |
 | `theme/dark` | 54 | ті самі ключі, інші кроки рампи |
 | `typography` | 25 | text styles |
-| `components` | 294 | усі компонентні токени в одному сеті |
+| `components` | 497 | усі компонентні токени в одному сеті |
 
 ## Теми → Figma
 
@@ -105,6 +105,19 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | [Progress](references/components/progress.md) | 10 |
 | [Checkbox](references/components/checkbox.md) | 20 |
 | [Switch](references/components/switch.md) | 15 |
+| [Section Heading](references/components/sectionHeader.md) | 7 |
+| [Stat Tile](references/components/stat.md) | 19 |
+| [List Item](references/components/listItem.md) | 20 |
+| [Alert](references/components/alert.md) | 20 |
+| [Leaderboard Row](references/components/leaderRow.md) | 23 |
+| [Nav Item](references/components/navItem.md) | 10 |
+| [Bottom Nav](references/components/bottomNav.md) | 5 |
+| [Game Tile](references/components/gameTile.md) | 16 |
+| [Promo Banner](references/components/promo.md) | 11 |
+| [Tournament Card](references/components/tournament.md) | 15 |
+| [Lootbox Card](references/components/lootbox.md) | 24 |
+| [Modal](references/components/modal.md) | 15 |
+| [Game Art](references/components/art.md) | 18 |
 
 ## Додати компонент
 
