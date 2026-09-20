@@ -164,7 +164,9 @@
   .header.is-searching .header__actions > :not(.header__tools) { display: none; }
 }
 .user-menu { position: relative; }
-.user-menu__btn { display: inline-flex; border-radius: 50%; cursor: pointer; }
+.user-menu__btn { appearance: none; display: inline-flex; padding: 0; margin: 0; border: 0; background: none; border-radius: var(--avatar-borderRadius); cursor: pointer; }
+.user-menu__btn:hover .avatar--brand, .user-menu__btn[aria-expanded="true"] .avatar--brand { background: var(--button-primary-bg-hover); }
+.user-menu__btn:focus-visible { outline: 2px solid var(--color-outline-focus); outline-offset: 3px; }
 .user-menu__pop { position: absolute; right: 0; top: calc(100% + 10px); z-index: 40; width: 240px; display: flex; flex-direction: column; padding: 8px;
   background: var(--modal-bg); border: var(--modal-borderWidth) solid var(--modal-br); border-radius: var(--modal-borderRadius); animation: fade .15s ease; }
 .user-menu__who { display: flex; flex-direction: column; padding: 8px 10px 12px; border-bottom: 1px solid var(--color-border-secondary); margin-bottom: 4px; }

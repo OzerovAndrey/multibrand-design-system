@@ -90,9 +90,9 @@ export function Tabs<T extends string>({ items, value, onChange, size = "md" }: 
 }
 
 // ---------- Avatar ----------
-export function Avatar({ initials, size = "md", icon, vip, status }: { initials?: string; size?: "xs" | "sm" | "md" | "lg" | "xl"; icon?: IconName; vip?: boolean; status?: boolean }) {
+export function Avatar({ initials, size = "md", icon, vip, status, brand }: { initials?: string; size?: "xs" | "sm" | "md" | "lg" | "xl"; icon?: IconName; vip?: boolean; status?: boolean; brand?: boolean }) {
   return (
-    <span className={cx("avatar", `avatar--${size}`, vip && "is-vip", `ts-label-${size === "xs" ? "xs" : size}`)}>
+    <span className={cx("avatar", `avatar--${size}`, vip && "is-vip", brand && "avatar--brand", `ts-label-${size === "xs" ? "xs" : size}`)}>
       {icon ? <Icon name={icon} /> : initials}
       {vip && <span className="avatar__ring" />}
       {status && <span className="avatar__status" />}

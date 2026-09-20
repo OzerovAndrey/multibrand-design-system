@@ -150,3 +150,6 @@
 .input__field--select { position: relative; cursor: pointer; }
 .input__select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 8px; }
 .input__field--select .icon { pointer-events: none; }
+
+.avatar--brand { background: var(--button-primary-bg-default); color: var(--button-primary-color-default); border-color: transparent; font-weight: 600; letter-spacing: .02em; transition: background-color .15s; }
+.avatar__status { right: -3px; bottom: -3px; }

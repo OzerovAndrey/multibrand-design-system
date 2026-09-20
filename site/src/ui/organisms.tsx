@@ -53,7 +53,7 @@ function UserMenu() {
   if (!user) return null;
   return (
     <div className="user-menu" ref={ref}>
-      <button type="button" className="user-menu__btn" aria-haspopup="menu" aria-expanded={open} aria-label="Account menu" onClick={() => setOpen(!open)}><Avatar size="md" initials={initials(user.name)} status /></button>
+      <button type="button" className="user-menu__btn" aria-haspopup="menu" aria-expanded={open} aria-label="Account menu" onClick={() => setOpen(!open)}><Avatar size="md" initials={initials(user.name)} status brand /></button>
       {open && (
         <div className="user-menu__pop" role="menu">
           <div className="user-menu__who"><span className="ts-label-md">{user.name}</span><span className="ts-caption-md muted">{user.email}</span></div>
