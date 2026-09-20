@@ -153,3 +153,40 @@
 
 .avatar--brand { background: var(--avatar-brand-bg-default); color: var(--avatar-brand-color); border-color: transparent; font-weight: 600; letter-spacing: .02em; transition: background-color .15s; }
 .avatar__status { right: -3px; bottom: -3px; }
+
+/* ===== Micro-interactions (hover) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .icon { transform-box: fill-box; transform-origin: center; transition: transform .28s cubic-bezier(.2,.8,.2,1); }
+  .btn:not(.btn--full):hover:not(:disabled) { transform: translateY(-1px); }
+  .btn:active:not(:disabled) { transform: scale(.97); }
+
+  /* per-icon reactions: hovering the button / link / row moves its icon */
+  :is(.btn, .list-item, .nav-item, .user-menu__item, .chip, .section-heading a):hover .icon[data-icon="gift"] { animation: ic-wiggle .6s ease-in-out; }
+  :is(.btn, .list-item, .nav-item, .user-menu__item, .chip):hover .icon[data-icon="plus"] { transform: rotate(90deg) scale(1.1); }
+  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="search"] { transform: rotate(-14deg) scale(1.12); }
+  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="close"] { transform: rotate(90deg); }
+  :is(.btn, .list-item, .nav-item):hover .icon[data-icon="settings"] { transform: rotate(70deg); }
+  :is(.btn, .list-item, .section-heading a):hover .icon[data-icon="chevron-right"] { transform: translateX(3px); }
+  :is(.btn, .list-item):hover .icon[data-icon="chevron-left"] { transform: translateX(-3px); }
+  :is(.btn, .list-item, .input__field):hover .icon[data-icon="chevron-down"] { transform: translateY(2px); }
+  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="play-filled"] { transform: translateX(2px) scale(1.15); }
+  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="wallet"] { animation: ic-hop .5s ease; }
+  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="user"] { transform: scale(1.14) rotate(-6deg); }
+  :is(.btn, .list-item, .nav-item):hover .icon[data-icon="home"] { transform: translateY(-2px) scale(1.08); }
+  :is(.btn, .list-item, .nav-item):hover .icon[data-icon="gamepad"] { animation: ic-wiggle .6s ease-in-out; }
+  :is(.btn, .list-item, .nav-item):hover .icon[data-icon="goblet-filled"] { animation: ic-hop .5s ease; }
+  :is(.btn, .list-item, .nav-item, .chip):hover .icon[data-icon="jackpot"], :is(.btn, .list-item, .chip):hover .icon[data-icon="game-casino"] { animation: ic-wiggle .6s ease-in-out; }
+  :is(.btn, .list-item):hover .icon[data-icon="coins-filled"] { animation: ic-spin .6s ease; }
+  :is(.btn, .list-item):hover .icon[data-icon="mail"] { transform: translateY(-2px) rotate(-8deg); }
+  :is(.btn, .list-item, .user-menu__item):hover .icon[data-icon="lock"] { animation: ic-wiggle .5s ease-in-out; }
+  .game-tile__fav:hover .icon { transform: scale(1.22); }
+
+  .nav-item:hover .nav-item__pill { background: var(--navItem-bg-selected); }
+  .header__link { transition: color .15s, background-color .15s, transform .15s; }
+  .header__link:hover { transform: translateY(-1px); }
+  .user-menu__btn:hover .avatar { transform: translateY(-1px); }
+  .avatar { transition: transform .15s, background-color .15s; }
+}
+@keyframes ic-wiggle { 0% { transform: rotate(0); } 20% { transform: rotate(-16deg) translate(-1px, -1px); } 45% { transform: rotate(13deg) translate(1px, -1px); } 70% { transform: rotate(-7deg); } 100% { transform: rotate(0); } }
+@keyframes ic-hop { 0% { transform: translateY(0); } 35% { transform: translateY(-4px) rotate(-6deg); } 65% { transform: translateY(0) rotate(4deg); } 100% { transform: none; } }
+@keyframes ic-spin { to { transform: rotate(360deg); } }

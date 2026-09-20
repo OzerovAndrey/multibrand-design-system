@@ -7,7 +7,7 @@ export function Icon({ name, size, className, style }: { name: IconName; size?: 
   const paths = ICON_PATHS[name];
   const s = size !== undefined ? { width: size, height: size } : undefined;
   return (
-    <svg className={cx("icon", className)} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ ...s, ...style }}>
+    <svg className={cx("icon", className)} data-icon={name} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ ...s, ...style }}>
       {paths.map(([d, eo], i) => <path key={i} d={d} fillRule={eo ? "evenodd" : undefined} clipRule={eo ? "evenodd" : undefined} />)}
     </svg>
   );
