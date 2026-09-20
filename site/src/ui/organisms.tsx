@@ -2,11 +2,11 @@ import { CSSProperties, ReactNode, useCallback, useEffect, useRef, useState } fr
 import { Avatar, Badge, BadgeTone, Button, Icon, IconName, Input, Progress } from "./atoms";
 import { Balance, Logo } from "./molecules";
 import { cx } from "./util";
-import { ROUTES, Route, href } from "../router";
+import { ROUTES, Route, href, tournamentHref } from "../router";
 import { Illustration, type IllusKey } from "../art/Illustration";
 import { GAMES } from "../data";
 import { initials, money, openDeposit, signOut, useSession } from "../session";
-import { launchGame, toggleFavorite, useFavorites } from "../store";
+import { launchGame, openJoin, toast, toggleFavorite, useFavorites } from "../store";
 
 // ---------- Header ----------
 function useOutside(ref: React.RefObject<HTMLElement>, onOutside: () => void, active: boolean) {
@@ -79,7 +79,7 @@ export function Header({ route }: { route: Route }) {
         <a href="#/" className="header__logo" aria-label="Home"><Logo /></a>
         {searching ? <HeaderSearch onClose={closeSearch} /> : (
           <nav className="header__nav hide-mobile" aria-label="Primary">
-            {links.map((l) => <a key={l.id} href={href(l.id)} className={cx("header__link ts-label-md", route === l.id && "is-active")}>{l.label}</a>)}
+            {links.map((l) => <a key={l.id} href={href(l.id)} className={cx("header__link ts-label-md", (route === l.id || (l.id === "tournaments" && route === "tournament")) && "is-active")}>{l.label}</a>)}
           </nav>
         )}
         <div className="header__actions">
@@ -191,18 +191,20 @@ export function GameTile({ id, title, provider, art, type = "slot", badge, playe
 }
 
 // ---------- Promo banner ----------
-type PromoAction = { label: string; href?: string; onClick?: () => void };
-export function PromoBanner({ eyebrow, title, text, primary, secondary }: { eyebrow?: string; title: string; text: string; primary: PromoAction; secondary?: PromoAction }) {
+type PromoAction = { label: string; href?: string; onClick?: () => void; disabled?: boolean; icon?: IconName };
+export function PromoBanner({ eyebrow, eyebrowTone = "accent", title, text, primary, secondary, scene = "jackpot", meta, h1 = true }: { eyebrow?: string; eyebrowTone?: BadgeTone; title: string; text: string; primary: PromoAction; secondary?: PromoAction; scene?: "jackpot" | "arena"; meta?: ReactNode; h1?: boolean }) {
+  const Title = h1 ? "h1" : "h2";
   return (
-    <section className="promo">
-      <SceneArt scene="jackpot" className="promo__art" />
+    <section className={cx("promo", `promo--${scene}`)}>
+      <SceneArt scene={scene} className="promo__art" />
       <div className="promo__content">
-        {eyebrow && <Badge tone="accent">{eyebrow}</Badge>}
-        <h1 className="promo__title ts-title-t2 ts-display-d3-md">{title}</h1>
+        {eyebrow && <Badge tone={eyebrowTone}>{eyebrow}</Badge>}
+        <Title className="promo__title ts-title-t2 ts-display-d3-md">{title}</Title>
         <p className="promo__text ts-body-md-regular">{text}</p>
+        {meta}
         <div className="promo__actions">
-          <Button variant="primary" size="lg" href={primary.href} onClick={primary.onClick}>{primary.label}</Button>
-          {secondary && <Button variant="secondary" size="lg" href={secondary.href} onClick={secondary.onClick}>{secondary.label}</Button>}
+          <Button variant="primary" size="lg" href={primary.href} onClick={primary.onClick} disabled={primary.disabled} iconLeft={primary.icon}>{primary.label}</Button>
+          {secondary && <Button variant="secondary" size="lg" href={secondary.href} onClick={secondary.onClick} iconLeft={secondary.icon}>{secondary.label}</Button>}
         </div>
       </div>
     </section>
@@ -211,20 +213,25 @@ export function PromoBanner({ eyebrow, title, text, primary, secondary }: { eyeb
 
 // ---------- Tournament card ----------
 const T_BADGE: Record<string, { tone: BadgeTone; label: string }> = { live: { tone: "danger", label: "Live" }, upcoming: { tone: "info", label: "Starts in 2d" }, finished: { tone: "neutral", label: "Finished" } };
-export function TournamentCard({ state, title, prize, players = "1,204 players", time, progress = 75, onJoin }: { state: "live" | "upcoming" | "finished"; title: string; prize: string; players?: string; time: string; progress?: number; onJoin?: () => void }) {
+export function TournamentCard({ id, state, title, prize, players = "1,204 players", time, progress = 75 }: { id: string; state: "live" | "upcoming" | "finished"; title: string; prize: string; players?: string; time: string; progress?: number }) {
   const b = T_BADGE[state];
+  const joined = useSession().joined.includes(id);
   return (
     <article className="tournament">
-      <div className="tournament__cover"><SceneArt scene="arena" className="tournament__art" /><div className="tournament__top"><Badge tone={b.tone}>{b.label}</Badge></div></div>
+      <a className="tournament__cover" href={tournamentHref(id)} aria-label={title}><SceneArt scene="arena" className="tournament__art" /><div className="tournament__top"><Badge tone={joined ? "success" : b.tone}>{joined ? "Joined" : b.label}</Badge></div></a>
       <div className="tournament__body">
-        <h3 className="tournament__title ts-title-t4">{title}</h3>
+        <h3 className="tournament__title ts-title-t4"><a href={tournamentHref(id)}>{title}</a></h3>
         <div className="tournament__prize"><span className="tournament__prize-label ts-caption-md">Prize pool</span><span className="tournament__prize-row"><Icon name="goblet-filled" className="tournament__trophy" /><span className="tournament__prize-amount ts-title-t2">{prize}</span></span></div>
         <div className="tournament__meta">
           <span className="tournament__meta-row ts-body-sm-regular"><Icon name="users" />{players}</span>
           <span className="tournament__meta-row ts-body-sm-regular"><Icon name="clock" />{time}</span>
         </div>
         {state !== "finished" && <Progress value={progress} tone="accent" size="sm" label="Seats taken" />}
-        {state === "live" ? <Button variant="primary" size="md" full onClick={onJoin}>Join now</Button> : state === "upcoming" ? <Button variant="secondary" size="md" full>Remind me</Button> : <Button variant="text" size="md" full>View results</Button>}
+        {state === "live"
+          ? (joined ? <Button variant="secondary" size="md" full href={tournamentHref(id)} iconLeft="check-mark">Joined · view</Button> : <Button variant="primary" size="md" full onClick={() => openJoin(id)}>Join now</Button>)
+          : state === "upcoming"
+            ? <Button variant="secondary" size="md" full onClick={() => toast("info", "We'll remind you", `${title} — you'll get a reminder before it starts.`)}>Remind me</Button>
+            : <Button variant="text" size="md" full href={tournamentHref(id)}>View results</Button>}
       </div>
     </article>
   );

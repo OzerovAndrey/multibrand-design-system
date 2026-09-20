@@ -2,29 +2,30 @@ import { useSyncExternalStore } from "react";
 
 export type Provider = "email" | "phone" | "google" | "telegram" | "oneclick";
 export type User = { name: string; email: string; provider: Provider };
-type State = { user: User | null; balance: number; deposited: boolean; depositOpen: boolean; bonusClaimed: boolean };
+type State = { user: User | null; balance: number; deposited: boolean; depositOpen: boolean; bonusClaimed: boolean; joined: string[] };
 
 const KEY = "mb-session";
 const load = (): State => {
   try {
     const s = JSON.parse(localStorage.getItem(KEY) || "null");
-    if (s?.user) return { user: s.user, balance: s.balance ?? 0, deposited: !!s.deposited, depositOpen: false, bonusClaimed: !!s.bonusClaimed };
+    if (s?.user) return { user: s.user, balance: s.balance ?? 0, deposited: !!s.deposited, depositOpen: false, bonusClaimed: !!s.bonusClaimed, joined: Array.isArray(s.joined) ? s.joined : [] };
   } catch { /* storage may be blocked */ }
-  return { user: null, balance: 0, deposited: false, depositOpen: false, bonusClaimed: false };
+  return { user: null, balance: 0, deposited: false, depositOpen: false, bonusClaimed: false, joined: [] };
 };
 
 let state: State = load();
 const listeners = new Set<() => void>();
 const set = (patch: Partial<State>) => {
   state = { ...state, ...patch };
-  try { localStorage.setItem(KEY, JSON.stringify({ user: state.user, balance: state.balance, deposited: state.deposited, bonusClaimed: state.bonusClaimed })); } catch { /* ignore */ }
+  try { localStorage.setItem(KEY, JSON.stringify({ user: state.user, balance: state.balance, deposited: state.deposited, bonusClaimed: state.bonusClaimed, joined: state.joined })); } catch { /* ignore */ }
   listeners.forEach((l) => l());
 };
 
 export const useSession = () => useSyncExternalStore((cb) => { listeners.add(cb); return () => { listeners.delete(cb); }; }, () => state);
 
 export const signIn = (user: User) => set({ user });
-export const signOut = () => set({ user: null, balance: 0, deposited: false, depositOpen: false, bonusClaimed: false });
+export const signOut = () => set({ user: null, balance: 0, deposited: false, depositOpen: false, bonusClaimed: false, joined: [] });
+export function joinTournament(id: string, fee: number) { if (!state.joined.includes(id)) set({ joined: [...state.joined, id], balance: Math.max(0, state.balance - fee) }); }
 export const claimBonus = () => set({ bonusClaimed: true });
 export const openDeposit = () => set({ depositOpen: true });
 export const closeDeposit = () => set({ depositOpen: false });

@@ -21,15 +21,18 @@ export const LIVE = [
   { id: "l4", title: "Baccarat Gold", provider: "Aurum Live", art: "d" as ArtKey, players: "986" },
 ];
 
-export type Tournament = { id: string; state: "live" | "upcoming" | "finished"; title: string; prize: string; time: string; players: string; progress: number };
+export type Tournament = { id: string; state: "live" | "upcoming" | "finished"; title: string; prize: string; time: string; players: string; progress: number; entry: number; about: string; game: string };
 export const TOURNAMENTS: Tournament[] = [
-  { id: "t1", state: "live", title: "Weekend Race", prize: "€50,000", time: "Ends in 02:14:36", players: "1,204 players", progress: 75 },
-  { id: "t2", state: "live", title: "Spin & Win Marathon", prize: "€30,000", time: "Ends in 1d 04:10", players: "2,318 players", progress: 62 },
-  { id: "t3", state: "upcoming", title: "Golden Spin League", prize: "€25,000", time: "Starts Sat, 20:00", players: "640 players", progress: 34 },
-  { id: "t4", state: "upcoming", title: "Nova Night Cup", prize: "€10,000", time: "Starts Sun, 21:00", players: "412 players", progress: 18 },
-  { id: "t5", state: "live", title: "Live Casino Rush", prize: "€15,000", time: "Ends in 05:32:10", players: "871 players", progress: 81 },
-  { id: "t6", state: "finished", title: "Summer Jackpot", prize: "€100,000", time: "Ended 2 days ago", players: "5,102 players", progress: 100 },
+  { id: "t1", state: "live", title: "Weekend Race", prize: "€50,000", time: "Ends in 02:14:36", players: "1,204 players", progress: 75, entry: 0, game: "Any slot", about: "The biggest weekend race of the month. Every real-money spin on eligible slots earns points — the more you wager, the higher you climb." },
+  { id: "t2", state: "live", title: "Spin & Win Marathon", prize: "€30,000", time: "Ends in 1d 04:10", players: "2,318 players", progress: 62, entry: 5, game: "Sweet Bonanza", about: "A three-day marathon on the community favourite. Points are awarded for the biggest single win multipliers." },
+  { id: "t3", state: "upcoming", title: "Golden Spin League", prize: "€25,000", time: "Starts Sat, 20:00", players: "640 players", progress: 34, entry: 0, game: "Golden Pharaoh", about: "A league night for Golden Pharaoh fans. Register now and your points start counting when the league opens." },
+  { id: "t4", state: "upcoming", title: "Nova Night Cup", prize: "€10,000", time: "Starts Sun, 21:00", players: "412 players", progress: 18, entry: 5, game: "Any slot", about: "A late-night cup for night owls. Play between 21:00 and 03:00 for double points." },
+  { id: "t5", state: "live", title: "Live Casino Rush", prize: "€15,000", time: "Ends in 05:32:10", players: "871 players", progress: 81, entry: 0, game: "Live casino", about: "Live tables only. Points come from your total bets on roulette, blackjack and baccarat." },
+  { id: "t6", state: "finished", title: "Summer Jackpot", prize: "€100,000", time: "Ended 2 days ago", players: "5,102 players", progress: 100, entry: 0, game: "Any slot", about: "The summer finale. Final standings are locked and prizes have been paid out to the winners." },
 ];
+export const prizeNum = (t: Tournament) => Number(t.prize.replace(/[^0-9]/g, ""));
+export const PRIZE_SPLIT = [0.2, 0.1, 0.05, 0.02, 0.01];
+export const leadersFor = (t: Tournament) => { const k = TOURNAMENTS.indexOf(t) % LEADERS.length; return [...LEADERS.slice(k), ...LEADERS.slice(0, k)]; };
 
 export const LEADERS = [
   { name: "Alexander M.", sub: "Level 12 · VIP", score: "214,900", prize: "€1,000" },

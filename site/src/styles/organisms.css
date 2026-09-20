@@ -200,3 +200,12 @@
 @keyframes hint-in { from { opacity: 0; transform: translateY(10px) scale(.95); } }
 @keyframes hint-bob { 50% { transform: translateY(-4px); } }
 @media (min-width: 768px) { .panel__hint { align-self: flex-end; margin-right: 40px; } .panel__hint::after { left: auto; right: 60px; } }
+
+/* ===== Tournament page ===== */
+.back-link { display: inline-block; align-self: flex-start; }
+.leader-gap { text-align: center; letter-spacing: .3em; }
+.promo--arena .scene--arena .scene__ill { left: 50%; top: 12px; height: 166px; transform: translateX(-50%); }
+.tournament__cover { display: block; }
+.tournament__title a { color: inherit; }
+.tournament__title a:hover { text-decoration: underline; }
+@media (min-width: 768px) { .promo--arena .scene--arena .scene__ill { left: auto; right: 0; top: 50%; height: min(100%, 440px); transform: translateY(-50%); } }

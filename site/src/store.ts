@@ -42,3 +42,10 @@ const bl = new Set<() => void>();
 export const useBonusView = () => useSyncExternalStore((cb) => { bl.add(cb); return () => { bl.delete(cb); }; }, () => bonus);
 export function openBonus(v: NonNullable<BonusView>) { bonus = v; bl.forEach((l) => l()); }
 export function closeBonus() { bonus = null; bl.forEach((l) => l()); }
+
+// ---------- Tournament join modal ----------
+let joinTarget: string | null = null;
+const jl = new Set<() => void>();
+export const useJoinTarget = () => useSyncExternalStore((cb) => { jl.add(cb); return () => { jl.delete(cb); }; }, () => joinTarget);
+export function openJoin(id: string) { joinTarget = id; jl.forEach((l) => l()); }
+export function closeJoin() { joinTarget = null; jl.forEach((l) => l()); }
