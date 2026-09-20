@@ -76,6 +76,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 5. Бренд = тільки значення. Нові ключі в бренді — лише якщо їх додано в усі три.
 6. Розміри й радіуси — у бренді, не в темі. Тема міняє лише кольори.
 7. Стани: `default / hover / active / disabled` (focus не робимо). Розміри: `xs / sm / md / lg / xl`.
+8. Ім'я групи не може бути `value`, `type` або `description` — Token Studio читає їх як поля токена. Замість `value` — `amount` / `percent` / `detail`.
 
 ## Карта файлів
 

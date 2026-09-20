@@ -30,6 +30,7 @@
 Ім'я = CSS-властивість: bg, color, br, iconColor, size, paddingH/V, gap, iconSize, borderRadius, borderWidth.
 Формат `компонент.[підчастина].[варіант].властивість.[стан|розмір]`. Стани: default / hover / active / disabled (focus не робимо). Розміри: xs–xl.
 Заборонено: inset, elevation, paddingX, stack.
+Ім'я групи не може бути `value`, `type`, `description` (зарезервовані Token Studio) — використовуй `amount` / `percent` / `detail`.
 
 ## Перевірка перед комітом
 1. JSON валідний.
@@ -40,3 +41,11 @@
 
 ## Коміти
 Коротко, українською, у форматі `<область>: <що>`, напр. `tokens(input): прибрано placeholder.color`, `docs: перегенеровано`.
+
+## Сайт (`site/`)
+Живе демо (Vite + React + TS): перемикач брендів/тем, сторінки Home · Slots · Tournaments · Profile · Sign up · Shop.
+- `npm --prefix site run tokens` генерує `site/src/styles/tokens.generated.css` і `site/public/tokens-manifest.json` з `tokens/*.json`. Ці файли **не редагувати вручну**.
+- Стилі компонентів у CSS беруть тільки змінні компонентних токенів (`var(--button-primary-bg-default)`); оболонка сторінок і панель — theme/brand-семантику (`--color-*`, `--space-*`). Ніколи core/map, hex, px чи шрифт напряму.
+- Нова зміна в `tokens/` → перегенерувати доки (`python3 scripts/build-token-docs.py`) і токени сайту разом.
+- Перевірка перед комітом сайту: `npm --prefix site run build` без помилок.
+

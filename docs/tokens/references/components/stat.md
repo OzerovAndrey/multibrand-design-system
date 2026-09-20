@@ -17,7 +17,7 @@
 | `stat.bg` | stat/bg | `{color.bg.secondary}` | `#16130F` | `#16130F` |
 | `stat.br` | stat/br | `{color.border.tertiary}` | `#16130F` | `#16130F` |
 | `stat.label.color` | stat/label/color | `{color.text.secondary}` | `#16130F` | `#16130F` |
-| `stat.value.color` | stat/value/color | `{color.text.primary}` | `#16130F` | `#16130F` |
+| `stat.amount.color` | stat/amount/color | `{color.text.primary}` | `#16130F` | `#16130F` |
 | `stat.icon.bg` | stat/icon/bg | `{color.fill.primary.subtle}` | `#CFA74A` | `#CFA74A` |
 | `stat.icon.color` | stat/icon/color | `{color.text.accent}` | `#CFA74A` | `#CFA74A` |
 | `stat.delta.color` | stat/delta/color | `{color.text.tertiary}` | `#16130F` | `#16130F` |

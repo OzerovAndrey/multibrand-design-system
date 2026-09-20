@@ -24,3 +24,16 @@ python3 scripts/build-token-docs.py
 ## Як скіл
 
 `docs/tokens/` — готовий скіл `multibrand-design-system` (папка з `SKILL.md` + `references/`).
+
+## Сайт-демо
+
+`site/` — Vite + React застосунок, що збирається прямо з токенів: `tokens/*.json` → CSS-змінні (`data-brand` × `data-theme`) → компоненти → 6 сторінок.
+
+```
+cd site && npm install
+npm run dev      # локально, http://localhost:5173
+npm run build    # production у site/dist
+```
+
+Перемикач брендів і тем (правий нижній кут), «Play tour» і панель **Under the hood** (diff токенів, ланцюжок alias'ів, метрики).
+

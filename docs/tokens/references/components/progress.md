@@ -19,7 +19,7 @@
 | `progress.fill.success.bg` | progress/fill/success/bg | `{color.fill.success.default}` | `#1F9D5B` | `#1F9D5B` |
 | `progress.fill.accent.bg` | progress/fill/accent/bg | `{color.fill.accent.default}` | `#8E2C43` | `#8E2C43` |
 | `progress.label.color` | progress/label/color | `{color.text.secondary}` | `#16130F` | `#16130F` |
-| `progress.value.color` | progress/value/color | `{color.text.primary}` | `#16130F` | `#16130F` |
+| `progress.percent.color` | progress/percent/color | `{color.text.primary}` | `#16130F` | `#16130F` |
 
 ## Розміри та форма
 

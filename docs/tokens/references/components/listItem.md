@@ -21,7 +21,7 @@
 | `listItem.title.color.default` | listItem/title/color/default | `{color.text.primary}` | `#16130F` | `#16130F` |
 | `listItem.title.color.disabled` | listItem/title/color/disabled | `{color.text.quaternary}` | `#16130F` | `#16130F` |
 | `listItem.subtitle.color` | listItem/subtitle/color | `{color.text.tertiary}` | `#16130F` | `#16130F` |
-| `listItem.value.color` | listItem/value/color | `{color.text.secondary}` | `#16130F` | `#16130F` |
+| `listItem.detail.color` | listItem/detail/color | `{color.text.secondary}` | `#16130F` | `#16130F` |
 | `listItem.icon.bg` | listItem/icon/bg | `{color.fill.secondary.default}` | `#16130F` | `#16130F` |
 | `listItem.icon.color` | listItem/icon/color | `{color.text.secondary}` | `#16130F` | `#16130F` |
 | `listItem.chevron.color` | listItem/chevron/color | `{color.text.tertiary}` | `#16130F` | `#16130F` |

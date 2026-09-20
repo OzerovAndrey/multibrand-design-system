@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-brand="aurum" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurum Multibrand — one token system, three brands</title>
+    <meta name="description" content="Live multi-brand design system demo: switch brand and theme, everything re-skins instantly." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        try {
+          var q = new URLSearchParams(location.search), s = JSON.parse(localStorage.getItem("mb-state") || "{}");
+          var b = q.get("brand") || s.brand || "aurum", t = q.get("theme") || s.theme || "light";
+          if (!["aurum", "nova", "fiesta"].includes(b)) b = "aurum";
+          if (!["light", "dark"].includes(t)) t = "light";
+          document.documentElement.dataset.brand = b;
+          document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

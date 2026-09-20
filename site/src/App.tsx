@@ -1,0 +1,28 @@
+import { useEffect } from "react";
+import { useRoute } from "./router";
+import { useLook } from "./theme";
+import { BottomNav } from "./ui/molecules";
+import { Footer, Header } from "./ui/organisms";
+import ControlPanel from "./panel/ControlPanel";
+import Home from "./pages/Home";
+import Slots from "./pages/Slots";
+import Tournaments from "./pages/Tournaments";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
+import Shop from "./pages/Shop";
+
+export default function App() {
+  const route = useRoute();
+  useLook();
+  useEffect(() => { window.scrollTo({ top: 0 }); }, [route]);
+  const Page = { home: Home, slots: Slots, tournaments: Tournaments, profile: Profile, register: Register, shop: Shop }[route];
+  return (
+    <div className="app">
+      <Header route={route} loggedIn={route !== "register"} />
+      <main><Page /></main>
+      <Footer />
+      <BottomNav active={route} />
+      <ControlPanel />
+    </div>
+  );
+}
