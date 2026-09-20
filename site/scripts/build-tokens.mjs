@@ -10,7 +10,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", "token
 const OUT_CSS = resolve(dirname(fileURLToPath(import.meta.url)), "..", "src", "styles", "tokens.generated.css");
 const OUT_META = resolve(dirname(fileURLToPath(import.meta.url)), "..", "src", "generated", "meta.json");
 const OUT_MANIFEST = resolve(dirname(fileURLToPath(import.meta.url)), "..", "public", "tokens-manifest.json");
-mkdirSync(dirname(OUT_META), { recursive: true });
+for (const f of [OUT_META, OUT_MANIFEST, OUT_CSS]) mkdirSync(dirname(f), { recursive: true });
 
 const BRANDS = ["aurum", "nova", "fiesta"];
 const THEMES = ["light", "dark"];
