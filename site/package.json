@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "tokens": "node scripts/build-tokens.mjs",
+    "tokens": "node ../tools/build-css.mjs",
     "dev": "npm run tokens && vite",
     "build": "npm run tokens && tsc --noEmit && vite build",
     "preview": "vite preview"

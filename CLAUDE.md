@@ -13,8 +13,8 @@
 
 ## Джерело правди
 - `tokens/*.json` (Token Studio) — єдине джерело правди. Figma — синхронізована копія.
-- `docs/tokens/` генерується. **Ніколи не редагувати вручну.**
-- Після будь-якої зміни в `tokens/` або `COMPONENT_NOTES` у скрипті — запусти `python3 scripts/build-token-docs.py` і коміть `tokens/` + `docs/tokens/` разом.
+- `skill/` генерується. **Ніколи не редагувати вручну.**
+- Після будь-якої зміни в `tokens/` або `COMPONENT_NOTES` у скрипті — запусти `python3 tools/build-skill.py` і коміть `tokens/` + `skill/` разом.
 
 ## Структура токенів (не змінювати без прямої вказівки)
 - Порядок сетів: core → brand/aurum|nova|fiesta → map → theme/light|dark → typography → components.
@@ -37,15 +37,17 @@
 2. Усі `{посилання}` резолвляться для кожної пари бренд × тема.
 3. Ключі brand/aurum = nova = fiesta; theme/light = dark.
 4. `components` не посилається на `core.*` і `map.*` напряму.
-5. `docs/tokens/` перегенеровано.
+5. `skill/` перегенеровано.
 
 ## Коміти
 Коротко, українською, у форматі `<область>: <що>`, напр. `tokens(input): прибрано placeholder.color`, `docs: перегенеровано`.
 
+## Структура репо
+`tokens/` (джерело) · `skill/` (генерується) · `site/` (демо) · `tools/` (генератори). Нових тек не створювати без потреби — по одній теці на роль, без дублів.
+
 ## Сайт (`site/`)
 Живе демо (Vite + React + TS): перемикач брендів/тем, сторінки Home · Slots · Tournaments · Profile · Sign up · Shop.
-- `npm --prefix site run tokens` генерує `site/src/styles/tokens.generated.css` і `site/public/tokens-manifest.json` з `tokens/*.json`. Ці файли **не редагувати вручну**.
+- `npm --prefix site run tokens` генерує `site/src/styles/tokens.generated.css` і `site/public/tokens-manifest.json` з `tokens/*.json` (через `tools/build-css.mjs`). Ці файли **не редагувати вручну**.
 - Стилі компонентів у CSS беруть тільки змінні компонентних токенів (`var(--button-primary-bg-default)`); оболонка сторінок і панель — theme/brand-семантику (`--color-*`, `--space-*`). Ніколи core/map, hex, px чи шрифт напряму.
-- Нова зміна в `tokens/` → перегенерувати доки (`python3 scripts/build-token-docs.py`) і токени сайту разом.
+- Нова зміна в `tokens/` → перегенерувати `skill/` (`python3 tools/build-skill.py`) і токени сайту разом.
 - Перевірка перед комітом сайту: `npm --prefix site run build` без помилок.
-
