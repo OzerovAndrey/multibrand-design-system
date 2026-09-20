@@ -2055,24 +2055,6 @@
       "value": "{space.gap.lg}",
       "type": "spacing"
     },
-    "play": {
-      "bg": {
-        "value": "{color.fill.primary.default}",
-        "type": "color"
-      },
-      "color": {
-        "value": "{color.text.onPrimary}",
-        "type": "color"
-      },
-      "size": {
-        "value": "{size.control.lg}",
-        "type": "sizing"
-      },
-      "iconSize": {
-        "value": "{iconSize.lg}",
-        "type": "sizing"
-      }
-    },
     "action": {
       "bg": {
         "value": "{color.bg.overlay}",
@@ -2089,6 +2071,16 @@
       "iconSize": {
         "value": "{iconSize.md}",
         "type": "sizing"
+      },
+      "likedColor": {
+        "value": "{color.fill.danger.default}",
+        "type": "color"
+      }
+    },
+    "actions": {
+      "gap": {
+        "value": "{space.gap.md}",
+        "type": "spacing"
       }
     }
   },

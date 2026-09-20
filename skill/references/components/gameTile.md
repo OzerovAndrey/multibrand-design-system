@@ -6,7 +6,7 @@
 **Варіанти:** Type: Slot (3:4, 176×235) / Live (16:9, 320×180) · State: Default / Hover (overlay + Play)  
 **Анатомія:** Вертикальний auto-layout → `Cover` (clip; `Art` · `Hover overlay` · `Play` · `Top row`: Badge + Favorite · для Live `Bottom row`: Players) · `Info` (Title + Provider).
 
-Токенів: **16**. Посилаються тільки на theme / brand-семантику, не на core.
+Токенів: **14**. Посилаються тільки на theme / brand-семантику, не на core.
 
 ## Кольори
 
@@ -18,10 +18,9 @@
 | `gameTile.provider.color` | gameTile/provider/color | `{color.text.tertiary}` | `#16130F` | `#16130F` |
 | `gameTile.meta.color` | gameTile/meta/color | `{color.text.secondary}` | `#16130F` | `#16130F` |
 | `gameTile.overlay.bg` | gameTile/overlay/bg | `{color.bg.overlay}` | `rgba(0, 0, 0, 0.6)` | `rgba(0, 0, 0, 0.6)` |
-| `gameTile.play.bg` | gameTile/play/bg | `{color.fill.primary.default}` | `#CFA74A` | `#CFA74A` |
-| `gameTile.play.color` | gameTile/play/color | `{color.text.onPrimary}` | `#000000` | `#000000` |
 | `gameTile.action.bg` | gameTile/action/bg | `{color.bg.overlay}` | `rgba(0, 0, 0, 0.6)` | `rgba(0, 0, 0, 0.6)` |
 | `gameTile.action.color` | gameTile/action/color | `{color.text.onOverlay}` | `#FFFFFF` | `#FFFFFF` |
+| `gameTile.action.likedColor` | gameTile/action/likedColor | `{color.fill.danger.default}` | `#D23B34` | `#D23B34` |
 
 ## Розміри та форма
 
@@ -31,10 +30,9 @@
 | `gameTile.gap` | gameTile/gap | spacing | `{space.gap.md}` | `8` |
 | `gameTile.info.gap` | gameTile/info/gap | spacing | `{space.gap.xs}` | `4` |
 | `gameTile.inset` | gameTile/inset | spacing | `{space.gap.lg}` | `10` |
-| `gameTile.play.size` | gameTile/play/size | sizing | `{size.control.lg}` | `48` |
-| `gameTile.play.iconSize` | gameTile/play/iconSize | sizing | `{iconSize.lg}` | `24` |
 | `gameTile.action.size` | gameTile/action/size | sizing | `{size.control.sm}` | `32` |
 | `gameTile.action.iconSize` | gameTile/action/iconSize | sizing | `{iconSize.md}` | `20` |
+| `gameTile.actions.gap` | gameTile/actions/gap | spacing | `{space.gap.md}` | `8` |
 
 ## Текст (text styles, не токени)
 

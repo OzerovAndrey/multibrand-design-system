@@ -8,7 +8,7 @@ description: Реєстр токенів Multibrand Design System (репо mult
 > Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **954**.
+Усього токенів: **952**.
 
 ## Мета й ідеологія
 
@@ -50,7 +50,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | `theme/light` | 73 | семантика кольорів: bg, fill, text, border, outline |
 | `theme/dark` | 73 | ті самі ключі, інші кроки рампи |
 | `typography` | 25 | text styles |
-| `components` | 518 | усі компонентні токени в одному сеті |
+| `components` | 516 | усі компонентні токени в одному сеті |
 
 ## Теми → Figma
 
@@ -113,7 +113,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | [Leaderboard Row](references/components/leaderRow.md) | 23 |
 | [Nav Item](references/components/navItem.md) | 10 |
 | [Bottom Nav](references/components/bottomNav.md) | 5 |
-| [Game Tile](references/components/gameTile.md) | 16 |
+| [Game Tile](references/components/gameTile.md) | 14 |
 | [Promo Banner](references/components/promo.md) | 11 |
 | [Tournament Card](references/components/tournament.md) | 15 |
 | [Lootbox Card](references/components/lootbox.md) | 24 |

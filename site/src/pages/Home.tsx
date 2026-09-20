@@ -19,12 +19,12 @@ export default function Home() {
       <div className="chips-row">{CATS.map((c) => <Chip key={c.id} selected={cat === c.id} icon={c.icon} onClick={() => setCat(c.id)}>{c.label}</Chip>)}</div>
       <section className="stack section">
         <SectionHeading title="Popular games" icon="flame-filled" seeAll arrows />
-        <div className="grid grid--games">{games.map((g) => <GameTile key={g.id} title={g.title} provider={g.provider} art={g.art} badge={g.badge} favorite={g.id.endsWith("0")} />)}</div>
+        <div className="grid grid--games">{games.map((g) => <GameTile key={g.id} id={g.id} title={g.title} provider={g.provider} art={g.art} badge={g.badge} />)}</div>
         {games.length === 0 && <p className="ts-body-md-regular muted">No games in this category yet.</p>}
       </section>
       <section className="stack section">
         <SectionHeading title="Live casino" subtitle="Real dealers, real time" icon="users" seeAll arrows />
-        <div className="grid grid--live">{LIVE.map((g) => <GameTile key={g.id} type="live" title={g.title} provider={g.provider} art={g.art} players={g.players} badge={{ tone: "danger", label: "Live" }} />)}</div>
+        <div className="grid grid--live">{LIVE.map((g) => <GameTile key={g.id} id={g.id} type="live" title={g.title} provider={g.provider} art={g.art} players={g.players} badge={{ tone: "danger", label: "Live" }} />)}</div>
       </section>
       <section className="stack section">
         <SectionHeading title="Tournaments" icon="goblet-filled" seeAll seeAllHref="#/tournaments" />

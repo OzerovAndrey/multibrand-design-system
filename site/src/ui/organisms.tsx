@@ -6,6 +6,7 @@ import { ROUTES, Route, href } from "../router";
 import { Illustration, type IllusKey } from "../art/Illustration";
 import { GAMES } from "../data";
 import { initials, money, openDeposit, signOut, useSession } from "../session";
+import { launchGame, toggleFavorite, useFavorites } from "../store";
 
 // ---------- Header ----------
 function useOutside(ref: React.RefObject<HTMLElement>, onOutside: () => void, active: boolean) {
@@ -165,15 +166,22 @@ export function SceneArt({ scene, className }: { scene: "jackpot" | "arena"; cla
 }
 
 // ---------- Game tile ----------
-export function GameTile({ title, provider, art, type = "slot", badge, favorite, players, onPlay }: { title: string; provider: string; art: ArtKey; type?: "slot" | "live"; badge?: { tone: BadgeTone; label: string }; favorite?: boolean; players?: string; onPlay?: () => void }) {
+export function GameTile({ id, title, provider, art, type = "slot", badge, players }: { id: string; title: string; provider: string; art: ArtKey; type?: "slot" | "live"; badge?: { tone: BadgeTone; label: string }; players?: string }) {
+  const liked = useFavorites().includes(id);
+  const open = (mode: "play" | "demo") => launchGame({ id, title, provider, art, mode });
   return (
     <article className={cx("game-tile", `game-tile--${type}`)}>
-      <div className="game-tile__cover">
+      <div className="game-tile__cover" tabIndex={0}>
         <GameArt pattern={art} className="game-tile__art" />
-        <div className="game-tile__hover"><button type="button" className="game-tile__play" aria-label={`Play ${title}`} onClick={onPlay}><Icon name="play-filled" /></button></div>
+        <div className="game-tile__hover">
+          <div className="game-tile__actions">
+            <Button variant="primary" size="md" iconLeft="play-filled" onClick={() => open("play")}>Play</Button>
+            <Button variant="secondary" size="md" onClick={() => open("demo")}>Demo</Button>
+          </div>
+        </div>
         <div className="game-tile__top">
           {badge ? <Badge tone={badge.tone}>{badge.label}</Badge> : <span />}
-          <button type="button" className="game-tile__fav" aria-label="Favorite">{favorite ? <Icon name="heart-filled" /> : <Icon name="heart" />}</button>
+          <button type="button" className={cx("game-tile__fav", liked && "is-liked")} aria-pressed={liked} aria-label={liked ? "Remove from favorites" : "Add to favorites"} onClick={() => toggleFavorite(id, title)}>{liked ? <Icon name="heart-filled" /> : <Icon name="heart" />}</button>
         </div>
         {players && <div className="game-tile__bottom"><span className="game-tile__players ts-label-sm"><Icon name="users" />{players}</span></div>}
       </div>

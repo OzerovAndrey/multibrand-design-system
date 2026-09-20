@@ -22,7 +22,7 @@ export default function Slots() {
         <div className="filters__sort"><Select value={sort} onChange={setSort} options={[{ id: "popular", label: "Sort: Popular" }, { id: "az", label: "Sort: A–Z" }]} /></div>
       </div>
       <div className="chips-row">{PROVIDERS.map((p) => <Chip key={p} selected={prov === p} onClick={() => setProv(p)}>{p}</Chip>)}</div>
-      <div className="grid grid--games">{list.slice(0, count).map((g) => <GameTile key={g.id} title={g.title} provider={g.provider} art={g.art} badge={g.badge} favorite={g.id.endsWith("5")} />)}</div>
+      <div className="grid grid--games">{list.slice(0, count).map((g) => <GameTile key={g.id} id={g.id} title={g.title} provider={g.provider} art={g.art} badge={g.badge} />)}</div>
       {list.length === 0 && <p className="ts-body-md-regular muted center">Nothing found — try another search.</p>}
       <div className="stack center-col">
         <span className="ts-caption-md muted">Showing {Math.min(count, list.length)} of {list.length}</span>

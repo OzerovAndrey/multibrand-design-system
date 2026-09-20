@@ -5,6 +5,7 @@ import { BottomNav } from "./ui/molecules";
 import { Footer, Header } from "./ui/organisms";
 import { IllustrationSprite } from "./art/Illustration";
 import { DepositModal } from "./ui/auth";
+import { GameLauncher, Toaster } from "./ui/game";
 import ControlPanel from "./panel/ControlPanel";
 import Home from "./pages/Home";
 import Slots from "./pages/Slots";
@@ -26,6 +27,8 @@ export default function App() {
       <Footer />
       <BottomNav active={route} />
       <DepositModal />
+      <GameLauncher />
+      <Toaster />
       <ControlPanel />
     </div>
   );
