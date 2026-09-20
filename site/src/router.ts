@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-export type Route = "home" | "slots" | "tournaments" | "profile" | "register" | "shop";
+export type Route = "home" | "slots" | "tournaments" | "profile" | "register" | "login" | "shop";
 export const ROUTES: { id: Route; path: string; label: string }[] = [
   { id: "home", path: "/", label: "Home" },
   { id: "slots", path: "/slots", label: "Slots" },
@@ -7,6 +7,7 @@ export const ROUTES: { id: Route; path: string; label: string }[] = [
   { id: "shop", path: "/shop", label: "Shop" },
   { id: "profile", path: "/profile", label: "Profile" },
   { id: "register", path: "/register", label: "Sign up" },
+  { id: "login", path: "/login", label: "Log in" },
 ];
 const current = (): Route => {
   const p = location.hash.replace(/^#/, "") || "/";

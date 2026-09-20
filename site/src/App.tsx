@@ -4,6 +4,7 @@ import { useLook } from "./theme";
 import { BottomNav } from "./ui/molecules";
 import { Footer, Header } from "./ui/organisms";
 import { IllustrationSprite } from "./art/Illustration";
+import { DepositModal } from "./ui/auth";
 import ControlPanel from "./panel/ControlPanel";
 import Home from "./pages/Home";
 import Slots from "./pages/Slots";
@@ -16,14 +17,15 @@ export default function App() {
   const route = useRoute();
   useLook();
   useEffect(() => { window.scrollTo({ top: 0 }); }, [route]);
-  const Page = { home: Home, slots: Slots, tournaments: Tournaments, profile: Profile, register: Register, shop: Shop }[route];
+  const Page = { home: Home, slots: Slots, tournaments: Tournaments, profile: Profile, register: Register, login: () => <Register mode="login" />, shop: Shop }[route];
   return (
     <div className="app">
       <IllustrationSprite />
-      <Header route={route} loggedIn={route !== "register"} />
+      <Header route={route} />
       <main><Page /></main>
       <Footer />
       <BottomNav active={route} />
+      <DepositModal />
       <ControlPanel />
     </div>
   );

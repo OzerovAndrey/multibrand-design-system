@@ -2,27 +2,34 @@ import { useState } from "react";
 import { Alert, Avatar, Button, Progress, Switch, Tabs } from "../ui/atoms";
 import { ListItem, StatTile } from "../ui/molecules";
 import { Card } from "../ui/organisms";
+import { initials, money, openDeposit, useSession } from "../session";
 
 type Tab = "overview" | "history" | "bonuses" | "settings";
 export default function Profile() {
   const [tab, setTab] = useState<Tab>("overview");
   const [prefs, setPrefs] = useState({ sound: true, push: false, twofa: true });
+  const { user, balance } = useSession();
+  if (!user) return (
+    <div className="main container">
+      <Card className="auth__form"><div className="stack gap-lg"><h1 className="ts-title-t2">Your profile</h1><p className="ts-body-md-regular muted">Log in to see your balance, bonuses and history.</p><div className="row"><Button variant="primary" size="md" href="#/login">Log in</Button><Button variant="secondary" size="md" href="#/register">Sign up</Button></div></div></Card>
+    </div>
+  );
   return (
     <div className="main container">
       <Card className="profile-head">
         <div className="profile-head__top">
-          <Avatar size="xl" initials="AM" vip status />
+          <Avatar size="xl" initials={initials(user.name)} vip status />
           <div className="profile-head__info">
-            <h1 className="ts-title-t2">Alexander Morozov</h1>
+            <h1 className="ts-title-t2">{user.name}</h1>
             <span className="ts-body-sm-regular muted">VIP Gold · Member since 2024 · ID 48213</span>
             <Progress value={75} label="VIP level 7 → 8" />
           </div>
-          <div className="profile-head__actions"><Button variant="primary" size="md" href="#/shop">Deposit</Button><Button variant="secondary" size="md">Edit profile</Button></div>
+          <div className="profile-head__actions"><Button variant="primary" size="md" onClick={openDeposit}>Deposit</Button><Button variant="secondary" size="md">Edit profile</Button></div>
         </div>
       </Card>
       <div className="grid grid--stats">
         <StatTile label="Total wagered" value="€12,480" delta="+12.4% vs last week" trend="up" icon="wallet" />
-        <StatTile label="Bonus balance" value="€85.00" icon="gift" />
+        <StatTile label="Balance" value={money(balance)} icon="wallet" />
         <StatTile label="Net result" value="−€40.20" delta="−3.1% vs last week" trend="down" icon="jackpot" />
         <StatTile label="Tournaments won" value="3" delta="+1 this month" trend="up" icon="goblet-filled" />
       </div>

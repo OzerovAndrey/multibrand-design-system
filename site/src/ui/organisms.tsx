@@ -1,32 +1,101 @@
-import { CSSProperties, ReactNode, useEffect } from "react";
-import { Badge, BadgeTone, Button, Icon, IconName, Progress } from "./atoms";
+import { CSSProperties, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { Avatar, Badge, BadgeTone, Button, Icon, IconName, Input, Progress } from "./atoms";
 import { Balance, Logo } from "./molecules";
 import { cx } from "./util";
 import { ROUTES, Route, href } from "../router";
 import { Illustration, type IllusKey } from "../art/Illustration";
+import { GAMES } from "../data";
+import { initials, money, openDeposit, signOut, useSession } from "../session";
 
 // ---------- Header ----------
-export function Header({ route, loggedIn = true }: { route: Route; loggedIn?: boolean }) {
+function useOutside(ref: React.RefObject<HTMLElement>, onOutside: () => void, active: boolean) {
+  useEffect(() => {
+    if (!active) return;
+    const down = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) onOutside(); };
+    const key = (e: KeyboardEvent) => e.key === "Escape" && onOutside();
+    document.addEventListener("mousedown", down); window.addEventListener("keydown", key);
+    return () => { document.removeEventListener("mousedown", down); window.removeEventListener("keydown", key); };
+  }, [active, onOutside, ref]);
+}
+
+function HeaderSearch({ onClose }: { onClose: () => void }) {
+  const [q, setQ] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => { ref.current?.querySelector("input")?.focus(); }, []);
+  useOutside(ref, onClose, true);
+  const term = q.trim().toLowerCase();
+  const hits = term ? GAMES.filter((g) => g.title.toLowerCase().includes(term) || g.provider.toLowerCase().includes(term)).slice(0, 6) : [];
+  return (
+    <div className="header__search" ref={ref} onKeyDown={(e) => { if (e.key === "Enter") { location.hash = "#/slots"; onClose(); } }}>
+      <Input placeholder="Search games and providers" iconLeft="search" iconRight="close" onIconRight={onClose} value={q} onChange={setQ} />
+      {term && (
+        <div className="search-results" role="listbox" aria-label="Search results">
+          {hits.length ? hits.map((g) => (
+            <a key={g.id} href="#/slots" className="search-hit" onClick={onClose}>
+              <span className="search-hit__art"><GameArt pattern={g.art} /></span>
+              <span className="search-hit__text"><span className="ts-label-md">{g.title}</span><span className="ts-caption-md muted">{g.provider}</span></span>
+              <Icon name="chevron-right" className="search-hit__chevron" />
+            </a>
+          )) : <p className="search-results__empty ts-body-sm-regular muted">No games found for “{q}”.</p>}
+          <a href="#/slots" className="search-results__all ts-label-md" onClick={onClose}>Browse all slots</a>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function UserMenu() {
+  const { user } = useSession();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const close = useCallback(() => setOpen(false), []);
+  useOutside(ref, close, open);
+  if (!user) return null;
+  return (
+    <div className="user-menu" ref={ref}>
+      <button type="button" className="user-menu__btn" aria-haspopup="menu" aria-expanded={open} aria-label="Account menu" onClick={() => setOpen(!open)}><Avatar size="md" initials={initials(user.name)} status /></button>
+      {open && (
+        <div className="user-menu__pop" role="menu">
+          <div className="user-menu__who"><span className="ts-label-md">{user.name}</span><span className="ts-caption-md muted">{user.email}</span></div>
+          <a className="user-menu__item ts-label-md" role="menuitem" href="#/profile" onClick={close}><Icon name="user" />Profile</a>
+          <button type="button" className="user-menu__item ts-label-md" role="menuitem" onClick={() => { close(); openDeposit(); }}><Icon name="wallet" />Deposit</button>
+          <a className="user-menu__item ts-label-md" role="menuitem" href="#/shop" onClick={close}><Icon name="gift" />Bonuses & shop</a>
+          <button type="button" className="user-menu__item user-menu__item--out ts-label-md" role="menuitem" onClick={() => { close(); signOut(); location.hash = "#/"; }}><Icon name="lock" />Log out</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function Header({ route }: { route: Route }) {
+  const { user, balance } = useSession();
+  const [searching, setSearching] = useState(false);
+  const closeSearch = useCallback(() => setSearching(false), []);
   const links = ROUTES.filter((r) => ["home", "slots", "tournaments", "shop"].includes(r.id));
   return (
-    <header className="header">
+    <header className={cx("header", searching && "is-searching")}>
       <div className="header__inner container">
         <a href="#/" className="header__logo" aria-label="Home"><Logo /></a>
-        <nav className="header__nav hide-mobile" aria-label="Primary">
-          {links.map((l) => <a key={l.id} href={href(l.id)} className={cx("header__link ts-label-md", route === l.id && "is-active")}>{l.label}</a>)}
-        </nav>
+        {searching ? <HeaderSearch onClose={closeSearch} /> : (
+          <nav className="header__nav hide-mobile" aria-label="Primary">
+            {links.map((l) => <a key={l.id} href={href(l.id)} className={cx("header__link ts-label-md", route === l.id && "is-active")}>{l.label}</a>)}
+          </nav>
+        )}
         <div className="header__actions">
-          <div className="header__tools">
-            <Button variant="secondary" size="md" iconOnly="search" label="Search" />
-            <span className="hide-mobile"><Button variant="secondary" size="md" iconOnly="gift" label="Bonuses" href="#/shop" /></span>
-          </div>
-          {loggedIn ? (
+          {!searching && (
+            <div className="header__tools">
+              <Button variant="secondary" size="md" iconOnly="search" label="Search" onClick={() => setSearching(true)} />
+              <span className="hide-mobile"><Button variant="secondary" size="md" iconOnly="gift" label="Bonuses" href="#/shop" /></span>
+            </div>
+          )}
+          {user ? (
             <>
-              <span className="hide-mobile"><Balance amount="€1,250.00" /></span>
-              <span className="hide-desktop"><Balance amount="€1,250" compact /></span>
+              <span className="hide-mobile"><Balance amount={money(balance)} onDeposit={openDeposit} /></span>
+              <span className="hide-desktop"><Balance amount={"€" + Math.round(balance).toLocaleString("en-US")} compact onDeposit={openDeposit} /></span>
+              <UserMenu />
             </>
           ) : (
-            <div className="header__auth"><Button variant="secondary" size="md" href="#/register">Log in</Button><Button variant="primary" size="md" href="#/register">Sign up</Button></div>
+            <div className="header__auth"><Button variant="secondary" size="md" href="#/login">Log in</Button><Button variant="primary" size="md" href="#/register">Sign up</Button></div>
           )}
         </div>
       </div>
