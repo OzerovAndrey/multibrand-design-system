@@ -6,7 +6,7 @@
 **Варіанти:** Size: xs–xl (24–56) · Type: Initials / Icon. Booleans: VIP, Status  
 **Анатомія:** Контейнер (фіксований квадрат `avatar.size.{size}`) → `Initials` (text) або `Icon` · `VIP ring` (absolute) · `Status` (absolute, нижній правий кут).
 
-Токенів: **19**. Посилаються тільки на theme / brand-семантику, не на core.
+Токенів: **22**. Посилаються тільки на theme / brand-семантику, не на core.
 
 ## Кольори
 
@@ -20,6 +20,9 @@
 | `avatar.vip.br` | avatar/vip/br | `{color.border.accent}` | `#CFA74A` | `#CFA74A` |
 | `avatar.status.bg` | avatar/status/bg | `{color.fill.success.default}` | `#1F9D5B` | `#1F9D5B` |
 | `avatar.status.br` | avatar/status/br | `{color.bg.primary}` | `#16130F` | `#16130F` |
+| `avatar.brand.bg.default` | avatar/brand/bg/default | `{color.fill.primary.default}` | `#CFA74A` | `#CFA74A` |
+| `avatar.brand.bg.hover` | avatar/brand/bg/hover | `{color.fill.primary.hover}` | `#CFA74A` | `#CFA74A` |
+| `avatar.brand.color` | avatar/brand/color | `{color.text.onPrimary}` | `#000000` | `#000000` |
 
 ## Розміри та форма
 

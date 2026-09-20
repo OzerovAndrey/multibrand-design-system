@@ -6,7 +6,7 @@
 **Варіанти:** Size: xs (mobile 360) / md (desktop, від sm 768 і ширше — Fill) · State: Logged in / Search open / Logged out  
 **Анатомія:** Контейнер (auto-layout H, space-between, padding `header.paddingH/V.{size}`, нижній бордер `header.br` × `header.borderWidth`) → `Logo` (instance) · `Actions` (auto-layout H, gap `header.gap`) → `Tools` (gap `header.actions.gap`: Search · Support) · `Balance`.
 
-Токенів: **12**. Посилаються тільки на theme / brand-семантику, не на core.
+Токенів: **19**. Посилаються тільки на theme / brand-семантику, не на core.
 
 ## Кольори
 
@@ -18,6 +18,9 @@
 | `header.br` | header/br | `{color.border.tertiary}` | `#16130F` | `#16130F` |
 | `header.logo.color` | header/logo/color | `{color.text.primary}` | `#16130F` | `#16130F` |
 | `header.logo.iconColor` | header/logo/iconColor | `{color.text.accent}` | `#CFA74A` | `#CFA74A` |
+| `header.link.color.default` | header/link/color/default | `{color.text.secondary}` | `#16130F` | `#16130F` |
+| `header.link.color.active` | header/link/color/active | `{color.text.accent}` | `#CFA74A` | `#CFA74A` |
+| `header.link.bg.hover` | header/link/bg/hover | `{color.fill.ghost.hover}` | `#16130F` | `#16130F` |
 
 ## Розміри та форма
 
@@ -31,6 +34,10 @@
 | `header.gap` | header/gap | spacing | `{space.gap.xl}` | `12` |
 | `header.actions.gap` | header/actions/gap | spacing | `{space.gap.md}` | `8` |
 | `header.logo.height` | header/logo/height | sizing | `{size.control.sm}` | `32` |
+| `header.link.paddingH` | header/link/paddingH | spacing | `{space.padding.sm}` | `12` |
+| `header.link.paddingV` | header/link/paddingV | spacing | `{space.gap.md}` | `8` |
+| `header.link.borderRadius` | header/link/borderRadius | borderRadius | `{borderRadius.control}` | `8` |
+| `header.nav.gap` | header/nav/gap | spacing | `{space.gap.xs}` | `4` |
 
 ## Нотатки
 
