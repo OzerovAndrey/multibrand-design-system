@@ -16,7 +16,7 @@ export default function Register({ mode = "signup" }: { mode?: "signup" | "login
   const [f, setF] = useState({ email: "", phone: "", password: "", country: "ua", promo: "WELCOME200" });
   const [c, setC] = useState({ age: true, terms: true, offers: false });
   const [pending, setPending] = useState<User | null>(null);
-  const [google, setGoogle] = useState(false);
+  const [social_, setSocial] = useState<null | "google" | "telegram">(null);
   const [error, setError] = useState("");
 
   useEffect(() => { if (user && !pending) home(); }, [user, pending]);
@@ -34,10 +34,7 @@ export default function Register({ mode = "signup" }: { mode?: "signup" | "login
     if (login) { signIn(u); home(); } else setPending(u);
   };
   const finish = () => { if (pending) { signIn(pending); setPending(null); home(); } };
-  const social = (p: "google" | "telegram") => {
-    if (p === "google") { setGoogle(true); return; }
-    signIn({ name: "Telegram User", email: "@telegram_user", provider: "telegram" });
-  };
+  const social = (p: "google" | "telegram") => setSocial(p);
 
   return (
     <div className="main container">
@@ -75,7 +72,7 @@ export default function Register({ mode = "signup" }: { mode?: "signup" | "login
           <PromoBanner eyebrow="Welcome bonus" title="Your welcome pack is waiting" text="200% bonus, 200 free spins and a seat in the Weekend Race." primary={{ label: "See how it works", onClick: () => openBonus("details") }} />
         </div>
       </div>
-      <GoogleChooser open={google} onClose={() => setGoogle(false)} onDone={() => { setGoogle(false); home(); }} />
+      <GoogleChooser open={!!social_} provider={social_ ?? "google"} onClose={() => setSocial(null)} onDone={() => { setSocial(null); home(); }} />
       <Modal open={!!pending} title="Welcome aboard!" onClose={finish} actions={<><Button variant="primary" size="md" onClick={finish}>Start playing</Button></>}>Your account is ready. Make your first deposit to claim the 200% welcome bonus.</Modal>
     </div>
   );

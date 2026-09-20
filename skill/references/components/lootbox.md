@@ -6,7 +6,7 @@
 **Варіанти:** Rarity: Common / Rare / Epic / Legendary · State: Default / Hover (контур accent)  
 **Анатомія:** Картка (V, clip) → `Art` (фон рідкості, `Halo`, `Icon`, `Rarity strip`, Badge) · `Info` (Title + Description) · `Purchase` (Price + Buy).
 
-Токенів: **24**. Посилаються тільки на theme / brand-семантику, не на core.
+Токенів: **23**. Посилаються тільки на theme / brand-семантику, не на core.
 
 ## Кольори
 
@@ -41,7 +41,6 @@
 | `lootbox.info.gap` | lootbox/info/gap | spacing | `{space.gap.sm}` | `6` |
 | `lootbox.price.gap` | lootbox/price/gap | spacing | `{space.gap.sm}` | `6` |
 | `lootbox.iconSize` | lootbox/iconSize | sizing | `{iconSize.md}` | `20` |
-| `lootbox.art.iconSize` | lootbox/art/iconSize | sizing | `{size.control.xl}` | `56` |
 | `lootbox.inset` | lootbox/inset | spacing | `{space.gap.lg}` | `10` |
 
 ## Текст (text styles, не токени)

@@ -232,12 +232,13 @@ export function TournamentCard({ state, title, prize, players = "1,204 players",
 
 // ---------- Lootbox card ----------
 export type Rarity = "common" | "rare" | "epic" | "legendary";
+const BOX_ART: Record<Rarity, IllusKey> = { common: "chips", rare: "dice", epic: "gem", legendary: "chest" };
 const R_BADGE: Record<Rarity, BadgeTone> = { common: "neutral", rare: "info", epic: "accent", legendary: "primary" };
 export function LootboxCard({ rarity, title, description, price, onOpen }: { rarity: Rarity; title: string; description: string; price: string; onOpen?: () => void }) {
   return (
     <article className={cx("lootbox", `lootbox--${rarity}`)}>
       <div className="lootbox__art">
-        <i className="lootbox__halo" /><Icon name="gift" className="lootbox__icon" /><i className="lootbox__strip" />
+        <i className="lootbox__halo" /><Illustration name={BOX_ART[rarity]} className="lootbox__ill" /><i className="lootbox__strip" />
         <div className="lootbox__top"><Badge tone={R_BADGE[rarity]}>{rarity}</Badge></div>
       </div>
       <div className="lootbox__info"><h3 className="lootbox__title ts-title-t4">{title}</h3><p className="lootbox__desc ts-body-sm-regular">{description}</p></div>

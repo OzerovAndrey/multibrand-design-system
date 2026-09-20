@@ -72,18 +72,20 @@ export function DepositModal() {
   );
 }
 
-const ACCOUNTS = [
-  { name: "Andrii Ozerov", email: "andrii.ozerov@gmail.com" },
-  { name: "Demo Player", email: "demo.player@gmail.com" },
-];
+const ACCOUNTS = {
+  google: [{ name: "Andrii Ozerov", email: "andrii.ozerov@gmail.com" }, { name: "Demo Player", email: "demo.player@gmail.com" }],
+  telegram: [{ name: "Andrii O.", email: "@andrii_ozerov" }, { name: "Demo Player", email: "@demo_player" }],
+};
 
-export function GoogleChooser({ open, onClose, onDone }: { open: boolean; onClose: () => void; onDone: (u: User) => void }) {
+export function GoogleChooser({ open, onClose, onDone, provider = "google" }: { open: boolean; onClose: () => void; onDone: (u: User) => void; provider?: "google" | "telegram" }) {
+  const list = ACCOUNTS[provider];
+  const label = provider === "google" ? "Google" : "Telegram";
   return (
-    <Modal open={open} title="Continue with Google" onClose={onClose} actions={<Button variant="secondary" size="md" full onClick={onClose}>Cancel</Button>}>
+    <Modal open={open} title={`Continue with ${label}`} onClose={onClose} actions={<Button variant="secondary" size="md" full onClick={onClose}>Cancel</Button>}>
       <div className="stack gap-lg">
-        <Alert tone="info" title="Demo sign-in">Choose any account below — no real Google login happens.</Alert>
+        <Alert tone="info" title="Demo sign-in">Choose any account below — no real {label} login happens.</Alert>
         <div className="stack">
-          {ACCOUNTS.map((a, i) => <ListItem key={a.email} icon="user" title={a.name} subtitle={a.email} divider={i < ACCOUNTS.length - 1} onClick={() => { const u = { ...a, provider: "google" as const }; signIn(u); onDone(u); }} />)}
+          {list.map((a, i) => <ListItem key={a.email} icon="user" title={a.name} subtitle={a.email} divider={i < list.length - 1} onClick={() => { const u = { ...a, provider }; signIn(u); onDone(u); }} />)}
         </div>
       </div>
     </Modal>

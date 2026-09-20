@@ -2283,12 +2283,6 @@
       "value": "{iconSize.md}",
       "type": "sizing"
     },
-    "art": {
-      "iconSize": {
-        "value": "{size.control.xl}",
-        "type": "sizing"
-      }
-    },
     "inset": {
       "value": "{space.gap.lg}",
       "type": "spacing"
