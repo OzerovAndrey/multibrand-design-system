@@ -6,6 +6,7 @@ import { Footer, Header } from "./ui/organisms";
 import { IllustrationSprite } from "./art/Illustration";
 import { DepositModal } from "./ui/auth";
 import { GameLauncher, Toaster } from "./ui/game";
+import { BonusModal } from "./ui/bonus";
 import ControlPanel from "./panel/ControlPanel";
 import Home from "./pages/Home";
 import Slots from "./pages/Slots";
@@ -28,6 +29,7 @@ export default function App() {
       <BottomNav active={route} />
       <DepositModal />
       <GameLauncher />
+      <BonusModal />
       <Toaster />
       <ControlPanel />
     </div>

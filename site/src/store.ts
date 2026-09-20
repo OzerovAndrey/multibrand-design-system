@@ -34,3 +34,11 @@ const ll = new Set<() => void>();
 export const useLaunch = () => useSyncExternalStore((cb) => { ll.add(cb); return () => { ll.delete(cb); }; }, () => launch);
 export function launchGame(g: NonNullable<Launch>) { launch = g; ll.forEach((l) => l()); }
 export function closeGame() { launch = null; ll.forEach((l) => l()); }
+
+// ---------- Bonus modal ----------
+export type BonusView = "claim" | "details" | null;
+let bonus: BonusView = null;
+const bl = new Set<() => void>();
+export const useBonusView = () => useSyncExternalStore((cb) => { bl.add(cb); return () => { bl.delete(cb); }; }, () => bonus);
+export function openBonus(v: NonNullable<BonusView>) { bonus = v; bl.forEach((l) => l()); }
+export function closeBonus() { bonus = null; bl.forEach((l) => l()); }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Alert, Button, Checkbox, Input, Select, Tabs } from "../ui/atoms";
 import { Card, Modal, PromoBanner } from "../ui/organisms";
 import { GoogleChooser } from "../ui/auth";
+import { openBonus } from "../store";
 import { nameFromEmail, signIn, useSession, type Provider, type User } from "../session";
 
 type Method = "email" | "phone" | "oneclick";
@@ -71,7 +72,7 @@ export default function Register({ mode = "signup" }: { mode?: "signup" | "login
           <p className="ts-body-sm-regular muted">{login ? <>New here? <a className="link" href="#/register">Create an account</a></> : <>Already have an account? <a className="link" href="#/login">Log in</a></>}</p>
         </Card>
         <div className="auth__promo hide-mobile">
-          <PromoBanner eyebrow="Welcome bonus" title="Your welcome pack is waiting" text="200% bonus, 200 free spins and a seat in the Weekend Race." primary={{ label: "See how it works", href: "#/shop" }} />
+          <PromoBanner eyebrow="Welcome bonus" title="Your welcome pack is waiting" text="200% bonus, 200 free spins and a seat in the Weekend Race." primary={{ label: "See how it works", onClick: () => openBonus("details") }} />
         </div>
       </div>
       <GoogleChooser open={google} onClose={() => setGoogle(false)} onDone={() => { setGoogle(false); home(); }} />

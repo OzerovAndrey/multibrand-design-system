@@ -191,7 +191,8 @@ export function GameTile({ id, title, provider, art, type = "slot", badge, playe
 }
 
 // ---------- Promo banner ----------
-export function PromoBanner({ eyebrow, title, text, primary, secondary }: { eyebrow?: string; title: string; text: string; primary: { label: string; href?: string }; secondary?: { label: string; href?: string } }) {
+type PromoAction = { label: string; href?: string; onClick?: () => void };
+export function PromoBanner({ eyebrow, title, text, primary, secondary }: { eyebrow?: string; title: string; text: string; primary: PromoAction; secondary?: PromoAction }) {
   return (
     <section className="promo">
       <SceneArt scene="jackpot" className="promo__art" />
@@ -200,8 +201,8 @@ export function PromoBanner({ eyebrow, title, text, primary, secondary }: { eyeb
         <h1 className="promo__title ts-title-t2 ts-display-d3-md">{title}</h1>
         <p className="promo__text ts-body-md-regular">{text}</p>
         <div className="promo__actions">
-          <Button variant="primary" size="lg" href={primary.href}>{primary.label}</Button>
-          {secondary && <Button variant="secondary" size="lg" href={secondary.href}>{secondary.label}</Button>}
+          <Button variant="primary" size="lg" href={primary.href} onClick={primary.onClick}>{primary.label}</Button>
+          {secondary && <Button variant="secondary" size="lg" href={secondary.href} onClick={secondary.onClick}>{secondary.label}</Button>}
         </div>
       </div>
     </section>

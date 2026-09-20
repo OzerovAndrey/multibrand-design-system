@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Chip, Button } from "../ui/atoms";
 import { SectionHeading } from "../ui/molecules";
+import { openBonus } from "../store";
 import { GameTile, PromoBanner, TournamentCard } from "../ui/organisms";
 import { GAMES, LIVE, TOURNAMENTS } from "../data";
 import type { IconName } from "../ui/atoms";
@@ -15,7 +16,7 @@ export default function Home() {
   const games = useMemo(() => GAMES.filter((g) => cat === "all" || g.category === cat).slice(0, 12), [cat]);
   return (
     <div className="main container">
-      <PromoBanner eyebrow="Welcome bonus" title="Get 200% on your first deposit" text="Up to €500 + 200 free spins. Claim it in one tap and join the Weekend Race." primary={{ label: "Claim bonus", href: "#/register" }} secondary={{ label: "Details", href: "#/shop" }} />
+      <PromoBanner eyebrow="Welcome bonus" title="Get 200% on your first deposit" text="Up to €500 + 200 free spins. Claim it in one tap and join the Weekend Race." primary={{ label: "Claim bonus", onClick: () => openBonus("claim") }} secondary={{ label: "Details", onClick: () => openBonus("details") }} />
       <div className="chips-row">{CATS.map((c) => <Chip key={c.id} selected={cat === c.id} icon={c.icon} onClick={() => setCat(c.id)}>{c.label}</Chip>)}</div>
       <section className="stack section">
         <SectionHeading title="Popular games" icon="flame-filled" seeAll arrows />
