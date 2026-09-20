@@ -99,11 +99,11 @@
   },
   "borderRadius": {
     "control": {
-      "value": "{borderRadius.999}",
+      "value": "{borderRadius.0}",
       "type": "borderRadius"
     },
     "surface": {
-      "value": "{borderRadius.8}",
+      "value": "{borderRadius.4}",
       "type": "borderRadius"
     }
   },

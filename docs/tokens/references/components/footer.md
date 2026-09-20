@@ -1,6 +1,6 @@
 # Footer
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Footer (component set) · Size  ·  частини: _Footer badge, _Footer age  
 **Варіанти:** Size: xs (mobile 360) / sm (tablet 768) / md (desktop, Fill для md 1024 · lg 1200 · xl 1440)  
@@ -44,13 +44,13 @@
 | `footer.links.gap.md` | footer/links/gap/md | spacing | `{layout.columnGap.lg}` | `24` |
 | `footer.column.gap` | footer/column/gap | spacing | `{space.gap.xl}` | `12` |
 | `footer.social.gap` | footer/social/gap | spacing | `{space.gap.md}` | `8` |
-| `footer.badge.borderRadius` | footer/badge/borderRadius | borderRadius | `{borderRadius.control}` | `999` |
+| `footer.badge.borderRadius` | footer/badge/borderRadius | borderRadius | `{borderRadius.control}` | `8` |
 | `footer.badge.size` | footer/badge/size | sizing | `{size.control.sm}` | `32` |
 | `footer.badge.paddingH` | footer/badge/paddingH | spacing | `{space.padding.sm}` | `12` |
 | `footer.badge.gap` | footer/badge/gap | spacing | `{space.gap.sm}` | `6` |
 | `footer.badge.iconSize` | footer/badge/iconSize | sizing | `{iconSize.sm}` | `16` |
 | `footer.age.borderWidth` | footer/age/borderWidth | borderWidth | `{borderWidth.control}` | `1` |
-| `footer.age.borderRadius` | footer/age/borderRadius | borderRadius | `{borderRadius.control}` | `999` |
+| `footer.age.borderRadius` | footer/age/borderRadius | borderRadius | `{borderRadius.control}` | `8` |
 | `footer.age.size` | footer/age/size | sizing | `{size.control.sm}` | `32` |
 
 ## Текст (text styles, не токени)

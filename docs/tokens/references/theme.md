@@ -1,10 +1,10 @@
 # Theme — Light / Dark
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 Семантика кольорів. Тут калькулюється логіка тем: той самий ключ у light і dark дивиться в різні кроки `map`.
 Figma: колекція **Theme** (modes Light / Dark). **Тільки кольори** — розміри живуть у бренді.
-Токенів: **46** (ключі light і dark ідентичні).
+Токенів: **54** (ключі light і dark ідентичні).
 
 Колонки «Aurum» — значення, до якого резолвиться токен у бренді Aurum.
 
@@ -25,6 +25,7 @@ Figma: колекція **Theme** (modes Light / Dark). **Тільки коль�
 | `color.fill.primary.hover` | `{color.product1.300}` | `#CFA74A` | `{color.product1.700}` | `#CFA74A` |
 | `color.fill.primary.active` | `{color.product1.700}` | `#CFA74A` | `{color.product1.300}` | `#CFA74A` |
 | `color.fill.primary.disabled` | `{color.neutral.200}` | `#16130F` | `{color.neutral.700}` | `#16130F` |
+| `color.fill.primary.subtle` | `{color.product1.100}` | `#CFA74A` | `{color.product1.900}` | `#CFA74A` |
 | `color.fill.secondary.default` | `{color.neutral.100}` | `#16130F` | `{color.neutral.800}` | `#16130F` |
 | `color.fill.secondary.hover` | `{color.neutral.200}` | `#16130F` | `{color.neutral.700}` | `#16130F` |
 | `color.fill.secondary.active` | `{color.neutral.300}` | `#16130F` | `{color.neutral.600}` | `#16130F` |
@@ -37,6 +38,7 @@ Figma: колекція **Theme** (modes Light / Dark). **Тільки коль�
 | `color.fill.accent.hover` | `{color.product2.300}` | `#8E2C43` | `{color.product2.700}` | `#8E2C43` |
 | `color.fill.accent.active` | `{color.product2.700}` | `#8E2C43` | `{color.product2.300}` | `#8E2C43` |
 | `color.fill.accent.disabled` | `{color.neutral.200}` | `#16130F` | `{color.neutral.700}` | `#16130F` |
+| `color.fill.accent.subtle` | `{color.product2.100}` | `#8E2C43` | `{color.product2.900}` | `#8E2C43` |
 | `color.fill.success.default` | `{color.success.500}` | `#1F9D5B` | `{color.success.500}` | `#1F9D5B` |
 | `color.fill.success.subtle` | `{color.success.100}` | `#1F9D5B` | `{color.success.900}` | `#1F9D5B` |
 | `color.fill.warning.default` | `{color.warning.500}` | `#E69A12` | `{color.warning.500}` | `#E69A12` |
@@ -46,6 +48,8 @@ Figma: колекція **Theme** (modes Light / Dark). **Тільки коль�
 | `color.fill.danger.active` | `{color.danger.900}` | `#D23B34` | `{color.danger.500}` | `#D23B34` |
 | `color.fill.danger.disabled` | `{color.neutral.200}` | `#16130F` | `{color.neutral.700}` | `#16130F` |
 | `color.fill.danger.subtle` | `{color.danger.100}` | `#D23B34` | `{color.danger.900}` | `#D23B34` |
+| `color.fill.info.default` | `{color.product3.500}` | `#B8704B` | `{color.product3.500}` | `#B8704B` |
+| `color.fill.info.subtle` | `{color.product3.100}` | `#B8704B` | `{color.product3.900}` | `#B8704B` |
 
 ## color.text
 
@@ -61,6 +65,10 @@ Figma: колекція **Theme** (modes Light / Dark). **Тільки коль�
 | `color.text.success` | `{color.success.700}` | `#1F9D5B` | `{color.success.300}` | `#1F9D5B` |
 | `color.text.warning` | `{color.warning.700}` | `#E69A12` | `{color.warning.300}` | `#E69A12` |
 | `color.text.danger` | `{color.danger.500}` | `#D23B34` | `{color.danger.300}` | `#D23B34` |
+| `color.text.info` | `{color.product3.700}` | `#B8704B` | `{color.product3.300}` | `#B8704B` |
+| `color.text.onDanger` | `{color.white}` | `#FFFFFF` | `{color.white}` | `#FFFFFF` |
+| `color.text.onSuccess` | `{color.white}` | `#FFFFFF` | `{color.white}` | `#FFFFFF` |
+| `color.text.onOverlay` | `{color.white}` | `#FFFFFF` | `{color.white}` | `#FFFFFF` |
 
 ## color.border
 

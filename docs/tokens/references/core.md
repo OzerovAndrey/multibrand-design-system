@@ -1,9 +1,9 @@
 # Core — примітиви
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 Словник сирих значень. **Ніколи не прив'язується до шару в Figma** — на core посилаються brand/map/theme/typography.
-Figma: колекція **Base** (mode Default). Токенів: **58**.
+Figma: колекція **Base** (mode Default). Токенів: **59**.
 
 ## dimension
 
@@ -32,6 +32,7 @@ Figma: колекція **Base** (mode Default). Токенів: **58**.
 | `borderRadius.4` | borderRadius | `4` | borderRadius/4 |
 | `borderRadius.8` | borderRadius | `8` | borderRadius/8 |
 | `borderRadius.12` | borderRadius | `12` | borderRadius/12 |
+| `borderRadius.24` | borderRadius | `24` | borderRadius/24 |
 | `borderRadius.999` | borderRadius | `999` | borderRadius/999 |
 
 ## borderWidth

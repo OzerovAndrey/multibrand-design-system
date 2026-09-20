@@ -35,6 +35,10 @@
         "disabled": {
           "value": "{color.neutral.200}",
           "type": "color"
+        },
+        "subtle": {
+          "value": "{color.product1.100}",
+          "type": "color"
         }
       },
       "secondary": {
@@ -89,6 +93,10 @@
         "disabled": {
           "value": "{color.neutral.200}",
           "type": "color"
+        },
+        "subtle": {
+          "value": "{color.product2.100}",
+          "type": "color"
         }
       },
       "success": {
@@ -132,6 +140,16 @@
           "value": "{color.danger.100}",
           "type": "color"
         }
+      },
+      "info": {
+        "default": {
+          "value": "{color.product3.500}",
+          "type": "color"
+        },
+        "subtle": {
+          "value": "{color.product3.100}",
+          "type": "color"
+        }
       }
     },
     "text": {
@@ -173,6 +191,22 @@
       },
       "danger": {
         "value": "{color.danger.500}",
+        "type": "color"
+      },
+      "info": {
+        "value": "{color.product3.700}",
+        "type": "color"
+      },
+      "onDanger": {
+        "value": "{color.white}",
+        "type": "color"
+      },
+      "onSuccess": {
+        "value": "{color.white}",
+        "type": "color"
+      },
+      "onOverlay": {
+        "value": "{color.white}",
         "type": "color"
       }
     },

@@ -1,6 +1,6 @@
 # Button
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Button (component set) · Variant × Size × State × Label  
 **Варіанти:** Variant: Primary / Secondary / Text · Size: xs–xl · State: Default / Hover / Active / Disabled  
@@ -63,7 +63,7 @@
 | `button.iconSize.md` | button/iconSize/md | sizing | `{iconSize.md}` | `20` |
 | `button.iconSize.lg` | button/iconSize/lg | sizing | `{iconSize.lg}` | `24` |
 | `button.iconSize.xl` | button/iconSize/xl | sizing | `{iconSize.xl}` | `32` |
-| `button.borderRadius` | button/borderRadius | borderRadius | `{borderRadius.control}` | `999` |
+| `button.borderRadius` | button/borderRadius | borderRadius | `{borderRadius.control}` | `8` |
 | `button.borderWidth.primary` | button/borderWidth/primary | borderWidth | `{borderWidth.none}` | `0` |
 | `button.borderWidth.secondary` | button/borderWidth/secondary | borderWidth | `{borderWidth.none}` | `0` |
 | `button.borderWidth.text` | button/borderWidth/text | borderWidth | `{borderWidth.control}` | `1` |

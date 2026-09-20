@@ -5,10 +5,22 @@ description: Реєстр токенів Multibrand Design System (репо mult
 
 # Multibrand Design System — токени (індекс)
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **544**.
+Усього токенів: **692**.
+
+## Мета й ідеологія
+
+**Кінцевий результат** — живий сайт-демо на власному домені: клієнт перемикає бренд (Aurum / Nova / Fiesta) і тему (Light / Dark), і весь iGaming-інтерфейс перебудовується миттєво, а компоненти й розмітка не змінюються. Ця система — доказ, що один набір токенів керує цілим продуктом.
+
+1. **Перемикання — головний продукт.** Кожен компонент і сторінка мають виглядати добре й змінюватись у всіх 6 комбінаціях (3 бренди × Light/Dark). Не змінилось або зламалось — це помилка архітектури, а не токенів.
+2. **Компонент не знає про бренд і тему.** Лише токени; жодного hex, px чи шрифту напряму.
+3. **Бренди відрізняються характером, а не тільки кольором:** колір + шрифт + радіуси + товщина бордера. Aurum — тепла преміум-класика, м'які кути. Nova — холодний tech, гострі кути. Fiesta — яскравий mass-market, pill-форми, товстіші контури.
+4. **Бренд = значення, тема = кольори.** Ключі брендів ідентичні; світла й темна теми різняться лише кольорами.
+5. **Будівельні блоки для геймблових структур:** компоненти проєктуються під лобі, каталог ігор, турніри, профіль, реєстрацію, магазин з лутбоксами — від атомів до секцій.
+6. **Кожна демо-функція вимірювана:** скільки токенів змінилось при перемиканні і скільки компонентів не торкнулись.
+7. **Репо — джерело правди;** Figma і сайт — його похідні.
 
 ## Потік
 
@@ -30,15 +42,15 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 
 | Сет | Токенів | Що всередині |
 |---|---|---|
-| `core` | 58 | примітиви: dimension, borderRadius, borderWidth, fontWeight, fontSize, lineHeight, letterSpacing, textCase, color.white/black/transparent |
+| `core` | 59 | примітиви: dimension, borderRadius, borderWidth, fontWeight, fontSize, lineHeight, letterSpacing, textCase, color.white/black/transparent |
 | `brand/aurum` | 55 | кольори бренду, шрифти, розмірна семантика, сітка сторінки (layout) |
 | `brand/nova` | 55 | ті самі ключі, інші значення |
 | `brand/fiesta` | 55 | ті самі ключі, інші значення |
 | `map` | 41 | рампи 100…900 від базових кольорів бренду |
-| `theme/light` | 46 | семантика кольорів: bg, fill, text, border, outline |
-| `theme/dark` | 46 | ті самі ключі, інші кроки рампи |
+| `theme/light` | 54 | семантика кольорів: bg, fill, text, border, outline |
+| `theme/dark` | 54 | ті самі ключі, інші кроки рампи |
 | `typography` | 25 | text styles |
-| `components` | 163 | усі компонентні токени в одному сеті |
+| `components` | 294 | усі компонентні токени в одному сеті |
 
 ## Теми → Figma
 
@@ -86,6 +98,13 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | [Header](references/components/header.md) | 12 |
 | [Balance](references/components/balance.md) | 10 |
 | [Footer](references/components/footer.md) | 33 |
+| [Badge](references/components/badge.md) | 19 |
+| [Chip](references/components/chip.md) | 32 |
+| [Tab](references/components/tab.md) | 16 |
+| [Avatar](references/components/avatar.md) | 19 |
+| [Progress](references/components/progress.md) | 10 |
+| [Checkbox](references/components/checkbox.md) | 20 |
+| [Switch](references/components/switch.md) | 15 |
 
 ## Додати компонент
 

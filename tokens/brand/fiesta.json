@@ -103,7 +103,7 @@
       "type": "borderRadius"
     },
     "surface": {
-      "value": "{borderRadius.8}",
+      "value": "{borderRadius.24}",
       "type": "borderRadius"
     }
   },
@@ -113,7 +113,7 @@
       "type": "borderWidth"
     },
     "control": {
-      "value": "{borderWidth.1}",
+      "value": "{borderWidth.2}",
       "type": "borderWidth"
     }
   },

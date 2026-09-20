@@ -1,6 +1,6 @@
 # Balance
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Balance (component set) · Size — молекула всередині Header  
 **Варіанти:** Size: sm (Deposit = Button Primary sm icon-only `plus`) / md (Button Primary md «Deposit»). Властивості: ✏️ Amount · 💰 Icon · 💠 Icon  
@@ -22,7 +22,7 @@
 
 | Токен | Figma variable | Тип | → Alias | Значення |
 |---|---|---|---|---|
-| `balance.borderRadius` | balance/borderRadius | borderRadius | `{borderRadius.control}` | `999` |
+| `balance.borderRadius` | balance/borderRadius | borderRadius | `{borderRadius.control}` | `8` |
 | `balance.paddingL.sm` | balance/paddingL/sm | spacing | `{space.padding.sm}` | `12` |
 | `balance.paddingL.md` | balance/paddingL/md | spacing | `{space.padding.md}` | `16` |
 | `balance.gap.sm` | balance/gap/sm | spacing | `{space.gap.sm}` | `6` |

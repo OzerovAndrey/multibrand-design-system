@@ -1,6 +1,6 @@
 # Media
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Media (component set) · Ratio × State  
 **Варіанти:** Ratio: 1:1 / 4:3 / 16:9 / 3:4 · State: Loaded / Loading / Error  
@@ -23,7 +23,7 @@
 
 | Токен | Figma variable | Тип | → Alias | Значення |
 |---|---|---|---|---|
-| `media.borderRadius` | media/borderRadius | borderRadius | `{borderRadius.surface}` | `8` |
+| `media.borderRadius` | media/borderRadius | borderRadius | `{borderRadius.surface}` | `12` |
 | `media.padding` | media/padding | spacing | `{space.padding.xs}` | `12` |
 | `media.gap` | media/gap | spacing | `{space.gap.md}` | `8` |
 | `media.fallback.iconSize` | media/fallback/iconSize | sizing | `{iconSize.lg}` | `24` |

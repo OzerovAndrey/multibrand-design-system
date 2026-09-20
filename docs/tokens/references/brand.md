@@ -1,6 +1,6 @@
 # Brand — Aurum / Nova / Fiesta
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 Бренд = набір значень. Ключі в усіх трьох файлах **ідентичні**, різняться лише значення.
 Figma: колекція **Brand** (modes Aurum / Nova / Fiesta). Разом із брендом у цю колекцію потрапляє `map` (enabled у темах Brand).
@@ -57,15 +57,15 @@ Figma: колекція **Brand** (modes Aurum / Nova / Fiesta). Разом із
 
 | Токен | Тип | Aurum | Nova | Fiesta |
 |---|---|---|---|---|
-| `borderRadius.control` | borderRadius | `{borderRadius.999}` → `999` | `{borderRadius.999}` → `999` | `{borderRadius.999}` → `999` |
-| `borderRadius.surface` | borderRadius | `{borderRadius.8}` → `8` | `{borderRadius.8}` → `8` | `{borderRadius.8}` → `8` |
+| `borderRadius.control` | borderRadius | `{borderRadius.8}` → `8` | `{borderRadius.0}` → `0` | `{borderRadius.999}` → `999` |
+| `borderRadius.surface` | borderRadius | `{borderRadius.12}` → `12` | `{borderRadius.4}` → `4` | `{borderRadius.24}` → `24` |
 
 ## borderWidth
 
 | Токен | Тип | Aurum | Nova | Fiesta |
 |---|---|---|---|---|
 | `borderWidth.none` | borderWidth | `{borderWidth.0}` → `0` | `{borderWidth.0}` → `0` | `{borderWidth.0}` → `0` |
-| `borderWidth.control` | borderWidth | `{borderWidth.1}` → `1` | `{borderWidth.1}` → `1` | `{borderWidth.1}` → `1` |
+| `borderWidth.control` | borderWidth | `{borderWidth.1}` → `1` | `{borderWidth.1}` → `1` | `{borderWidth.2}` → `2` |
 
 ## size
 

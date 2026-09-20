@@ -1,6 +1,6 @@
 # Input
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Input (component set) · Size × State  
 **Варіанти:** Size: sm / md / lg · State: Default / Hover / Active / Disabled (focus не робимо)  
@@ -55,7 +55,7 @@
 | `input.iconSize.sm` | input/iconSize/sm | sizing | `{iconSize.sm}` | `16` |
 | `input.iconSize.md` | input/iconSize/md | sizing | `{iconSize.md}` | `20` |
 | `input.iconSize.lg` | input/iconSize/lg | sizing | `{iconSize.lg}` | `24` |
-| `input.borderRadius` | input/borderRadius | borderRadius | `{borderRadius.surface}` | `8` |
+| `input.borderRadius` | input/borderRadius | borderRadius | `{borderRadius.surface}` | `12` |
 | `input.borderWidth` | input/borderWidth | borderWidth | `{borderWidth.control}` | `1` |
 | `input.wrapper.gap` | input/wrapper/gap | spacing | `{space.gap.xs}` | `4` |
 

@@ -1,6 +1,6 @@
 # Card Default
 
-> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-19. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `scripts/build-token-docs.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Card Default (component set) · Size  
 **Варіанти:** Size: xs (mobile) / sm (tablet) / md (desktop). Станів немає — статичний контейнер  
@@ -22,7 +22,7 @@
 | Токен | Figma variable | Тип | → Alias | Значення |
 |---|---|---|---|---|
 | `card.default.borderWidth` | card/default/borderWidth | borderWidth | `{borderWidth.control}` | `1` |
-| `card.default.borderRadius` | card/default/borderRadius | borderRadius | `{borderRadius.surface}` | `8` |
+| `card.default.borderRadius` | card/default/borderRadius | borderRadius | `{borderRadius.surface}` | `12` |
 | `card.default.paddingH.xs` | card/default/paddingH/xs | spacing | `{space.padding.sm}` | `12` |
 | `card.default.paddingH.sm` | card/default/paddingH/sm | spacing | `{space.padding.md}` | `16` |
 | `card.default.paddingH.md` | card/default/paddingH/md | spacing | `{space.padding.xl}` | `24` |

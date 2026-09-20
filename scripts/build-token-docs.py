@@ -129,6 +129,88 @@ COMPONENT_NOTES = {
     },
 }
 
+COMPONENT_NOTES.update({
+    "badge": {
+        "title": "Badge",
+        "figma": "Badge (component set) · Tone",
+        "anatomy": "Контейнер (auto-layout H, height `badge.size`) → `Icon` (instance, вимкнена за замовчуванням) · `Label` (text).",
+        "variants": "Tone: Neutral / Primary / Accent / Success / Warning / Danger / Info. Стани відсутні — статична мітка",
+        "text_styles": [("label", "label/xs")],
+        "notes": [
+            "Тони мапляться на теми: Primary = product1, Accent = product2, Info = product3 — змінюються разом із брендом.",
+            "Рідкість лутбоксів: Common = Neutral, Rare = Info, Epic = Accent, Legendary = Primary.",
+            "Властивості: ✏️ Label · Icon (boolean) · 💠 Icon (swap, за замовчуванням `star-filled`).",
+        ],
+    },
+    "chip": {
+        "title": "Chip",
+        "figma": "Chip (component set) · Selected × State × Size",
+        "anatomy": "Контейнер (auto-layout H, pill/м'який/гострий від бренду) → `Icon` (instance) · `Label` (text).",
+        "variants": "Selected: False / True · State: Default / Hover / Active / Disabled · Size: sm (32) / md (40)",
+        "text_styles": [("sm", "label/sm"), ("md", "label/md")],
+        "notes": [
+            "Фільтр категорій (Slots / Live / Jackpots). Selected Hover/Active — суцільний primary з `text.onPrimary`.",
+            "Товщина контуру береться з `borderWidth.control` — у Fiesta 2, в інших 1.",
+            "Властивості: ✏️ Label · Icon (boolean) · 💠 Icon (swap, за замовчуванням `game-casino`).",
+        ],
+    },
+    "tab": {
+        "title": "Tab",
+        "figma": "Tab (component set) · Selected × State × Size",
+        "anatomy": "Контейнер (auto-layout H) → `Icon` · `Label` · `Indicator` (absolute, знизу, вмикається при Selected).",
+        "variants": "Selected: False / True · State: Default / Hover / Active / Disabled · Size: sm (40) / md (48)",
+        "text_styles": [("sm", "label/sm"), ("md", "label/md")],
+        "notes": [
+            "Ряд вкладок збирається вручну в auto-layout; нижня лінія-трек — `tab.track.br` / `tab.track.borderWidth`.",
+            "Форма індикатора від бренду: pill (Fiesta), м'який (Aurum), гострий (Nova).",
+        ],
+    },
+    "avatar": {
+        "title": "Avatar",
+        "figma": "Avatar (component set) · Size × Type",
+        "anatomy": "Контейнер (фіксований квадрат `avatar.size.{size}`) → `Initials` (text) або `Icon` · `VIP ring` (absolute) · `Status` (absolute, нижній правий кут).",
+        "variants": "Size: xs–xl (24–56) · Type: Initials / Icon. Booleans: VIP, Status",
+        "text_styles": [("xs", "label/xs"), ("sm", "label/sm"), ("md", "label/md"), ("lg", "label/lg"), ("xl", "label/xl")],
+        "notes": [
+            "Форма від `borderRadius.control`: Aurum — м'який квадрат, Nova — гострий, Fiesta — коло.",
+            "Фото — заливка Image поверх контейнера; ✏️ Initials і 💠 Icon — властивості інстансу.",
+        ],
+    },
+    "progress": {
+        "title": "Progress",
+        "figma": "Progress (component set) · Size × Tone × Value",
+        "anatomy": "Вертикальний auto-layout → `Header` (Label + Value, boolean) · `Track` (frame) → `Fill` (масштабується разом із треком).",
+        "variants": "Size: sm (6) / md (8) · Tone: Primary / Success / Accent · Value: 0 / 25 / 50 / 75 / 100",
+        "text_styles": [("label", "caption/md"), ("value", "label/sm")],
+        "notes": [
+            "XP-рівень (Primary), wagering (Success), призовий фонд турніру (Accent).",
+            "Проміжні значення — змінити ширину `Fill` в інстансі.",
+        ],
+    },
+    "checkbox": {
+        "title": "Checkbox",
+        "figma": "Checkbox (component set) · Checked × State",
+        "anatomy": "Контейнер (auto-layout H) → `Box` (frame, іконка `check-mark` при Checked) · `Label` (text).",
+        "variants": "Checked: False / True · State: Default / Hover / Active / Disabled",
+        "text_styles": [("label", "body/md/regular")],
+        "notes": [
+            "Форма боксу від `borderRadius.control` — у Nova квадрат, у Fiesta коло.",
+            "Властивості: ✏️ Label · Show label (boolean).",
+        ],
+    },
+    "switch": {
+        "title": "Switch",
+        "figma": "Switch (component set) · On × State",
+        "anatomy": "Контейнер (auto-layout H) → `Track` (auto-layout, knob вирівнюється вліво/вправо) → `Knob` · `Label` (text).",
+        "variants": "On: False / True · State: Default / Hover / Disabled",
+        "text_styles": [("label", "body/md/regular")],
+        "notes": [
+            "Track і knob беруть `borderRadius.control` — у Nova перемикач прямокутний, у Fiesta капсула.",
+            "Властивості: ✏️ Label · Show label (boolean).",
+        ],
+    },
+})
+
 # ---------------------------------------------------------------- завантаження
 def load(p):
     with open(os.path.join(TOK, p), encoding="utf-8") as f:
@@ -389,6 +471,18 @@ description: Реєстр токенів Multibrand Design System (репо mult
 {HEADER}
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
 Усього токенів: **{total}**.
+
+## Мета й ідеологія
+
+**Кінцевий результат** — живий сайт-демо на власному домені: клієнт перемикає бренд (Aurum / Nova / Fiesta) і тему (Light / Dark), і весь iGaming-інтерфейс перебудовується миттєво, а компоненти й розмітка не змінюються. Ця система — доказ, що один набір токенів керує цілим продуктом.
+
+1. **Перемикання — головний продукт.** Кожен компонент і сторінка мають виглядати добре й змінюватись у всіх 6 комбінаціях (3 бренди × Light/Dark). Не змінилось або зламалось — це помилка архітектури, а не токенів.
+2. **Компонент не знає про бренд і тему.** Лише токени; жодного hex, px чи шрифту напряму.
+3. **Бренди відрізняються характером, а не тільки кольором:** колір + шрифт + радіуси + товщина бордера. Aurum — тепла преміум-класика, м'які кути. Nova — холодний tech, гострі кути. Fiesta — яскравий mass-market, pill-форми, товстіші контури.
+4. **Бренд = значення, тема = кольори.** Ключі брендів ідентичні; світла й темна теми різняться лише кольорами.
+5. **Будівельні блоки для геймблових структур:** компоненти проєктуються під лобі, каталог ігор, турніри, профіль, реєстрацію, магазин з лутбоксами — від атомів до секцій.
+6. **Кожна демо-функція вимірювана:** скільки токенів змінилось при перемиканні і скільки компонентів не торкнулись.
+7. **Репо — джерело правди;** Figma і сайт — його похідні.
 
 ## Потік
 
