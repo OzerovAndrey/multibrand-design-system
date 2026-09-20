@@ -3,6 +3,7 @@ import { useRoute } from "./router";
 import { useLook } from "./theme";
 import { BottomNav } from "./ui/molecules";
 import { Footer, Header } from "./ui/organisms";
+import { IllustrationSprite } from "./art/Illustration";
 import ControlPanel from "./panel/ControlPanel";
 import Home from "./pages/Home";
 import Slots from "./pages/Slots";
@@ -18,6 +19,7 @@ export default function App() {
   const Page = { home: Home, slots: Slots, tournaments: Tournaments, profile: Profile, register: Register, shop: Shop }[route];
   return (
     <div className="app">
+      <IllustrationSprite />
       <Header route={route} loggedIn={route !== "register"} />
       <main><Page /></main>
       <Footer />

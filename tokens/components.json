@@ -2389,27 +2389,11 @@
       "bg": {
         "value": "{color.fill.primary.subtle}",
         "type": "color"
-      },
-      "shape1": {
-        "value": "{color.fill.primary.default}",
-        "type": "color"
-      },
-      "shape2": {
-        "value": "{color.fill.accent.default}",
-        "type": "color"
       }
     },
     "b": {
       "bg": {
         "value": "{color.fill.accent.subtle}",
-        "type": "color"
-      },
-      "shape1": {
-        "value": "{color.fill.accent.default}",
-        "type": "color"
-      },
-      "shape2": {
-        "value": "{color.fill.primary.default}",
         "type": "color"
       }
     },
@@ -2417,57 +2401,135 @@
       "bg": {
         "value": "{color.fill.info.subtle}",
         "type": "color"
-      },
-      "shape1": {
-        "value": "{color.fill.info.default}",
-        "type": "color"
-      },
-      "shape2": {
-        "value": "{color.fill.primary.default}",
-        "type": "color"
       }
     },
     "d": {
       "bg": {
         "value": "{color.bg.tertiary}",
         "type": "color"
-      },
-      "shape1": {
-        "value": "{color.fill.success.default}",
-        "type": "color"
-      },
-      "shape2": {
-        "value": "{color.fill.accent.default}",
-        "type": "color"
       }
     },
     "e": {
       "bg": {
-        "value": "{color.fill.primary.default}",
-        "type": "color"
-      },
-      "shape1": {
-        "value": "{color.fill.accent.default}",
-        "type": "color"
-      },
-      "shape2": {
-        "value": "{color.fill.primary.subtle}",
+        "value": "{color.fill.danger.subtle}",
         "type": "color"
       }
     },
     "f": {
       "bg": {
-        "value": "{color.fill.accent.default}",
-        "type": "color"
-      },
-      "shape1": {
-        "value": "{color.fill.info.default}",
-        "type": "color"
-      },
-      "shape2": {
-        "value": "{color.fill.primary.default}",
+        "value": "{color.fill.warning.subtle}",
         "type": "color"
       }
+    },
+    "g": {
+      "bg": {
+        "value": "{color.fill.secondary.default}",
+        "type": "color"
+      }
+    },
+    "h": {
+      "bg": {
+        "value": "{color.fill.success.subtle}",
+        "type": "color"
+      }
+    },
+    "jackpot": {
+      "bg": {
+        "value": "{color.illustration.stage.primary}",
+        "type": "color"
+      }
+    },
+    "arena": {
+      "bg": {
+        "value": "{color.illustration.stage.accent}",
+        "type": "color"
+      }
+    }
+  },
+  "illustration": {
+    "primary": {
+      "light": {
+        "value": "{color.illustration.primary.light}",
+        "type": "color"
+      },
+      "base": {
+        "value": "{color.illustration.primary.base}",
+        "type": "color"
+      },
+      "dark": {
+        "value": "{color.illustration.primary.dark}",
+        "type": "color"
+      },
+      "deep": {
+        "value": "{color.illustration.primary.deep}",
+        "type": "color"
+      }
+    },
+    "accent": {
+      "light": {
+        "value": "{color.illustration.accent.light}",
+        "type": "color"
+      },
+      "base": {
+        "value": "{color.illustration.accent.base}",
+        "type": "color"
+      },
+      "dark": {
+        "value": "{color.illustration.accent.dark}",
+        "type": "color"
+      },
+      "deep": {
+        "value": "{color.illustration.accent.deep}",
+        "type": "color"
+      }
+    },
+    "info": {
+      "light": {
+        "value": "{color.illustration.info.light}",
+        "type": "color"
+      },
+      "base": {
+        "value": "{color.illustration.info.base}",
+        "type": "color"
+      },
+      "dark": {
+        "value": "{color.illustration.info.dark}",
+        "type": "color"
+      },
+      "deep": {
+        "value": "{color.illustration.info.deep}",
+        "type": "color"
+      }
+    },
+    "ink": {
+      "value": "{color.illustration.ink}",
+      "type": "color"
+    },
+    "night": {
+      "value": "{color.illustration.night}",
+      "type": "color"
+    },
+    "cream": {
+      "value": "{color.illustration.cream}",
+      "type": "color"
+    },
+    "white": {
+      "value": "{color.illustration.white}",
+      "type": "color"
+    },
+    "stage": {
+      "primary": {
+        "value": "{color.illustration.stage.primary}",
+        "type": "color"
+      },
+      "accent": {
+        "value": "{color.illustration.stage.accent}",
+        "type": "color"
+      }
+    },
+    "glow": {
+      "value": "{color.illustration.glow}",
+      "type": "color"
     }
   }
 }

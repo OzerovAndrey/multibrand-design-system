@@ -28,7 +28,7 @@ export default function Home() {
       </section>
       <section className="stack section">
         <SectionHeading title="Tournaments" icon="goblet-filled" seeAll seeAllHref="#/tournaments" />
-        <div className="grid grid--cards">{TOURNAMENTS.slice(0, 3).map((t) => <TournamentCard key={t.id} state={t.state} title={t.title} prize={t.prize} time={t.time} art={t.art} players={t.players} progress={t.progress} />)}</div>
+        <div className="grid grid--cards">{TOURNAMENTS.slice(0, 3).map((t) => <TournamentCard key={t.id} state={t.state} title={t.title} prize={t.prize} time={t.time} players={t.players} progress={t.progress} />)}</div>
         <div className="row row--center"><Button variant="secondary" size="lg" href="#/tournaments">All tournaments</Button></div>
       </section>
     </div>

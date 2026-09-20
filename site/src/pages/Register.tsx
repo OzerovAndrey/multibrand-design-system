@@ -38,7 +38,7 @@ export default function Register() {
           <p className="ts-body-sm-regular muted">Already have an account? <a className="link" href="#/">Log in</a></p>
         </Card>
         <div className="auth__promo hide-mobile">
-          <PromoBanner eyebrow="Welcome bonus" title="Your welcome pack is waiting" text="200% bonus, 200 free spins and a seat in the Weekend Race." art="e" primary={{ label: "See how it works", href: "#/shop" }} />
+          <PromoBanner eyebrow="Welcome bonus" title="Your welcome pack is waiting" text="200% bonus, 200 free spins and a seat in the Weekend Race." primary={{ label: "See how it works", href: "#/shop" }} />
         </div>
       </div>
       <Modal open={done} title="Welcome aboard!" onClose={() => setDone(false)} actions={<><Button variant="primary" size="md" href="#/">Start playing</Button><Button variant="secondary" size="md" onClick={() => setDone(false)}>Close</Button></>}>Your account is ready and the welcome bonus is on its way to your balance.</Modal>

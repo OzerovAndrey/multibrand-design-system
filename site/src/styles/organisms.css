@@ -36,11 +36,14 @@
 @media (min-width: 1024px) { .footer__inner { padding-block: var(--footer-paddingV-md); } .footer__top { flex-direction: row; gap: 48px; } .footer__links { gap: var(--footer-links-gap-md); } }
 
 /* ===== Game art ===== */
-.art { position: relative; container-type: inline-size; overflow: hidden; background: var(--bg); width: 100%; height: 100%; }
-.art i { --u: min(0.41667cqw, 1.15px); position: absolute; display: block; }
-.art__big { width: calc(var(--bw) * var(--u)); aspect-ratio: 1; right: calc(var(--br) * var(--u)); bottom: calc(var(--bb) * var(--u)); border-radius: 50%; background: var(--s1); }
-.art__small { width: calc(var(--sw) * var(--u)); aspect-ratio: 1; left: calc(var(--sl) * var(--u)); top: calc(var(--st) * var(--u)); border-radius: 50%; background: var(--s2); }
-.art__bar { width: calc(160 * var(--u)); height: calc(26 * var(--u)); left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(var(--rot)); border-radius: 999px; background: var(--s2); opacity: .85; }
+.art { position: relative; container-type: size; overflow: hidden; background: var(--bg); width: 100%; height: 100%; display: grid; place-items: center; }
+.art__glow { position: absolute; left: 50%; top: 50%; width: min(88cqw, 72cqh); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: var(--illustration-glow); opacity: .4; }
+.art__ill { position: relative; width: min(100cqw, 98cqh); height: auto; }
+.art__ill--wide { width: min(114cqw, 112cqh); }
+.scene { position: relative; overflow: hidden; background: var(--bg); width: 100%; height: 100%; }
+.scene__ill { position: absolute; display: block; }
+.scene--arena .scene__ill { left: 50%; top: 50%; height: 100%; width: auto; aspect-ratio: 2 / 1; transform: translate(-50%, -50%); }
+.scene--jackpot .scene__ill { left: 50%; top: 12px; height: 166px; width: auto; aspect-ratio: 560 / 240; transform: translateX(-50%); }
 
 /* ===== Game tile ===== */
 .game-tile { display: flex; flex-direction: column; gap: var(--gameTile-gap); min-width: 0; }
@@ -74,6 +77,7 @@
 .promo__actions { display: flex; flex-wrap: wrap; gap: var(--promo-actions-gap); }
 @media (min-width: 768px) {
   .promo { flex-direction: row; justify-content: flex-start; min-height: 360px; }
+  .promo .scene--jackpot .scene__ill { left: auto; right: 0; top: 0; height: 100%; transform: none; }
   .promo__content { width: min(480px, 52%); padding: var(--promo-paddingV-md) var(--promo-paddingH-md); gap: var(--promo-gap-md); justify-content: center; }
   .ts-display-d3-md { font-size: var(--fontSize-40); line-height: var(--lineHeight-48); letter-spacing: var(--letterSpacing-tight); }
   .promo__text { font-size: var(--fontSize-18); line-height: var(--lineHeight-28); }

@@ -241,6 +241,92 @@
         "value": "{color.product1.300}",
         "type": "color"
       }
+    },
+    "illustration": {
+      "primary": {
+        "light": {
+          "value": "{color.product1.300}",
+          "type": "color"
+        },
+        "base": {
+          "value": "{color.product1.500}",
+          "type": "color"
+        },
+        "dark": {
+          "value": "{color.product1.700}",
+          "type": "color"
+        },
+        "deep": {
+          "value": "{color.product1.900}",
+          "type": "color"
+        }
+      },
+      "accent": {
+        "light": {
+          "value": "{color.product2.300}",
+          "type": "color"
+        },
+        "base": {
+          "value": "{color.product2.500}",
+          "type": "color"
+        },
+        "dark": {
+          "value": "{color.product2.700}",
+          "type": "color"
+        },
+        "deep": {
+          "value": "{color.product2.900}",
+          "type": "color"
+        }
+      },
+      "info": {
+        "light": {
+          "value": "{color.product3.300}",
+          "type": "color"
+        },
+        "base": {
+          "value": "{color.product3.500}",
+          "type": "color"
+        },
+        "dark": {
+          "value": "{color.product3.700}",
+          "type": "color"
+        },
+        "deep": {
+          "value": "{color.product3.900}",
+          "type": "color"
+        }
+      },
+      "ink": {
+        "value": "{color.ink}",
+        "type": "color"
+      },
+      "night": {
+        "value": "{color.neutral.800}",
+        "type": "color"
+      },
+      "cream": {
+        "value": "{color.neutral.50}",
+        "type": "color"
+      },
+      "white": {
+        "value": "{color.white}",
+        "type": "color"
+      },
+      "stage": {
+        "primary": {
+          "value": "{color.product1.700}",
+          "type": "color"
+        },
+        "accent": {
+          "value": "{color.product2.700}",
+          "type": "color"
+        }
+      },
+      "glow": {
+        "value": "{color.white}",
+        "type": "color"
+      }
     }
   }
 }

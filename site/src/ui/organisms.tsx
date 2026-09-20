@@ -3,6 +3,7 @@ import { Badge, BadgeTone, Button, Icon, IconName, Progress } from "./atoms";
 import { Balance, Logo } from "./molecules";
 import { cx } from "./util";
 import { ROUTES, Route, href } from "../router";
+import { Illustration, type IllusKey } from "../art/Illustration";
 
 // ---------- Header ----------
 export function Header({ route, loggedIn = true }: { route: Route; loggedIn?: boolean }) {
@@ -72,20 +73,26 @@ export function Footer() {
   );
 }
 
-// ---------- Game art (brand-reactive abstract placeholder) ----------
-const ART: Record<string, [[number, number, number], [number, number, number], number]> = {
-  a: [[220, 150, 200], [80, 20, 30], -25], b: [[180, 170, 150], [100, 180, 40], 20], c: [[240, 120, 240], [70, 30, 180], -40],
-  d: [[200, 160, 160], [90, 190, 60], 35], e: [[230, 140, 190], [60, 26, 26], -15], f: [[170, 180, 220], [110, 200, 50], 45],
-};
-export type ArtKey = "a" | "b" | "c" | "d" | "e" | "f";
+// ---------- Game art (brand-reactive casino illustrations) ----------
+export type ArtKey = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h";
+const ART_ILLUSTRATION: Record<ArtKey, IllusKey> = { a: "slots", b: "roulette", c: "cards", d: "chips", e: "dice", f: "gem", g: "chest", h: "trophy" };
 export function GameArt({ pattern = "a", className }: { pattern?: ArtKey; className?: string }) {
-  const [[bw, bx, by], [sw, sx, sy], rot] = ART[pattern];
-  const c = (n: number) => String(n);
-  const s: CSSProperties & Record<string, string> = {
-    "--bg": `var(--art-${pattern}-bg)`, "--s1": `var(--art-${pattern}-shape1)`, "--s2": `var(--art-${pattern}-shape2)`,
-    "--bw": c(bw), "--br": c(240 - (bx + bw)), "--bb": c(320 - (by + bw)), "--sw": c(sw), "--sl": c(sx), "--st": c(sy), "--rot": `${rot}deg`,
-  };
-  return <div className={cx("art", className)} style={s}><i className="art__big" /><i className="art__small" /><i className="art__bar" /></div>;
+  const name = ART_ILLUSTRATION[pattern];
+  return (
+    <div className={cx("art", className)} style={{ "--bg": `var(--art-${pattern}-bg)` } as CSSProperties}>
+      <i className="art__glow" />
+      <Illustration name={name} className={cx("art__ill", name === "chest" && "art__ill--wide")} />
+    </div>
+  );
+}
+
+// Wide scenes for banners and tournament covers
+export function SceneArt({ scene, className }: { scene: "jackpot" | "arena"; className?: string }) {
+  return (
+    <div className={cx("scene", `scene--${scene}`, className)} style={{ "--bg": `var(--art-${scene}-bg)` } as CSSProperties}>
+      <Illustration name={scene} className="scene__ill" />
+    </div>
+  );
 }
 
 // ---------- Game tile ----------
@@ -107,10 +114,10 @@ export function GameTile({ title, provider, art, type = "slot", badge, favorite,
 }
 
 // ---------- Promo banner ----------
-export function PromoBanner({ eyebrow, title, text, art = "e", primary, secondary }: { eyebrow?: string; title: string; text: string; art?: ArtKey; primary: { label: string; href?: string }; secondary?: { label: string; href?: string } }) {
+export function PromoBanner({ eyebrow, title, text, primary, secondary }: { eyebrow?: string; title: string; text: string; primary: { label: string; href?: string }; secondary?: { label: string; href?: string } }) {
   return (
     <section className="promo">
-      <GameArt pattern={art} className="promo__art" />
+      <SceneArt scene="jackpot" className="promo__art" />
       <div className="promo__content">
         {eyebrow && <Badge tone="accent">{eyebrow}</Badge>}
         <h1 className="promo__title ts-title-t2 ts-display-d3-md">{title}</h1>
@@ -126,11 +133,11 @@ export function PromoBanner({ eyebrow, title, text, art = "e", primary, secondar
 
 // ---------- Tournament card ----------
 const T_BADGE: Record<string, { tone: BadgeTone; label: string }> = { live: { tone: "danger", label: "Live" }, upcoming: { tone: "info", label: "Starts in 2d" }, finished: { tone: "neutral", label: "Finished" } };
-export function TournamentCard({ state, title, prize, players = "1,204 players", time, art, progress = 75, onJoin }: { state: "live" | "upcoming" | "finished"; title: string; prize: string; players?: string; time: string; art: ArtKey; progress?: number; onJoin?: () => void }) {
+export function TournamentCard({ state, title, prize, players = "1,204 players", time, progress = 75, onJoin }: { state: "live" | "upcoming" | "finished"; title: string; prize: string; players?: string; time: string; progress?: number; onJoin?: () => void }) {
   const b = T_BADGE[state];
   return (
     <article className="tournament">
-      <div className="tournament__cover"><GameArt pattern={art} className="tournament__art" /><div className="tournament__top"><Badge tone={b.tone}>{b.label}</Badge></div></div>
+      <div className="tournament__cover"><SceneArt scene="arena" className="tournament__art" /><div className="tournament__top"><Badge tone={b.tone}>{b.label}</Badge></div></div>
       <div className="tournament__body">
         <h3 className="tournament__title ts-title-t4">{title}</h3>
         <div className="tournament__prize"><span className="tournament__prize-label ts-caption-md">Prize pool</span><span className="tournament__prize-row"><Icon name="goblet-filled" className="tournament__trophy" /><span className="tournament__prize-amount ts-title-t2">{prize}</span></span></div>

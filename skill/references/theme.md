@@ -4,7 +4,7 @@
 
 Семантика кольорів. Тут калькулюється логіка тем: той самий ключ у light і dark дивиться в різні кроки `map`.
 Figma: колекція **Theme** (modes Light / Dark). **Тільки кольори** — розміри живуть у бренді.
-Токенів: **54** (ключі light і dark ідентичні).
+Токенів: **73** (ключі light і dark ідентичні).
 
 Колонки «Aurum» — значення, до якого резолвиться токен у бренді Aurum.
 
@@ -86,3 +86,27 @@ Figma: колекція **Theme** (modes Light / Dark). **Тільки коль�
 | Токен | Light | Aurum light | Dark | Aurum dark |
 |---|---|---|---|---|
 | `color.outline.focus` | `{color.product1.300}` | `#CFA74A` | `{color.product1.300}` | `#CFA74A` |
+
+## color.illustration
+
+| Токен | Light | Aurum light | Dark | Aurum dark |
+|---|---|---|---|---|
+| `color.illustration.primary.light` | `{color.product1.300}` | `#CFA74A` | `{color.product1.300}` | `#CFA74A` |
+| `color.illustration.primary.base` | `{color.product1.500}` | `#CFA74A` | `{color.product1.500}` | `#CFA74A` |
+| `color.illustration.primary.dark` | `{color.product1.700}` | `#CFA74A` | `{color.product1.700}` | `#CFA74A` |
+| `color.illustration.primary.deep` | `{color.product1.900}` | `#CFA74A` | `{color.product1.900}` | `#CFA74A` |
+| `color.illustration.accent.light` | `{color.product2.300}` | `#8E2C43` | `{color.product2.300}` | `#8E2C43` |
+| `color.illustration.accent.base` | `{color.product2.500}` | `#8E2C43` | `{color.product2.500}` | `#8E2C43` |
+| `color.illustration.accent.dark` | `{color.product2.700}` | `#8E2C43` | `{color.product2.700}` | `#8E2C43` |
+| `color.illustration.accent.deep` | `{color.product2.900}` | `#8E2C43` | `{color.product2.900}` | `#8E2C43` |
+| `color.illustration.info.light` | `{color.product3.300}` | `#B8704B` | `{color.product3.300}` | `#B8704B` |
+| `color.illustration.info.base` | `{color.product3.500}` | `#B8704B` | `{color.product3.500}` | `#B8704B` |
+| `color.illustration.info.dark` | `{color.product3.700}` | `#B8704B` | `{color.product3.700}` | `#B8704B` |
+| `color.illustration.info.deep` | `{color.product3.900}` | `#B8704B` | `{color.product3.900}` | `#B8704B` |
+| `color.illustration.ink` | `{color.ink}` | `#16130F` | `{color.ink}` | `#16130F` |
+| `color.illustration.night` | `{color.neutral.800}` | `#16130F` | `{color.neutral.700}` | `#16130F` |
+| `color.illustration.cream` | `{color.neutral.50}` | `#16130F` | `{color.neutral.200}` | `#16130F` |
+| `color.illustration.white` | `{color.white}` | `#FFFFFF` | `{color.white}` | `#FFFFFF` |
+| `color.illustration.stage.primary` | `{color.product1.700}` | `#CFA74A` | `{color.product1.900}` | `#CFA74A` |
+| `color.illustration.stage.accent` | `{color.product2.700}` | `#8E2C43` | `{color.product2.900}` | `#8E2C43` |
+| `color.illustration.glow` | `{color.white}` | `#FFFFFF` | `{color.product1.300}` | `#CFA74A` |

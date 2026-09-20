@@ -13,7 +13,7 @@ export default function Tournaments() {
     <div className="main container">
       <SectionHeading title="Tournaments" subtitle="Compete for prize pools, climb the leaderboard" icon="goblet-filled" />
       <Tabs value={tab} onChange={setTab} items={[{ id: "live", label: "Active" }, { id: "upcoming", label: "Upcoming" }, { id: "finished", label: "Finished" }, { id: "mine", label: "My tournaments" }]} />
-      <div className="grid grid--cards">{list.map((t) => <TournamentCard key={t.id} state={t.state} title={t.title} prize={t.prize} time={t.time} art={t.art} players={t.players} progress={t.progress} />)}</div>
+      <div className="grid grid--cards">{list.map((t) => <TournamentCard key={t.id} state={t.state} title={t.title} prize={t.prize} time={t.time} players={t.players} progress={t.progress} />)}</div>
       <section className="stack section">
         <SectionHeading title="Weekend Race — leaderboard" icon="goblet-filled" />
         <div className="split">
