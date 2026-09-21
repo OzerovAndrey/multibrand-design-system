@@ -1,6 +1,6 @@
 # Typography — text styles
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
 
 Окремий шар. Сет `typography` → тема **Typography / Default** → Figma **text styles** `typography/…`.
 Компоненти **не мають** власних typography-токенів: текстовий шар бере стиль зі шкали. Той самий набір — для вільного тексту.

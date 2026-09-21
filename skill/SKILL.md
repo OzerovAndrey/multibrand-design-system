@@ -5,7 +5,7 @@ description: Реєстр токенів Multibrand Design System (репо mult
 
 # Multibrand Design System — токени (індекс)
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
 Усього токенів: **951**.

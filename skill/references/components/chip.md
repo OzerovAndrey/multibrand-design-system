@@ -1,6 +1,6 @@
 # Chip
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Chip (component set) · Selected × State × Size  
 **Варіанти:** Selected: False / True · State: Default / Hover / Active / Disabled · Size: sm (32) / md (40)  

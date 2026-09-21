@@ -1,6 +1,6 @@
 # Progress
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Progress (component set) · Size × Tone × Value  
 **Варіанти:** Size: sm (6) / md (8) · Tone: Primary / Success / Accent · Value: 0 / 25 / 50 / 75 / 100  

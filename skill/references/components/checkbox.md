@@ -1,6 +1,6 @@
 # Checkbox
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Checkbox (component set) · Checked × State  
 **Варіанти:** Checked: False / True · State: Default / Hover / Active / Disabled  

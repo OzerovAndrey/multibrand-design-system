@@ -1,6 +1,6 @@
 # Balance
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-20. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Balance (component set) · Size — молекула всередині Header  
 **Варіанти:** Size: sm (Deposit = Button Primary sm icon-only `plus`) / md (Button Primary md «Deposit»). Властивості: ✏️ Amount · 💰 Icon · 💠 Icon  
