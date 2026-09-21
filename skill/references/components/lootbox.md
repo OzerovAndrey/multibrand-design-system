@@ -41,7 +41,7 @@
 | `lootbox.info.gap` | lootbox/info/gap | spacing | `{space.gap.sm}` | `6` |
 | `lootbox.price.gap` | lootbox/price/gap | spacing | `{space.gap.sm}` | `6` |
 | `lootbox.iconSize` | lootbox/iconSize | sizing | `{iconSize.md}` | `20` |
-| `lootbox.inset` | lootbox/inset | spacing | `{space.gap.lg}` | `10` |
+| `lootbox.cover.padding` | lootbox/cover/padding | spacing | `{space.gap.lg}` | `10` |
 
 ## Текст (text styles, не токени)
 

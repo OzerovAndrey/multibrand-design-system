@@ -33,7 +33,7 @@
 | `tournament.info.gap` | tournament/info/gap | spacing | `{space.gap.md}` | `8` |
 | `tournament.meta.gap` | tournament/meta/gap | spacing | `{space.gap.sm}` | `6` |
 | `tournament.iconSize` | tournament/iconSize | sizing | `{iconSize.md}` | `20` |
-| `tournament.inset` | tournament/inset | spacing | `{space.gap.lg}` | `10` |
+| `tournament.cover.padding` | tournament/cover/padding | spacing | `{space.gap.lg}` | `10` |
 
 ## Текст (text styles, не токени)
 

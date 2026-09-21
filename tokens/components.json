@@ -2049,11 +2049,12 @@
       "bg": {
         "value": "{color.bg.overlay}",
         "type": "color"
+      },
+      "padding": {
+        "value": "{space.gap.lg}",
+        "type": "spacing",
+        "description": "відступ бейджів/кнопок від краю обкладинки"
       }
-    },
-    "inset": {
-      "value": "{space.gap.lg}",
-      "type": "spacing"
     },
     "action": {
       "bg": {
@@ -2072,9 +2073,11 @@
         "value": "{iconSize.md}",
         "type": "sizing"
       },
-      "likedColor": {
-        "value": "{color.fill.danger.default}",
-        "type": "color"
+      "selected": {
+        "color": {
+          "value": "{color.fill.danger.default}",
+          "type": "color"
+        }
       }
     },
     "actions": {
@@ -2211,9 +2214,12 @@
       "value": "{iconSize.md}",
       "type": "sizing"
     },
-    "inset": {
-      "value": "{space.gap.lg}",
-      "type": "spacing"
+    "cover": {
+      "padding": {
+        "value": "{space.gap.lg}",
+        "type": "spacing",
+        "description": "відступ бейджів/кнопок від краю обкладинки"
+      }
     }
   },
   "lootbox": {
@@ -2283,10 +2289,6 @@
       "value": "{iconSize.md}",
       "type": "sizing"
     },
-    "inset": {
-      "value": "{space.gap.lg}",
-      "type": "spacing"
-    },
     "common": {
       "art": {
         "bg": {
@@ -2341,6 +2343,13 @@
           "value": "{color.fill.primary.default}",
           "type": "color"
         }
+      }
+    },
+    "cover": {
+      "padding": {
+        "value": "{space.gap.lg}",
+        "type": "spacing",
+        "description": "відступ бейджів/кнопок від краю обкладинки"
       }
     }
   },

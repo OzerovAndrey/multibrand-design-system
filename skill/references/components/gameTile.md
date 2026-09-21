@@ -20,7 +20,7 @@
 | `gameTile.overlay.bg` | gameTile/overlay/bg | `{color.bg.overlay}` | `rgba(0, 0, 0, 0.6)` | `rgba(0, 0, 0, 0.6)` |
 | `gameTile.action.bg` | gameTile/action/bg | `{color.bg.overlay}` | `rgba(0, 0, 0, 0.6)` | `rgba(0, 0, 0, 0.6)` |
 | `gameTile.action.color` | gameTile/action/color | `{color.text.onOverlay}` | `#FFFFFF` | `#FFFFFF` |
-| `gameTile.action.likedColor` | gameTile/action/likedColor | `{color.fill.danger.default}` | `#D23B34` | `#D23B34` |
+| `gameTile.action.selected.color` | gameTile/action/selected/color | `{color.fill.danger.default}` | `#D23B34` | `#D23B34` |
 
 ## Розміри та форма
 
@@ -29,7 +29,7 @@
 | `gameTile.borderRadius` | gameTile/borderRadius | borderRadius | `{borderRadius.surface}` | `12` |
 | `gameTile.gap` | gameTile/gap | spacing | `{space.gap.md}` | `8` |
 | `gameTile.info.gap` | gameTile/info/gap | spacing | `{space.gap.xs}` | `4` |
-| `gameTile.inset` | gameTile/inset | spacing | `{space.gap.lg}` | `10` |
+| `gameTile.overlay.padding` | gameTile/overlay/padding | spacing | `{space.gap.lg}` | `10` |
 | `gameTile.action.size` | gameTile/action/size | sizing | `{size.control.sm}` | `32` |
 | `gameTile.action.iconSize` | gameTile/action/iconSize | sizing | `{iconSize.md}` | `20` |
 | `gameTile.actions.gap` | gameTile/actions/gap | spacing | `{space.gap.md}` | `8` |
