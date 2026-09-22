@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "react";
 export type Brand = "aurum" | "nova" | "fiesta" | "ultra";
 export type Theme = "light" | "dark";
 export const BRANDS: { id: Brand; name: string; tagline: string }[] = [
-  { id: "aurum", name: "Aurum", tagline: "Warm premium · soft corners · serif" },
+  { id: "aurum", name: "Aurum", tagline: "Warm premium · soft corners · geometric sans" },
   { id: "nova", name: "Nova", tagline: "Cold tech · sharp corners · grotesk" },
   { id: "fiesta", name: "Fiesta", tagline: "Bold mass-market · pill shapes · rounded" },
   { id: "ultra", name: "Ultra", tagline: "Neon night · hot pink & cyan · wide grotesk" },

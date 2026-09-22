@@ -41,12 +41,12 @@
   },
   "fontFamily": {
     "display": {
-      "value": "Cormorant Garamond",
+      "value": "Montserrat",
       "type": "fontFamilies",
       "description": "заголовки: display / title"
     },
     "base": {
-      "value": "Cormorant Garamond",
+      "value": "Manrope",
       "type": "fontFamilies",
       "description": "текст: body / label / caption / overline"
     }

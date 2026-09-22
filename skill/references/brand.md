@@ -30,8 +30,8 @@ Figma: колекція **Brand** (modes Aurum / Nova / Fiesta / Ultra). Раз�
 
 | Токен | Тип | Aurum | Nova | Fiesta | Ultra |
 |---|---|---|---|---|---|
-| `fontFamily.display` | fontFamilies | `Cormorant Garamond` | `Space Grotesk` | `Nunito` | `Unbounded` |
-| `fontFamily.base` | fontFamilies | `Cormorant Garamond` | `Space Grotesk` | `Nunito` | `Inter` |
+| `fontFamily.display` | fontFamilies | `Montserrat` | `Space Grotesk` | `Nunito` | `Unbounded` |
+| `fontFamily.base` | fontFamilies | `Manrope` | `Space Grotesk` | `Nunito` | `Inter` |
 
 ## space.padding
 
