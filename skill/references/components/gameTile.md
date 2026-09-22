@@ -1,6 +1,6 @@
 # Game Tile
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Game Tile (component set) · Type × State  
 **Варіанти:** Type: Slot (3:4, 176×235) / Live (16:9, 320×180) · State: Default / Hover (overlay + Play)  

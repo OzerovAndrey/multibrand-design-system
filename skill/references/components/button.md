@@ -1,6 +1,6 @@
 # Button
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Button (component set) · Variant × Size × State × Label  
 **Варіанти:** Variant: Primary / Secondary / Text · Size: xs–xl · State: Default / Hover / Active / Disabled  

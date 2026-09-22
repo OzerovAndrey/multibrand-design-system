@@ -77,8 +77,8 @@ export default function UnderTheHood({ onClose }: { onClose: () => void }) {
             <li><b>{meta.counts.total}</b><span>tokens in total</span></li>
             <li><b>{meta.counts.components}</b><span>component tokens · {meta.componentCount} components</span></li>
             <li><b>{meta.counts.theme}</b><span>theme tokens (Light + Dark)</span></li>
-            <li><b>{meta.counts.brand}</b><span>brand tokens (3 brands)</span></li>
-            <li><b>6</b><span>brand × theme combinations</span></li>
+            <li><b>{meta.counts.brand}</b><span>brand tokens ({meta.brandCount} brands)</span></li>
+            <li><b>{meta.comboCount}</b><span>brand × theme combinations</span></li>
             <li><b>{(meta.cssBytes / 1024).toFixed(0)} kB</b><span>generated CSS, all brands and themes</span></li>
           </ul>
         )}

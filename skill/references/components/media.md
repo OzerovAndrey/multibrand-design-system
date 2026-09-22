@@ -1,6 +1,6 @@
 # Media
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Media (component set) · Ratio × State  
 **Варіанти:** Ratio: 1:1 / 4:3 / 16:9 / 3:4 · State: Loaded / Loading / Error  

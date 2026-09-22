@@ -1,6 +1,6 @@
 # Header
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Header (component set) · Size × State  ·  частини: Logo (component set · Brand × Type), Balance (component set · Size)  
 **Варіанти:** Size: xs (mobile 360) / md (desktop, від sm 768 і ширше — Fill) · State: Logged in / Search open / Logged out  
@@ -47,5 +47,5 @@
 - md · Logged out: Log in (Button Secondary md) і Sign up (Button Primary md).
 - xs: Logo Type=Mark, контроли sm (32), Support прихований (іде в меню / TabBar), Balance Size=sm. Search open — Input sm Fill на місці лого.
 - Висота не токен: md 72 = `header.paddingV.md` 16 × 2 + control md 40; xs 56 = `header.paddingV.xs` 12 × 2 + control sm 32.
-- Logo — asset, не токен: Brand-варіант (Aurum / Nova / Fiesta) обирається разом із Brand-mode; Type=Full / Mark. Кольори — `header.logo.iconColor` (марка) і `header.logo.color` (wordmark).
+- Logo — asset, не токен: Brand-варіант (Aurum / Nova / Fiesta / Ultra) обирається разом із Brand-mode; Type=Full / Mark. Кольори — `header.logo.iconColor` (марка) і `header.logo.color` (wordmark).
 - Logo, Balance, Search, Support, Log in, Sign up — exposed instances.

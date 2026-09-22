@@ -1,12 +1,13 @@
 /* ===== Logo ===== */
 .logo { display: inline-flex; align-items: center; gap: 10px; color: var(--header-logo-color); }
 .logo__mark { display: none; height: var(--header-logo-height); width: auto; aspect-ratio: 1; color: var(--header-logo-iconColor); }
-html[data-brand="aurum"] .logo__mark[data-b="aurum"], html[data-brand="nova"] .logo__mark[data-b="nova"], html[data-brand="fiesta"] .logo__mark[data-b="fiesta"] { display: block; }
+html[data-brand="aurum"] .logo__mark[data-b="aurum"], html[data-brand="nova"] .logo__mark[data-b="nova"], html[data-brand="fiesta"] .logo__mark[data-b="fiesta"], html[data-brand="ultra"] .logo__mark[data-b="ultra"] { display: block; }
 .logo__word > span { display: none; font-family: var(--fontFamily-display); color: var(--header-logo-color); line-height: 1; }
-html[data-brand="aurum"] .logo__word [data-b="aurum"], html[data-brand="nova"] .logo__word [data-b="nova"], html[data-brand="fiesta"] .logo__word [data-b="fiesta"] { display: inline; }
+html[data-brand="aurum"] .logo__word [data-b="aurum"], html[data-brand="nova"] .logo__word [data-b="nova"], html[data-brand="fiesta"] .logo__word [data-b="fiesta"], html[data-brand="ultra"] .logo__word [data-b="ultra"] { display: inline; }
 .logo__word [data-b="aurum"] { font-weight: 600; font-size: 24px; letter-spacing: .28em; text-transform: uppercase; }
 .logo__word [data-b="nova"] { font-weight: 700; font-size: 20px; letter-spacing: .18em; text-transform: uppercase; }
 .logo__word [data-b="fiesta"] { font-weight: 800; font-size: 28px; letter-spacing: -.02em; }
+.logo__word [data-b="ultra"] { font-weight: 800; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
 
 /* ===== Balance ===== */
 .balance { display: inline-flex; align-items: center; gap: var(--balance-gap-md); padding-left: var(--balance-paddingL-md); background: var(--balance-bg); border-radius: var(--balance-borderRadius); color: var(--balance-color); }

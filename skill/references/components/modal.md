@@ -1,6 +1,6 @@
 # Modal
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Modal (component set) · Size  
 **Варіанти:** Size: xs (bottom sheet 360, лише верхні кути) / md (діалог 480)  

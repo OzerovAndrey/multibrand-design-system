@@ -1,6 +1,6 @@
 # Core — примітиви
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 Словник сирих значень. **Ніколи не прив'язується до шару в Figma** — на core посилаються brand/map/theme/typography.
 Figma: колекція **Base** (mode Default). Токенів: **59**.

@@ -1,22 +1,22 @@
 ---
 name: multibrand-design-system
-description: Реєстр токенів Multibrand Design System (репо multibrand-design-system; бренди Aurum / Nova / Fiesta) — усі сети Token Studio (core, brand/aurum|nova|fiesta, map, theme/light|dark, typography, components), їхні значення, посилання й Figma-змінні. Use ANY TIME the user works with tokens of the Multibrand Design System — adding a component's tokens, binding variables in Figma, checking what a token resolves to, adding a brand, or asking "який токен для…". INDEX — деталі в references/*.md, вантажити тільки потрібний файл. Генерується з JSON скриптом tools/build-skill.py.
+description: Реєстр токенів Multibrand Design System (репо multibrand-design-system; бренди Aurum / Nova / Fiesta / Ultra) — усі сети Token Studio (core, brand/aurum|nova|fiesta|ultra, map, theme/light|dark, typography, components), їхні значення, посилання й Figma-змінні. Use ANY TIME the user works with tokens of the Multibrand Design System — adding a component's tokens, binding variables in Figma, checking what a token resolves to, adding a brand, or asking "який токен для…". INDEX — деталі в references/*.md, вантажити тільки потрібний файл. Генерується з JSON скриптом tools/build-skill.py.
 ---
 
 # Multibrand Design System — токени (індекс)
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **951**.
+Усього токенів: **1006**.
 
 ## Мета й ідеологія
 
-**Кінцевий результат** — живий сайт-демо на власному домені: клієнт перемикає бренд (Aurum / Nova / Fiesta) і тему (Light / Dark), і весь iGaming-інтерфейс перебудовується миттєво, а компоненти й розмітка не змінюються. Ця система — доказ, що один набір токенів керує цілим продуктом.
+**Кінцевий результат** — живий сайт-демо на власному домені: клієнт перемикає бренд (Aurum / Nova / Fiesta / Ultra) і тему (Light / Dark), і весь iGaming-інтерфейс перебудовується миттєво, а компоненти й розмітка не змінюються. Ця система — доказ, що один набір токенів керує цілим продуктом.
 
-1. **Перемикання — головний продукт.** Кожен компонент і сторінка мають виглядати добре й змінюватись у всіх 6 комбінаціях (3 бренди × Light/Dark). Не змінилось або зламалось — це помилка архітектури, а не токенів.
+1. **Перемикання — головний продукт.** Кожен компонент і сторінка мають виглядати добре й змінюватись у всіх 8 комбінаціях (4 бренди × Light/Dark). Не змінилось або зламалось — це помилка архітектури, а не токенів.
 2. **Компонент не знає про бренд і тему.** Лише токени; жодного hex, px чи шрифту напряму.
-3. **Бренди відрізняються характером, а не тільки кольором:** колір + шрифт + радіуси + товщина бордера. Aurum — тепла преміум-класика, м'які кути. Nova — холодний tech, гострі кути. Fiesta — яскравий mass-market, pill-форми, товстіші контури.
+3. **Бренди відрізняються характером, а не тільки кольором:** колір + шрифт + радіуси + товщина бордера. Aurum — тепла преміум-класика, м'які кути. Nova — холодний tech, гострі кути. Fiesta — яскравий mass-market, pill-форми, товстіші контури. Ultra — нічний neon-казино: navy + hot pink + cyan, широкий display-гротеск, кути 12, контур 2.
 4. **Бренд = значення, тема = кольори.** Ключі брендів ідентичні; світла й темна теми різняться лише кольорами.
 5. **Будівельні блоки для геймблових структур:** компоненти проєктуються під лобі, каталог ігор, турніри, профіль, реєстрацію, магазин з лутбоксами — від атомів до секцій.
 6. **Кожна демо-функція вимірювана:** скільки токенів змінилось при перемиканні і скільки компонентів не торкнулись.
@@ -46,6 +46,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | `brand/aurum` | 55 | кольори бренду, шрифти, розмірна семантика, сітка сторінки (layout) |
 | `brand/nova` | 55 | ті самі ключі, інші значення |
 | `brand/fiesta` | 55 | ті самі ключі, інші значення |
+| `brand/ultra` | 55 | ті самі ключі, інші значення |
 | `map` | 41 | рампи 100…900 від базових кольорів бренду |
 | `theme/light` | 73 | семантика кольорів: bg, fill, text, border, outline |
 | `theme/dark` | 73 | ті самі ключі, інші кроки рампи |
@@ -60,6 +61,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | Brand | Aurum | core (source), brand/aurum, map | variables |
 | Brand | Nova | core (source), brand/nova, map | variables |
 | Brand | Fiesta | core (source), brand/fiesta, map | variables |
+| Brand | Ultra | core (source), brand/ultra, map | variables |
 | Theme | Light | core (source), brand/aurum (source), map (source), theme/light | variables |
 | Theme | Dark | core (source), brand/aurum (source), map (source), theme/dark | variables |
 | Typography | Default | core (source), brand/aurum (source), typography | text styles |
@@ -72,7 +74,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 1. Ім'я токена = CSS-властивість: `bg`, `color`, `br`, `iconColor`, `size`, `paddingH/V`, `gap`, `iconSize`, `borderRadius`, `borderWidth`. Формат `компонент.[підчастина].[варіант].властивість.[стан|розмір]`; стан/розмір — завжди останній.
 2. Компонент посилається тільки на theme / brand-семантику (`color.*`, `space.*`, `layout.*`, `size.control.*`, `iconSize.*`, `borderRadius.*`, `borderWidth.*`). Ніколи на core і ніколи на `map` напряму.
 3. Компонент не має typography-токенів — текстовий шар отримує text style (`typography/…`).
-4. Ключі трьох брендів ідентичні; ключі light і dark ідентичні.
+4. Ключі всіх брендів ідентичні; ключі light і dark ідентичні.
 5. Бренд = тільки значення. Нові ключі в бренді — лише якщо їх додано в усі три.
 6. Розміри й радіуси — у бренді, не в темі. Тема міняє лише кольори.
 7. Стани: `default / hover / active / disabled` (focus не робимо). Розміри: `xs / sm / md / lg / xl`.
@@ -83,7 +85,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | Файл | Коли читати |
 |---|---|
 | [references/core.md](references/core.md) | примітиви, шкали розмірів і шрифтів |
-| [references/brand.md](references/brand.md) | значення трьох брендів поруч |
+| [references/brand.md](references/brand.md) | значення всіх брендів поруч |
 | [references/map.md](references/map.md) | рампи кольорів |
 | [references/theme.md](references/theme.md) | семантика кольорів light / dark |
 | [references/typography.md](references/typography.md) | text styles |

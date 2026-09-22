@@ -1,6 +1,6 @@
 # Multibrand Design System
 
-Одна токен-архітектура, три бренди (Aurum / Nova / Fiesta), дві теми (Light / Dark).
+Одна токен-архітектура, чотири бренди (Aurum / Nova / Fiesta / Ultra), дві теми (Light / Dark).
 **Демо:** https://ozerovandrey.github.io/multibrand-design-system/
 
 ```

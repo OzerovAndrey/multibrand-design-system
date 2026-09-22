@@ -1,6 +1,6 @@
 # Tournament Card
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Tournament Card (component set) · State  
 **Варіанти:** State: Live (CTA Join now) / Upcoming (Remind me) / Finished (View results)  

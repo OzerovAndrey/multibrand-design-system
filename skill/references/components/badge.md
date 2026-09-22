@@ -1,6 +1,6 @@
 # Badge
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Badge (component set) · Tone  
 **Варіанти:** Tone: Neutral / Primary / Accent / Success / Warning / Danger / Info. Стани відсутні — статична мітка  

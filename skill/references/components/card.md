@@ -1,6 +1,6 @@
 # Card Default
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Card Default (component set) · Size  
 **Варіанти:** Size: xs (mobile) / sm (tablet) / md (desktop). Станів немає — статичний контейнер  

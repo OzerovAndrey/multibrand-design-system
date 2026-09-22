@@ -12,7 +12,7 @@ const OUT_META = resolve(dirname(fileURLToPath(import.meta.url)), "..", "site", 
 const OUT_MANIFEST = resolve(dirname(fileURLToPath(import.meta.url)), "..", "site", "public", "tokens-manifest.json");
 for (const f of [OUT_META, OUT_MANIFEST, OUT_CSS]) mkdirSync(dirname(f), { recursive: true });
 
-const BRANDS = ["aurum", "nova", "fiesta"];
+const BRANDS = ["aurum", "nova", "fiesta", "ultra"];
 const THEMES = ["light", "dark"];
 const read = (p) => JSON.parse(readFileSync(resolve(ROOT, p), "utf8"));
 
@@ -77,7 +77,7 @@ function formatValue(v, type) {
   if (["sizing", "spacing", "borderRadius", "borderWidth", "fontSizes", "lineHeights", "dimension"].includes(type) && /^-?\d+(\.\d+)?$/.test(v)) return v + "px";
   if (type === "letterSpacing" && /%$/.test(v)) return (parseFloat(v) / 100).toFixed(3).replace(/0+$/, "").replace(/\.$/, "") + "em";
   if (type === "fontFamilies") {
-    const fallback = { "Cormorant Garamond": "Georgia, 'Times New Roman', serif", "Space Grotesk": "system-ui, -apple-system, 'Segoe UI', sans-serif", "Nunito": "system-ui, -apple-system, 'Segoe UI', sans-serif" }[v] ?? "system-ui, sans-serif";
+    const fallback = { "Cormorant Garamond": "Georgia, 'Times New Roman', serif", "Space Grotesk": "system-ui, -apple-system, 'Segoe UI', sans-serif", "Nunito": "system-ui, -apple-system, 'Segoe UI', sans-serif", "Unbounded": "'Arial Black', system-ui, sans-serif", "Inter": "system-ui, -apple-system, 'Segoe UI', sans-serif" }[v] ?? "system-ui, sans-serif";
     return `'${v}', ${fallback}`;
   }
   return v;
@@ -200,8 +200,8 @@ writeFileSync(OUT_MANIFEST, JSON.stringify({ layers, aliases, values, chains }))
 // component counts by prefix
 const compGroups = {};
 for (const n of components.keys()) { const g = n.split(".")[0]; compGroups[g] = (compGroups[g] ?? 0) + 1; }
-const counts = { core: core.size, brand: brand.aurum.size * 3, map: mapRaw.size, theme: theme.light.size * 2, typography: typography.size, components: components.size };
+const counts = { core: core.size, brand: brand.aurum.size * BRANDS.length, map: mapRaw.size, theme: theme.light.size * 2, typography: typography.size, components: components.size };
 counts.total = Object.values(counts).reduce((a, b) => a + b, 0);
 const css = lines.join("\n");
-writeFileSync(OUT_META, JSON.stringify({ counts, componentGroups: compGroups, componentCount: Object.keys(compGroups).length, cssBytes: Buffer.byteLength(css), textStyles: tsNames.length }, null, 2));
+writeFileSync(OUT_META, JSON.stringify({ counts, brandCount: BRANDS.length, comboCount: BRANDS.length * THEMES.length, componentGroups: compGroups, componentCount: Object.keys(compGroups).length, cssBytes: Buffer.byteLength(css), textStyles: tsNames.length }, null, 2));
 console.log(`tokens → css: ${Buffer.byteLength(css)} bytes · total ${counts.total} tokens · ${Object.keys(compGroups).length} component groups`);

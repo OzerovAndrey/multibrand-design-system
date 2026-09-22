@@ -1,6 +1,6 @@
 # Bottom Nav
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-21. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Bottom Nav (component set) · Active  
 **Варіанти:** Active: Home / Games / Tournaments / Shop / Profile  

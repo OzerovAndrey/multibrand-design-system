@@ -2,18 +2,19 @@ import { ReactNode } from "react";
 import { Avatar, Button, Icon, IconName, Progress } from "./atoms";
 import { cx } from "./util";
 import { MARKS } from "../icons/paths";
+import { BRANDS } from "../theme";
 
 // ---------- Logo (mark = SVG from Figma, wordmark = live text in the brand display font) ----------
 export function Logo({ mark }: { mark?: boolean }) {
   return (
     <span className="logo">
-      {(["aurum", "nova", "fiesta"] as const).map((b) => (
+      {BRANDS.map(({ id: b }) => (
         <svg key={b} className="logo__mark" data-b={b} viewBox={MARKS[b].vb} fill="currentColor" aria-hidden="true">
           {MARKS[b].paths.map(([d, eo], i) => <path key={i} d={d} fillRule={eo ? "evenodd" : undefined} />)}
         </svg>
       ))}
       {!mark && <span className="logo__word">
-        <span data-b="aurum">Aurum</span><span data-b="nova">Nova</span><span data-b="fiesta">fiesta</span>
+        <span data-b="aurum">Aurum</span><span data-b="nova">Nova</span><span data-b="fiesta">fiesta</span><span data-b="ultra">Ultra</span>
       </span>}
     </span>
   );

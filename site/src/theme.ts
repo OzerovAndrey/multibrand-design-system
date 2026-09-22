@@ -1,11 +1,12 @@
 import { useSyncExternalStore } from "react";
 
-export type Brand = "aurum" | "nova" | "fiesta";
+export type Brand = "aurum" | "nova" | "fiesta" | "ultra";
 export type Theme = "light" | "dark";
 export const BRANDS: { id: Brand; name: string; tagline: string }[] = [
   { id: "aurum", name: "Aurum", tagline: "Warm premium · soft corners · serif" },
   { id: "nova", name: "Nova", tagline: "Cold tech · sharp corners · grotesk" },
   { id: "fiesta", name: "Fiesta", tagline: "Bold mass-market · pill shapes · rounded" },
+  { id: "ultra", name: "Ultra", tagline: "Neon night · hot pink & cyan · wide grotesk" },
 ];
 export const THEMES: Theme[] = ["light", "dark"];
 
@@ -59,7 +60,7 @@ const subscribe = (cb: () => void) => { listeners.add(cb); return () => listener
 export const getLook = () => state;
 export function useLook() { return useSyncExternalStore(subscribe, () => state); }
 
-// guided tour: cycles through all 6 combinations
+// guided tour: cycles through every brand × theme combination
 let tourTimer: number | null = null;
 const tourListeners = new Set<() => void>();
 export const isTouring = () => tourTimer !== null;
