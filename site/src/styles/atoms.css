@@ -69,6 +69,22 @@
 .chip.is-selected:hover:not(:disabled) { background: var(--chip-selected-bg-hover); border-color: var(--chip-selected-br-hover); color: var(--chip-selected-color-hover); }
 .chip.is-selected:active:not(:disabled) { background: var(--chip-selected-bg-active); border-color: var(--chip-selected-br-active); color: var(--chip-selected-color-active); }
 
+/* ===== Menu ===== */
+.menu { display: flex; flex-direction: column; gap: 2px; }
+.menu-item { display: flex; align-items: center; gap: var(--menu-gap); width: 100%; height: var(--menu-size-md); padding: 0 var(--menu-paddingH-md); cursor: pointer; text-align: left;
+  border-radius: var(--menu-borderRadius); border: var(--menu-borderWidth) solid var(--menu-br-default); background: var(--menu-bg-default); color: var(--menu-color-default); transition: all .15s; }
+.menu-item--sm { height: var(--menu-size-sm); padding: 0 var(--menu-paddingH-sm); }
+.menu-item .icon { --ic: var(--menu-iconSize-md); }
+.menu-item--sm .icon { --ic: var(--menu-iconSize-sm); }
+.menu-item:hover:not(:disabled) { background: var(--menu-bg-hover); border-color: var(--menu-br-hover); color: var(--menu-color-hover); }
+.menu-item:active:not(:disabled) { background: var(--menu-bg-active); border-color: var(--menu-br-active); color: var(--menu-color-active); }
+.menu-item:disabled { background: var(--menu-bg-disabled); border-color: var(--menu-br-disabled); color: var(--menu-color-disabled); cursor: not-allowed; }
+.menu-item.is-selected { background: var(--menu-selected-bg-default); border-color: var(--menu-selected-br-default); color: var(--menu-selected-color-default); }
+.menu-item.is-selected:hover:not(:disabled) { background: var(--menu-selected-bg-hover); border-color: var(--menu-selected-br-hover); color: var(--menu-selected-color-hover); }
+.menu-item.is-selected:active:not(:disabled) { background: var(--menu-selected-bg-active); border-color: var(--menu-selected-br-active); color: var(--menu-selected-color-active); }
+.menu-item--danger { color: var(--color-text-danger); }
+.menu-item--danger .icon { color: var(--color-text-danger); }
+
 /* ===== Tabs ===== */
 .tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; border-bottom: var(--tab-track-borderWidth) solid var(--tab-track-br); }
 .tabs::-webkit-scrollbar { display: none; }
@@ -161,24 +177,24 @@
   .btn:active:not(:disabled) { transform: scale(.97); }
 
   /* per-icon reactions: hovering the button / link / row moves its icon */
-  :is(.btn, .list-item, .nav-item, .user-menu__item, .chip, .section-heading a):hover .icon[data-icon="gift"] { animation: ic-wiggle .6s ease-in-out; }
-  :is(.btn, .list-item, .nav-item, .user-menu__item, .chip):hover .icon[data-icon="plus"] { transform: rotate(90deg) scale(1.1); }
-  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="search"] { transform: rotate(-14deg) scale(1.12); }
-  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="close"] { transform: rotate(90deg); }
+  :is(.btn, .list-item, .nav-item, .menu-item, .chip, .section-heading a):hover .icon[data-icon="gift"] { animation: ic-wiggle .6s ease-in-out; }
+  :is(.btn, .list-item, .nav-item, .menu-item, .chip):hover .icon[data-icon="plus"] { transform: rotate(90deg) scale(1.1); }
+  :is(.btn, .list-item, .nav-item, .menu-item):hover .icon[data-icon="search"] { transform: rotate(-14deg) scale(1.12); }
+  :is(.btn, .list-item, .nav-item, .menu-item):hover .icon[data-icon="close"] { transform: rotate(90deg); }
   :is(.btn, .list-item, .nav-item):hover .icon[data-icon="settings"] { transform: rotate(70deg); }
   :is(.btn, .list-item, .section-heading a):hover .icon[data-icon="chevron-right"] { transform: translateX(3px); }
   :is(.btn, .list-item):hover .icon[data-icon="chevron-left"] { transform: translateX(-3px); }
   :is(.btn, .list-item, .input__field):hover .icon[data-icon="chevron-down"] { transform: translateY(2px); }
-  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="play-filled"] { transform: translateX(2px) scale(1.15); }
-  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="wallet"] { animation: ic-hop .5s ease; }
-  :is(.btn, .list-item, .nav-item, .user-menu__item):hover .icon[data-icon="user"] { transform: scale(1.14) rotate(-6deg); }
+  :is(.btn, .list-item, .nav-item, .menu-item):hover .icon[data-icon="play-filled"] { transform: translateX(2px) scale(1.15); }
+  :is(.btn, .list-item, .nav-item, .menu-item):hover .icon[data-icon="wallet"] { animation: ic-hop .5s ease; }
+  :is(.btn, .list-item, .nav-item, .menu-item):hover .icon[data-icon="user"] { transform: scale(1.14) rotate(-6deg); }
   :is(.btn, .list-item, .nav-item):hover .icon[data-icon="home"] { transform: translateY(-2px) scale(1.08); }
   :is(.btn, .list-item, .nav-item):hover .icon[data-icon="gamepad"] { animation: ic-wiggle .6s ease-in-out; }
   :is(.btn, .list-item, .nav-item):hover .icon[data-icon="goblet-filled"] { animation: ic-hop .5s ease; }
   :is(.btn, .list-item, .nav-item, .chip):hover .icon[data-icon="jackpot"], :is(.btn, .list-item, .chip):hover .icon[data-icon="game-casino"] { animation: ic-wiggle .6s ease-in-out; }
   :is(.btn, .list-item):hover .icon[data-icon="coins-filled"] { animation: ic-spin .6s ease; }
   :is(.btn, .list-item):hover .icon[data-icon="mail"] { transform: translateY(-2px) rotate(-8deg); }
-  :is(.btn, .list-item, .user-menu__item):hover .icon[data-icon="lock"] { animation: ic-wiggle .5s ease-in-out; }
+  :is(.btn, .list-item, .menu-item):hover .icon[data-icon="lock"] { animation: ic-wiggle .5s ease-in-out; }
   .game-tile__fav:hover .icon { transform: scale(1.22); }
 
   .nav-item:hover .nav-item__pill { background: var(--navItem-bg-selected); }

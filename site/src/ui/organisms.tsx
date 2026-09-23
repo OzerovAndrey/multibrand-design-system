@@ -45,7 +45,7 @@ function HeaderSearch({ onClose }: { onClose: () => void }) {
   );
 }
 
-function UserMenu() {
+function UserMenu({ route }: { route?: Route }) {
   const { user } = useSession();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -58,10 +58,12 @@ function UserMenu() {
       {open && (
         <div className="user-menu__pop" role="menu">
           <div className="user-menu__who"><span className="ts-label-md">{user.name}</span><span className="ts-caption-md muted">{user.email}</span></div>
-          <a className="user-menu__item ts-label-md" role="menuitem" href="#/profile" onClick={close}><Icon name="user" />Profile</a>
-          <button type="button" className="user-menu__item ts-label-md" role="menuitem" onClick={() => { close(); openDeposit(); }}><Icon name="wallet" />Deposit</button>
-          <a className="user-menu__item ts-label-md" role="menuitem" href="#/shop" onClick={close}><Icon name="gift" />Bonuses & shop</a>
-          <button type="button" className="user-menu__item user-menu__item--out ts-label-md" role="menuitem" onClick={() => { close(); signOut(); location.hash = "#/"; }}><Icon name="lock" />Log out</button>
+          <div className="menu">
+            <a className={cx("menu-item", "ts-label-md", route === "profile" && "is-selected")} role="menuitem" href="#/profile" onClick={close}><Icon name="user" />Profile</a>
+            <button type="button" className="menu-item ts-label-md" role="menuitem" onClick={() => { close(); openDeposit(); }}><Icon name="wallet" />Deposit</button>
+            <a className="menu-item ts-label-md" role="menuitem" href="#/shop" onClick={close}><Icon name="gift" />Bonuses & shop</a>
+            <button type="button" className="menu-item menu-item--danger ts-label-md" role="menuitem" onClick={() => { close(); signOut(); location.hash = "#/"; }}><Icon name="lock" />Log out</button>
+          </div>
         </div>
       )}
     </div>
@@ -93,7 +95,7 @@ export function Header({ route }: { route: Route }) {
             <>
               <span className="hide-mobile"><Balance amount={money(balance)} onDeposit={openDeposit} /></span>
               <span className="hide-desktop"><Balance amount={"€" + Math.round(balance).toLocaleString("en-US")} compact onDeposit={openDeposit} /></span>
-              <UserMenu />
+              <UserMenu route={route} />
             </>
           ) : (
             <div className="header__auth"><Button variant="secondary" size="md" href="#/login">Log in</Button><Button variant="primary" size="md" href="#/register">Sign up</Button></div>
