@@ -1,6 +1,6 @@
 # Promo Banner
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-23. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Promo Banner (component set) · Size  
 **Варіанти:** Size: xs (mobile 328×420, контент знизу) / md (desktop 1000×360, панель зліва)  

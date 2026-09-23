@@ -5,10 +5,10 @@ description: Реєстр токенів Multibrand Design System (репо mult
 
 # Multibrand Design System — токени (індекс)
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-23. Не редагувати вручну — правити JSON і перегенерувати.
 
 Джерело правди — Token Studio JSON у `tokens/`. Figma Variables і text styles — синхронізована копія.
-Усього токенів: **1006**.
+Усього токенів: **1039**.
 
 ## Мета й ідеологія
 
@@ -51,7 +51,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | `theme/light` | 73 | семантика кольорів: bg, fill, text, border, outline |
 | `theme/dark` | 73 | ті самі ключі, інші кроки рампи |
 | `typography` | 25 | text styles |
-| `components` | 515 | усі компонентні токени в одному сеті |
+| `components` | 548 | усі компонентні токени в одному сеті |
 
 ## Теми → Figma
 
@@ -103,6 +103,7 @@ core ──► brand/<x> ──► map ──► theme/<mode> ──► componen
 | [Footer](references/components/footer.md) | 33 |
 | [Badge](references/components/badge.md) | 19 |
 | [Chip](references/components/chip.md) | 32 |
+| [menu](references/components/menu.md) | 33 |
 | [Tab](references/components/tab.md) | 16 |
 | [Avatar](references/components/avatar.md) | 22 |
 | [Progress](references/components/progress.md) | 10 |

@@ -1,6 +1,6 @@
 # Footer
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-23. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Footer (component set) · Size  ·  частини: _Footer badge, _Footer age  
 **Варіанти:** Size: xs (mobile 360) / sm (tablet 768) / md (desktop, Fill для md 1024 · lg 1200 · xl 1440)  

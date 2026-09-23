@@ -1,6 +1,6 @@
 # List Item
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-23. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** List Item (component set) · State  
 **Варіанти:** State: Default / Hover / Active / Disabled  

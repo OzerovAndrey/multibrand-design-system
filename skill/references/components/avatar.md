@@ -1,6 +1,6 @@
 # Avatar
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-23. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Avatar (component set) · Size × Type  
 **Варіанти:** Size: xs–xl (24–56) · Type: Initials / Icon. Booleans: VIP, Status  

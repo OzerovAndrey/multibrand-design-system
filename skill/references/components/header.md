@@ -1,6 +1,6 @@
 # Header
 
-> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-22. Не редагувати вручну — правити JSON і перегенерувати.
+> Згенеровано `tools/build-skill.py` з Token Studio JSON · 2026-09-23. Не редагувати вручну — правити JSON і перегенерувати.
 
 **Figma:** Header (component set) · Size × State  ·  частини: Logo (component set · Brand × Type), Balance (component set · Size)  
 **Варіанти:** Size: xs (mobile 360) / md (desktop, від sm 768 і ширше — Fill) · State: Logged in / Search open / Logged out  
