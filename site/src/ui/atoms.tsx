@@ -1,5 +1,7 @@
 import { CSSProperties, ReactNode, useId } from "react";
 import { ICON_PATHS } from "../icons/paths";
+import { CATEGORY_ICONS, type CategoryIconKey } from "../icons/categoryIcons";
+import { useLook } from "../theme";
 import { cx } from "./util";
 
 export type IconName = keyof typeof ICON_PATHS;
@@ -10,6 +12,17 @@ export function Icon({ name, size, className, style }: { name: IconName; size?: 
     <svg className={cx("icon", className)} data-icon={name} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ ...s, ...style }}>
       {paths.map(([d, eo], i) => <path key={i} d={d} fillRule={eo ? "evenodd" : undefined} clipRule={eo ? "evenodd" : undefined} />)}
     </svg>
+  );
+}
+
+export type { CategoryIconKey };
+// Brand-specific 3D icon tile — hard-coded per brand (not a token), swapped whole-set when the brand changes.
+// Same 28-icon library as the Figma "Icons · Brand" section.
+export function CategoryIcon({ category, size = 22, className }: { category: CategoryIconKey; size?: string | number; className?: string }) {
+  const { brand } = useLook();
+  const body = CATEGORY_ICONS[brand][category];
+  return (
+    <svg className={cx("category-icon", className)} width={size} height={size} viewBox="0 0 32 32" aria-hidden="true" focusable="false" dangerouslySetInnerHTML={{ __html: body }} />
   );
 }
 
@@ -68,10 +81,10 @@ export function Badge({ tone = "neutral", icon, children }: { tone?: BadgeTone; 
 }
 
 // ---------- Chip ----------
-export function Chip({ selected, icon, size = "md", disabled, onClick, children }: { selected?: boolean; icon?: IconName; size?: "sm" | "md"; disabled?: boolean; onClick?: () => void; children: ReactNode }) {
+export function Chip({ selected, icon, iconNode, size = "md", disabled, onClick, children }: { selected?: boolean; icon?: IconName; iconNode?: ReactNode; size?: "sm" | "md"; disabled?: boolean; onClick?: () => void; children: ReactNode }) {
   return (
     <button type="button" className={cx("chip", `chip--${size}`, selected && "is-selected", size === "sm" ? "ts-label-sm" : "ts-label-md")} disabled={disabled} onClick={onClick} aria-pressed={selected}>
-      {icon && <Icon name={icon} />}{children}
+      {iconNode ?? (icon && <Icon name={icon} />)}{children}
     </button>
   );
 }

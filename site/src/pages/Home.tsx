@@ -1,14 +1,14 @@
 import { useMemo, useState } from "react";
-import { Chip, Button } from "../ui/atoms";
+import { CategoryIcon, Chip, Button } from "../ui/atoms";
 import { SectionHeading } from "../ui/molecules";
 import { openBonus } from "../store";
 import { GameTile, PromoBanner, TournamentCard } from "../ui/organisms";
 import { GAMES, LIVE, TOURNAMENTS } from "../data";
-import type { IconName } from "../ui/atoms";
+import type { CategoryIconKey } from "../ui/atoms";
 
-const CATS: { id: string; label: string; icon?: IconName }[] = [
-  { id: "all", label: "All" }, { id: "slots", label: "Slots", icon: "game-casino" }, { id: "live", label: "Live casino", icon: "game-casino" }, { id: "table", label: "Table games" },
-  { id: "jackpots", label: "Jackpots", icon: "jackpot" }, { id: "new", label: "New" }, { id: "megaways", label: "Megaways" }, { id: "bonus buy", label: "Bonus buy" },
+const CATS: { id: string; label: string; icon?: CategoryIconKey }[] = [
+  { id: "all", label: "All" }, { id: "slots", label: "Slots", icon: "slots" }, { id: "live", label: "Live casino", icon: "live" }, { id: "table", label: "Table games", icon: "table" },
+  { id: "jackpots", label: "Jackpots", icon: "jackpots" }, { id: "new", label: "New", icon: "new" }, { id: "megaways", label: "Megaways", icon: "megaways" }, { id: "bonus buy", label: "Bonus buy", icon: "bonus" },
 ];
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="main container">
       <PromoBanner eyebrow="Welcome bonus" title="Get 200% on your first deposit" text="Up to €500 + 200 free spins. Claim it in one tap and join the Weekend Race." primary={{ label: "Claim bonus", onClick: () => openBonus("claim") }} secondary={{ label: "Details", onClick: () => openBonus("details") }} />
-      <div className="chips-row">{CATS.map((c) => <Chip key={c.id} selected={cat === c.id} icon={c.icon} onClick={() => setCat(c.id)}>{c.label}</Chip>)}</div>
+      <div className="chips-row">{CATS.map((c) => <Chip key={c.id} selected={cat === c.id} iconNode={c.icon && <CategoryIcon category={c.icon} />} onClick={() => setCat(c.id)}>{c.label}</Chip>)}</div>
       <section className="stack section">
         <SectionHeading title="Popular games" icon="flame-filled" seeAll arrows />
         <div className="grid grid--games">{games.map((g) => <GameTile key={g.id} id={g.id} title={g.title} provider={g.provider} art={g.art} badge={g.badge} />)}</div>
