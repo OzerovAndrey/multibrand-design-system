@@ -89,6 +89,17 @@ export function Chip({ selected, icon, iconNode, size = "md", disabled, onClick,
   );
 }
 
+// Menu — the Figma "Menu" component (node 217:65025): same shape/states as Chip,
+// but its iconSize tokens are one step bigger (iconSize.md/lg vs Chip's fixed
+// iconSize.sm), sized for rich art like the brand 3D category icons.
+export function MenuChip({ selected, iconNode, size = "md", disabled, onClick, children }: { selected?: boolean; iconNode?: ReactNode; size?: "sm" | "md"; disabled?: boolean; onClick?: () => void; children: ReactNode }) {
+  return (
+    <button type="button" className={cx("menu-pill", `menu-pill--${size}`, selected && "is-selected", size === "sm" ? "ts-label-sm" : "ts-label-md")} disabled={disabled} onClick={onClick} aria-pressed={selected}>
+      {iconNode}{children}
+    </button>
+  );
+}
+
 // ---------- Tabs ----------
 export function Tabs<T extends string>({ items, value, onChange, size = "md" }: { items: { id: T; label: string; icon?: IconName; disabled?: boolean }[]; value: T; onChange?: (id: T) => void; size?: "sm" | "md" }) {
   return (

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { CategoryIcon, Chip, Button } from "../ui/atoms";
+import { CategoryIcon, MenuChip, Button } from "../ui/atoms";
 import { SectionHeading } from "../ui/molecules";
 import { openBonus } from "../store";
 import { GameTile, PromoBanner, TournamentCard } from "../ui/organisms";
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="main container">
       <PromoBanner eyebrow="Welcome bonus" title="Get 200% on your first deposit" text="Up to €500 + 200 free spins. Claim it in one tap and join the Weekend Race." primary={{ label: "Claim bonus", onClick: () => openBonus("claim") }} secondary={{ label: "Details", onClick: () => openBonus("details") }} />
-      <div className="chips-row">{CATS.map((c) => <Chip key={c.id} selected={cat === c.id} iconNode={c.icon && <CategoryIcon category={c.icon} />} onClick={() => setCat(c.id)}>{c.label}</Chip>)}</div>
+      <div className="chips-row">{CATS.map((c) => <MenuChip key={c.id} selected={cat === c.id} iconNode={c.icon && <CategoryIcon category={c.icon} />} onClick={() => setCat(c.id)}>{c.label}</MenuChip>)}</div>
       <section className="stack section">
         <SectionHeading title="Popular games" icon="flame-filled" seeAll arrows />
         <div className="grid grid--games">{games.map((g) => <GameTile key={g.id} id={g.id} title={g.title} provider={g.provider} art={g.art} badge={g.badge} />)}</div>

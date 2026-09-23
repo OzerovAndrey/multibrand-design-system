@@ -85,6 +85,21 @@
 .menu-item--danger { color: var(--color-text-danger); }
 .menu-item--danger .icon { color: var(--color-text-danger); }
 
+/* Menu — pill variant: same shape/states as .chip but a bigger icon slot
+   (menu.iconSize.sm/md = iconSize.md/lg vs chip's fixed iconSize.sm) for
+   detailed art like the brand 3D category icons — see Figma "Menu" component. */
+.menu-pill { display: inline-flex; align-items: center; gap: var(--menu-gap); height: var(--menu-size-md); padding: 0 var(--menu-paddingH-md); cursor: pointer; white-space: nowrap; flex: none;
+  border-radius: var(--menu-borderRadius); border: var(--menu-borderWidth) solid var(--menu-br-default); background: var(--menu-bg-default); color: var(--menu-color-default); transition: all .15s; }
+.menu-pill--sm { height: var(--menu-size-sm); padding: 0 var(--menu-paddingH-sm); }
+.menu-pill .category-icon { width: var(--menu-iconSize-md); height: var(--menu-iconSize-md); flex: none; }
+.menu-pill--sm .category-icon { width: var(--menu-iconSize-sm); height: var(--menu-iconSize-sm); }
+.menu-pill:hover:not(:disabled) { background: var(--menu-bg-hover); border-color: var(--menu-br-hover); color: var(--menu-color-hover); }
+.menu-pill:active:not(:disabled) { background: var(--menu-bg-active); border-color: var(--menu-br-active); color: var(--menu-color-active); }
+.menu-pill:disabled { background: var(--menu-bg-disabled); border-color: var(--menu-br-disabled); color: var(--menu-color-disabled); cursor: not-allowed; }
+.menu-pill.is-selected { background: var(--menu-selected-bg-default); border-color: var(--menu-selected-br-default); color: var(--menu-selected-color-default); }
+.menu-pill.is-selected:hover:not(:disabled) { background: var(--menu-selected-bg-hover); border-color: var(--menu-selected-br-hover); color: var(--menu-selected-color-hover); }
+.menu-pill.is-selected:active:not(:disabled) { background: var(--menu-selected-bg-active); border-color: var(--menu-selected-br-active); color: var(--menu-selected-color-active); }
+
 /* ===== Tabs ===== */
 .tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; border-bottom: var(--tab-track-borderWidth) solid var(--tab-track-br); }
 .tabs::-webkit-scrollbar { display: none; }
