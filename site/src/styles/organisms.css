@@ -25,6 +25,7 @@
 .footer__title { color: var(--footer-title-color); }
 .footer__link { color: var(--footer-link-color); transition: color .15s; }
 .footer__link:hover { color: var(--color-text-accent); }
+.footer__credit { text-decoration: underline; text-underline-offset: .2em; }
 .footer__pay { display: flex; flex-direction: column; gap: var(--footer-column-gap); }
 .footer__badges { display: flex; flex-wrap: wrap; gap: var(--footer-social-gap); }
 .footer__badge { display: inline-flex; align-items: center; gap: var(--footer-badge-gap); height: var(--footer-badge-size); padding: 0 var(--footer-badge-paddingH); border-radius: var(--footer-badge-borderRadius); background: var(--footer-badge-bg); color: var(--footer-badge-color); }

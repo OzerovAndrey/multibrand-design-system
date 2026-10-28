@@ -138,7 +138,7 @@ export function Footer() {
         </div>
         <div className="footer__bottom">
           <span className="footer__age ts-label-sm">18+</span>
-          <p className="footer__caption ts-caption-md">Gambling can be addictive — play responsibly. 18+ only. Demo product for a design-system portfolio, no real-money gaming.<br />© 2026 Demo Casino. All rights reserved.</p>
+          <p className="footer__caption ts-caption-md">Gambling can be addictive — play responsibly. 18+ only. Demo product for a design-system portfolio, no real-money gaming.<br />© 2026 Demo Casino. All rights reserved.<br />Design system by <a className="footer__link footer__credit" href="https://ozerovandrey.github.io/portfolio/en/cases/aurum-multibrand/" target="_blank" rel="noopener noreferrer">Andrey Ozerov — View portfolio case</a>.</p>
         </div>
       </div>
     </footer>
